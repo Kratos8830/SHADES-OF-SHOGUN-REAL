@@ -13,6 +13,12 @@ public class Player : MonoBehaviour
     public bool DoubleJump = false;
 
 
+    private bool WallSliding;
+    private float WallslidingSpeed = 2f;
+    [SerializeField] private Transform wallcheck;
+    [SerializeField] private LayerMask wallLayer;
+
+
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -61,6 +67,22 @@ public class Player : MonoBehaviour
             Grounded = true;
             Debug.Log("grounded");
 
+        }
+    }
+    private bool isWalled()
+    {
+       return Physics2D.OverlapCircle(wallcheck.position, 0.2f, wallLayer);
+    }
+    private void isWallsliding()
+    {
+        if(isWalled() && Grounded != true && HorizontalInput != 0)
+        {
+            WallSliding=true;
+
+        }
+        else
+        {
+            WallSliding = false;
         }
     }
 
