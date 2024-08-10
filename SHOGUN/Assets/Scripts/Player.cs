@@ -14,7 +14,7 @@ public class Player : MonoBehaviour
 
 
     private bool WallSliding;
-    private float WallslidingSpeed = 2f;
+    private float WallslidingSpeed = 5f;
     [SerializeField] private Transform wallcheck;
     [SerializeField] private LayerMask wallLayer;
 
@@ -36,6 +36,7 @@ public class Player : MonoBehaviour
         Jump();
         GroundCheck();
         Flip();
+        Wallslide();
     }
 
 
@@ -72,13 +73,15 @@ public class Player : MonoBehaviour
     private bool isWalled()
     {
        return Physics2D.OverlapCircle(wallcheck.position, 0.2f, wallLayer);
+        
     }
-    private void isWallsliding()
+    private void Wallslide()
     {
-        if(isWalled() && Grounded != true && HorizontalInput != 0)
+        if(isWalled() && Grounded != true && HorizontalInput > 0)
         {
             WallSliding=true;
-
+            rb.velocity = new Vector2(rb.velocity.x, Mathf.Clamp(rb.velocity.y,-WallslidingSpeed,float.MaxValue));
+            Debug.Log("walled");
         }
         else
         {

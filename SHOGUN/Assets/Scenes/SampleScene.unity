@@ -123,6 +123,37 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &262519282
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 262519283}
+  m_Layer: 0
+  m_Name: wall check
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &262519283
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 262519282}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 1.99, y: 0.04, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1859479941}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -271,7 +302,7 @@ GameObject:
   - component: {fileID: 589377993}
   - component: {fileID: 589377992}
   - component: {fileID: 589377991}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: wall 2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -401,7 +432,7 @@ GameObject:
   - component: {fileID: 1348161244}
   - component: {fileID: 1348161243}
   - component: {fileID: 1348161242}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: wall 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -572,8 +603,8 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.2422889, y: 0.592856}
-  m_Size: {x: 6.277228, y: 9.614289}
+  m_Offset: {x: 0.06556394, y: 0.8563655}
+  m_Size: {x: 3.2729096, y: 9.087281}
   m_Direction: 0
 --- !u!114 &1859479938
 MonoBehaviour:
@@ -594,6 +625,10 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 64
   DoubleJump: 0
+  wallcheck: {fileID: 262519283}
+  wallLayer:
+    serializedVersion: 2
+    m_Bits: 128
 --- !u!50 &1859479939
 Rigidbody2D:
   serializedVersion: 4
@@ -685,7 +720,8 @@ Transform:
   m_LocalPosition: {x: -6.16, y: -0.93, z: 0}
   m_LocalScale: {x: 0.28408143, y: 0.3096, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 262519283}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2076777865
