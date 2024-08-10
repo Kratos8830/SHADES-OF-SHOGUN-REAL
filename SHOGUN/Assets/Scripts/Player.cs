@@ -7,7 +7,7 @@ public class Player : MonoBehaviour
     private Rigidbody2D rb;
     public SpriteRenderer sprite;
     private float HorizontalInput;
-    public float jumpforce = 3.0f;
+    public float jumpforce = 6.0f;
     public bool Grounded = true;
     public LayerMask JumpableGround;
     public bool DoubleJump = false;
@@ -37,13 +37,14 @@ public class Player : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            if (Grounded)
+            if (Grounded && DoubleJump != true)
             {
                 rb.velocity = new Vector2(rb.velocity.x, jumpforce);
                 Grounded = false;
                 DoubleJump = true;
+
             }
-            else if (DoubleJump)
+            else if (DoubleJump == true && Grounded != false)
             {
                 rb.velocity = new Vector2(rb.velocity.x, jumpforce * 0.7f);
                 DoubleJump = false;
@@ -53,11 +54,13 @@ public class Player : MonoBehaviour
 
     void GroundCheck()
     {
-        RaycastHit2D hitinfo = Physics2D.Raycast(transform.position, Vector3.down, 1f, JumpableGround);
+        RaycastHit2D hitinfo = Physics2D.Raycast(transform.position, Vector3.down, 1.5f, JumpableGround);
 
         if (hitinfo.collider != null)
         {
             Grounded = true;
+            Debug.Log("grounded");
+
         }
     }
 
