@@ -9,7 +9,7 @@ public class Player : MonoBehaviour
     //especially for Shoot script gets access of Sprite Rendered of Player
     public SpriteRenderer sprite;  
     private float HorizontalInput;
-    public float jumpforce = 3.0f;
+    public float jumpforce = 10.0f;
     public bool Grounded = true;
     public LayerMask JumpableGround;
     public bool DoubleJump = false;
