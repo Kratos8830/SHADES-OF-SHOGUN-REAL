@@ -30,7 +30,6 @@ public class Player : MonoBehaviour
     public float dashAmount = 24f;
     private float DashTime = 0.2f;
     private float DashCoolDown = 1f;
-    private TrailRenderer trail;
     private float originalGravity;
 
     // For Checking Walls
@@ -44,7 +43,7 @@ public class Player : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         
         sprite = GetComponentInChildren<SpriteRenderer>();
-        trail = GetComponent<TrailRenderer>();
+      
     }
 
     // Update is called once per frame
@@ -134,12 +133,11 @@ public class Player : MonoBehaviour
         rb.gravityScale = 0f;
 
         // Determine the dash direction based on the player's facing direction
-        float dashDirection = sprite.flipX ? -1f : 1f;
+        float dashDirection = isFacingRight ? 1f : -1f;
         rb.velocity = new Vector2(dashDirection * dashAmount, 0f);
 
-        trail.emitting = true;
         yield return new WaitForSeconds(DashTime);
-        trail.emitting = false;
+     
 
         // Stop the player's movement after the dash
         rb.velocity = new Vector2(0f, rb.velocity.y);
