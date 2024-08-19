@@ -13,6 +13,8 @@ public class Player : MonoBehaviour
     public bool Grounded = true;
     public LayerMask JumpableGround;
     public bool DoubleJump = false;
+    private bool isFacingRight = true;
+    
 
     // For Wall Slide
     public bool isWallSliding = false;
@@ -56,12 +58,20 @@ public class Player : MonoBehaviour
         HorizontalInput = Input.GetAxis("Horizontal");
 
         rb.velocity = new Vector2(HorizontalInput * 7, rb.velocity.y);
-       
+
+        if (HorizontalInput > 0 && !isFacingRight)
+        {
+            Flip();
+        }
+        else if (HorizontalInput < 0 && isFacingRight)
+        {
+            Flip();
+        }
+
 
         DashMechanics();
         Jump();
         GroundCheck();
-        Flip();
         WallSlide();
     }
 
@@ -109,14 +119,11 @@ public class Player : MonoBehaviour
 
     void Flip()
     {
-        if (HorizontalInput > 0)
-        {
-            sprite.flipX = false;
-        }
-        else if (HorizontalInput < 0)
-        {
-            sprite.flipX = true;
-        }
+        Vector3 currentScale=gameObject.transform.localScale;
+        currentScale.x *= -1;
+        gameObject.transform.localScale = currentScale;
+
+        isFacingRight= !isFacingRight;
     }
 
     private IEnumerator Dash()
