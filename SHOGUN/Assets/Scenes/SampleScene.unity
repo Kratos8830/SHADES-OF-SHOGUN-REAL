@@ -931,7 +931,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sprite: {fileID: 1859479940}
-  jumpforce: 10
+  jumpforce: 7
   isGrounded: 0
   JumpableGround:
     serializedVersion: 2
@@ -939,6 +939,7 @@ MonoBehaviour:
   DoubleJump: 0
   Groundcheck: {fileID: 403493860}
   groundCheckRadius: 0.5
+  movementspeed: 5
   dashAmount: 24
   wallCheck: {fileID: 262519283}
   Wallcheckdistance: 0.3
@@ -946,6 +947,8 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 128
   wallSlidingSpeed: 2
+  movementForceInAir: 10
+  AirDragSpeed: 0.95
 --- !u!50 &1974434929
 Rigidbody2D:
   serializedVersion: 4

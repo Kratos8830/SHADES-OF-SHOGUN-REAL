@@ -17,6 +17,8 @@ public class Player : MonoBehaviour
     private bool isFacingRight = true;
     public Transform Groundcheck;
     public float groundCheckRadius;
+
+    public float movementspeed = 5;
     
 
   
@@ -39,6 +41,10 @@ public class Player : MonoBehaviour
     private bool isWallSliding;
     public float wallSlidingSpeed;
 
+    //in Air
+    public float movementForceInAir;
+    public float AirDragSpeed;
+
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -55,9 +61,29 @@ public class Player : MonoBehaviour
             return; // Exit Update early if currently dashing or wall jumping
         }
 
+       
         HorizontalInput = Input.GetAxis("Horizontal");
 
-        rb.velocity = new Vector2(HorizontalInput * 7, rb.velocity.y);
+        
+        if (isGrounded)
+        {
+            rb.velocity = new Vector2(HorizontalInput * 7, rb.velocity.y);
+        }
+        else if(!isGrounded && !isWallSliding && HorizontalInput !=0)
+        {
+            Vector2 forcetoadd = new Vector2(movementForceInAir * HorizontalInput, 0);
+            rb.AddForce(forcetoadd);
+
+            if(Mathf.Abs(rb.velocity.x)> movementspeed)
+            {
+                rb.velocity = new Vector2 (movementspeed * HorizontalInput, rb.velocity.y);
+            }
+        }
+        else if (!isGrounded && !isWallSliding && HorizontalInput ==0)
+        {
+            rb.velocity = new Vector2(rb.velocity.x * AirDragSpeed, rb.velocity.y);
+        }
+
 
         if (HorizontalInput > 0 && !isFacingRight)
         {
@@ -137,11 +163,16 @@ public class Player : MonoBehaviour
 
     void Flip()
     {
-        Vector3 currentScale=gameObject.transform.localScale;
-        currentScale.x *= -1;
-        gameObject.transform.localScale = currentScale;
+        if (!isWallSliding)
+        {
 
-        isFacingRight= !isFacingRight;
+
+            Vector3 currentScale = gameObject.transform.localScale;
+            currentScale.x *= -1;
+            gameObject.transform.localScale = currentScale;
+            isFacingRight = !isFacingRight;
+        }
+       
     }
 
     private IEnumerator Dash()
