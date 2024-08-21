@@ -428,6 +428,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 232795783103840272, guid: 66bf7f231bf7bb24e8b61c9e00ec8d23, type: 3}
+      propertyPath: m_BodyType
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 1428468202352045992, guid: 66bf7f231bf7bb24e8b61c9e00ec8d23, type: 3}
       propertyPath: m_Layer
       value: 6
@@ -778,7 +782,7 @@ MonoBehaviour:
   dashAmount: 24
   WallLayer:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 64
   WallCheck: {fileID: 262519283}
 --- !u!50 &1974434929
 Rigidbody2D:
