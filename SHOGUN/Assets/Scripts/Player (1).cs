@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Runtime.CompilerServices;
 using UnityEngine;
 
 public class Player : MonoBehaviour
@@ -10,19 +11,15 @@ public class Player : MonoBehaviour
     public SpriteRenderer sprite;  
     private float HorizontalInput;
     public float jumpforce = 10.0f;
-    public bool Grounded = true;
+    public bool isGrounded ;
     public LayerMask JumpableGround;
     public bool DoubleJump = false;
     private bool isFacingRight = true;
+    public Transform Groundcheck;
+    public float groundCheckRadius;
     
 
-    // For Wall Slide
-    public bool isWallSliding = false;
-    public float WallSlidingSpeed = 20.0f;
-
-    // For Wall Jump
-    public float wallJumpForce = 5.0f;
-    private bool isWallJumping;
+  
 
     // For Dash
     private bool canDash = true;
@@ -32,11 +29,15 @@ public class Player : MonoBehaviour
     private float DashCoolDown = 1f;
     private float originalGravity;
 
-    // For Checking Walls
-    [SerializeField]
-    private LayerMask WallLayer;
-    [SerializeField]
-    private Transform WallCheck;
+    // for walljump
+
+    private bool isTouchingWall;
+    public Transform wallCheck;
+    public float Wallcheckdistance;
+    public LayerMask whatisWall;
+
+    private bool isWallSliding;
+    public float wallSlidingSpeed;
 
     void Start()
     {
@@ -49,7 +50,7 @@ public class Player : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (isDashing || isWallJumping)
+        if (isDashing )
         {
             return; // Exit Update early if currently dashing or wall jumping
         }
@@ -70,8 +71,11 @@ public class Player : MonoBehaviour
 
         DashMechanics();
         Jump();
-        GroundCheck();
-        WallSlide();
+        CheckSurrounding();
+        wallSliding();
+        CheckIfWallSliding();
+
+
     }
 
     void DashMechanics()
@@ -86,11 +90,11 @@ public class Player : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            if (Grounded)
+            if (isGrounded)
             {
                 rb.velocity = new Vector2(rb.velocity.x, jumpforce);
                 
-                Grounded = false;
+                isGrounded = false;
                 DoubleJump = true;
             }
             else if (DoubleJump)
@@ -98,21 +102,36 @@ public class Player : MonoBehaviour
                 rb.velocity = new Vector2(rb.velocity.x, jumpforce * 0.7f);
                 DoubleJump = false;
             }
-            else if (isWallSliding)
-            {
-                WallJump();
-            }
+           
         }
     }
 
-    void GroundCheck()
+   private void CheckSurrounding()
     {
-        RaycastHit2D hitinfo = Physics2D.Raycast(transform.position, Vector3.down, 1.5f, JumpableGround);
+        isGrounded = Physics2D.OverlapCircle(Groundcheck.position, groundCheckRadius, JumpableGround);
 
-        if (hitinfo.collider != null)
+        isTouchingWall = Physics2D.Raycast(wallCheck.position, transform.right,Wallcheckdistance,whatisWall);
+    }
+   private void CheckIfWallSliding()
+    {
+        if (isTouchingWall && !isGrounded && rb.velocity.y < 0)
         {
-            Grounded = true;
-            
+            isWallSliding = true;
+            Debug.Log("walled");
+        }
+        else
+        {
+            isWallSliding = false;
+        }
+    }
+    private void wallSliding()
+    {
+        if (isWallSliding)
+        {
+            if(rb.velocity.y < -wallSlidingSpeed)
+            {
+                rb.velocity = new Vector2 (rb.velocity.x,-wallSlidingSpeed);
+            }
         }
     }
 
@@ -147,44 +166,17 @@ public class Player : MonoBehaviour
         canDash = true;
     }
 
-    private bool IsWalled()
+
+
+
+    private void OnDrawGizmos()
     {
-        return Physics2D.OverlapCircle(WallCheck.position, 0.2f, WallLayer);
+        Gizmos.DrawLine(wallCheck.position,new Vector3(wallCheck.position.x + Wallcheckdistance,wallCheck.position.y,wallCheck.position.z));
     }
 
-    private void WallSlide()
-    {
-        if (IsWalled() && !Grounded && HorizontalInput != 0f)
-        {
-            isWallSliding = true;
-            rb.velocity = new Vector2(rb.velocity.x, Mathf.Clamp(rb.velocity.y, -WallSlidingSpeed, float.MaxValue));
-        }
-        else
-        {
-            isWallSliding = false;
-        }
-    }
 
-    private void WallJump()
-    {
-        isWallJumping = true;
 
-        // Determine the jump direction based on the wall's side
-        float jumpDirection = sprite.flipX ? 1f : -1f;
 
-        // Apply the jump force with some horizontal velocity
-        rb.velocity = new Vector2(jumpDirection * wallJumpForce, jumpforce);
 
-        // Flip the player's sprite
-        sprite.flipX = jumpDirection == 1f ? false : true;
 
-        // Prevent further wall jumps for a short duration
-        StartCoroutine(ResetWallJump());
-    }
-
-    private IEnumerator ResetWallJump()
-    {
-        yield return new WaitForSeconds(0.2f);
-        isWallJumping = false;
-    }
 }
