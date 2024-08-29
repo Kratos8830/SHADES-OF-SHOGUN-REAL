@@ -17,7 +17,6 @@ public class Player : MonoBehaviour
     private bool isFacingRight = true;
     public Transform Groundcheck;
     public float groundCheckRadius;
-
     public float movementspeed = 5;
     
 
@@ -61,7 +60,6 @@ public class Player : MonoBehaviour
             return; // Exit Update early if currently dashing or wall jumping
         }
 
-       
         HorizontalInput = Input.GetAxis("Horizontal");
 
         
@@ -133,11 +131,11 @@ public class Player : MonoBehaviour
     }
 
    private void CheckSurrounding()
-    {
+   {
         isGrounded = Physics2D.OverlapCircle(Groundcheck.position, groundCheckRadius, JumpableGround);
 
         isTouchingWall = Physics2D.Raycast(wallCheck.position, transform.right,Wallcheckdistance,whatisWall);
-    }
+   }
    private void CheckIfWallSliding()
     {
         if (isTouchingWall && !isGrounded && rb.velocity.y < 0)
@@ -165,7 +163,6 @@ public class Player : MonoBehaviour
     {
         if (!isWallSliding)
         {
-
 
             Vector3 currentScale = gameObject.transform.localScale;
             currentScale.x *= -1;
