@@ -208,7 +208,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_BindingMode: 1
-  m_FollowOffset: {x: 6.89, y: 0, z: -10}
+  m_FollowOffset: {x: 3.3, y: 0, z: -10}
   m_XDamping: 1
   m_YDamping: 1
   m_ZDamping: 1
@@ -242,7 +242,7 @@ Transform:
   m_GameObject: {fileID: 262519282}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.76, y: 0.01, z: 0}
+  m_LocalPosition: {x: 0.35, y: 0.01, z: 0}
   m_LocalScale: {x: 0.28408143, y: 0.3096, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -265,7 +265,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!61 &285952464
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -516,7 +516,7 @@ Camera:
   far clip plane: 1000
   field of view: 34
   orthographic: 1
-  orthographic size: 9.4436865
+  orthographic size: 5.43
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -541,10 +541,11 @@ Transform:
   m_GameObject: {fileID: 519420028}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -23.62, y: -1.45, z: -10}
+  m_LocalPosition: {x: -27.6, y: -1.1, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 1678567425}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &519420033
@@ -615,11 +616,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7136267884095789693, guid: 66bf7f231bf7bb24e8b61c9e00ec8d23, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -22.7
+      value: -23
       objectReference: {fileID: 0}
     - target: {fileID: 7136267884095789693, guid: 66bf7f231bf7bb24e8b61c9e00ec8d23, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.4
+      value: 0.01
       objectReference: {fileID: 0}
     - target: {fileID: 7136267884095789693, guid: 66bf7f231bf7bb24e8b61c9e00ec8d23, type: 3}
       propertyPath: m_LocalPosition.z
@@ -652,6 +653,18 @@ PrefabInstance:
     - target: {fileID: 7136267884095789693, guid: 66bf7f231bf7bb24e8b61c9e00ec8d23, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9181370787844125808, guid: 66bf7f231bf7bb24e8b61c9e00ec8d23, type: 3}
+      propertyPath: m_Color.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9181370787844125808, guid: 66bf7f231bf7bb24e8b61c9e00ec8d23, type: 3}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9181370787844125808, guid: 66bf7f231bf7bb24e8b61c9e00ec8d23, type: 3}
+      propertyPath: m_Color.r
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -782,7 +795,7 @@ MonoBehaviour:
   m_Follow: {fileID: 1974434931}
   m_Lens:
     FieldOfView: 34
-    OrthographicSize: 9.4436865
+    OrthographicSize: 5.43
     NearClipPlane: 0.3
     FarClipPlane: 1000
     Dutch: 0
@@ -808,12 +821,12 @@ Transform:
   m_GameObject: {fileID: 1678567423}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -23.62, y: -1.45, z: -10}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 170953110}
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 519420032}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1859479936
 GameObject:
@@ -952,25 +965,27 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7d83a3cddebb8424f942c4ebfb2699ef, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sprite: {fileID: 0}
-  jumpforce: 7
-  isGrounded: 0
+  movementspeed: 5
+  jumpforce: 10
+  groundCheckRadius: 0.5
+  dashAmount: 25
+  DashTime: 0.2
+  DashCoolDown: 1
+  Wallcheckdistance: 0.5
+  wallSlidingSpeed: 3
+  movementForceInAir: 10
+  AirDragSpeed: 0.95
+  Groundcheck: {fileID: 403493860}
+  wallCheck: {fileID: 262519283}
   JumpableGround:
     serializedVersion: 2
     m_Bits: 64
-  DoubleJump: 0
-  Groundcheck: {fileID: 403493860}
-  groundCheckRadius: 0.5
-  movementspeed: 5
-  dashAmount: 24
-  wallCheck: {fileID: 262519283}
-  Wallcheckdistance: 0.3
   whatisWall:
     serializedVersion: 2
     m_Bits: 128
-  wallSlidingSpeed: 2
-  movementForceInAir: 10
-  AirDragSpeed: 0.95
+  DoubleJump: 0
+  isGrounded: 0
+  sprite: {fileID: 1859479940}
 --- !u!50 &1974434929
 Rigidbody2D:
   serializedVersion: 4
@@ -986,7 +1001,7 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 1
+  m_GravityScale: 3
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
@@ -996,7 +1011,7 @@ Rigidbody2D:
     m_Bits: 0
   m_Interpolate: 0
   m_SleepingMode: 1
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
   m_Constraints: 4
 --- !u!70 &1974434930
 CapsuleCollider2D:
@@ -1030,8 +1045,8 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.07511266, y: 0.04585862}
-  m_Size: {x: 0.6927287, y: 1.8864869}
+  m_Offset: {x: 0.039957024, y: -0.0063777864}
+  m_Size: {x: 0.65487325, y: 1.7638092}
   m_Direction: 0
 --- !u!4 &1974434931
 Transform:
@@ -1042,9 +1057,9 @@ Transform:
   m_GameObject: {fileID: 1974434927}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -30.51, y: -1.45, z: 0}
-  m_LocalScale: {x: 1.5, y: 1.5, z: 1.5}
-  m_ConstrainProportionsScale: 0
+  m_LocalPosition: {x: -30.9, y: -1.1, z: 0}
+  m_LocalScale: {x: 0.96408, y: 0.96408, z: 0.96408}
+  m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 1859479941}
   - {fileID: 262519283}
@@ -1068,7 +1083,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!61 &2065384206
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1187,7 +1202,6 @@ SceneRoots:
   m_Roots:
   - {fileID: 519420032}
   - {fileID: 987643070}
-  - {fileID: 1678567425}
   - {fileID: 1974434931}
   - {fileID: 2065384208}
   - {fileID: 285952466}
