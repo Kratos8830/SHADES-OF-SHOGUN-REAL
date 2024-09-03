@@ -6,6 +6,9 @@ using UnityEngine;
 public class Player : MonoBehaviour
 {
     private Rigidbody2D rb;
+    //Main player
+
+    public GameObject player;
 
     // Float Values
     public float movementspeed = 5f;              // Ground movement speed
@@ -163,10 +166,9 @@ public class Player : MonoBehaviour
         if (!isWallSliding)
         {
 
-            Vector3 currentScale = gameObject.transform.localScale;
-            currentScale.x *= -1;
-            gameObject.transform.localScale = currentScale;
             isFacingRight = !isFacingRight;
+            player.transform.Rotate(0f, 180f, 0f);
+            wallCheck.transform.Rotate(0f,180f, 0f);
         }
 
     }
