@@ -84,7 +84,6 @@ public class Player : MonoBehaviour
             rb.velocity = new Vector2(rb.velocity.x * AirDragSpeed, rb.velocity.y);
         }
 
-
         if (HorizontalInput > 0 && !isFacingRight)
         {
             Flip();
