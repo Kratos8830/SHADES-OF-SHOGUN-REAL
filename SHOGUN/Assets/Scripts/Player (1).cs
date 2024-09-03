@@ -7,8 +7,9 @@ public class Player : MonoBehaviour
 {
     private Rigidbody2D rb;
     //Main player
-
     public GameObject player;
+    //animator reference
+    public Animator anim;
 
     // Float Values
     public float movementspeed = 5f;              // Ground movement speed
@@ -44,6 +45,8 @@ public class Player : MonoBehaviour
     private float HorizontalInput;                // Player input for horizontal movement
     private float originalGravity;                // Store original gravity for dash
 
+    
+
 
 
     void Start()
@@ -51,7 +54,7 @@ public class Player : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
 
         sprite = GetComponentInChildren<SpriteRenderer>();
-
+        anim=GameObject.Find("sprite").GetComponent<Animator>();
     }
 
     // Update is called once per frame
@@ -63,8 +66,6 @@ public class Player : MonoBehaviour
         }
 
         HorizontalInput = Input.GetAxis("Horizontal");
-
-
         if (isGrounded)
         {
             rb.velocity = new Vector2(HorizontalInput * 7, rb.velocity.y);
@@ -79,6 +80,7 @@ public class Player : MonoBehaviour
                 rb.velocity = new Vector2(movementspeed * HorizontalInput, rb.velocity.y);
             }
         }
+
         else if (!isGrounded && !isWallSliding && HorizontalInput == 0)
         {
             rb.velocity = new Vector2(rb.velocity.x * AirDragSpeed, rb.velocity.y);
@@ -87,6 +89,7 @@ public class Player : MonoBehaviour
         if (HorizontalInput > 0 && !isFacingRight)
         {
             Flip();
+           
         }
         else if (HorizontalInput < 0 && isFacingRight)
         {
@@ -94,13 +97,17 @@ public class Player : MonoBehaviour
         }
 
 
+       // rb.velocity = new Vector2(HorizontalInput * 7, rb.velocity.y);
+
+        anim.SetFloat("run",Mathf.Abs(HorizontalInput));
+
         DashMechanics();
         Jump();
         CheckSurrounding();
         wallSliding();
         CheckIfWallSliding();
-
-
+       
+      
     }
 
     void DashMechanics()
