@@ -9,6 +9,7 @@ public class Player : MonoBehaviour
     //Main player
 
     public GameObject player;
+    private Animator anim;
 
     // Float Values
     public float movementspeed = 5f;              // Ground movement speed
@@ -51,7 +52,7 @@ public class Player : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
 
         sprite = GetComponentInChildren<SpriteRenderer>();
-
+        anim = GameObject.Find("sprite").GetComponent<Animator>();
     }
 
     // Update is called once per frame
@@ -100,7 +101,7 @@ public class Player : MonoBehaviour
         wallSliding();
         CheckIfWallSliding();
 
-
+        anim.SetFloat("run", Mathf.Abs(HorizontalInput));
     }
 
     void DashMechanics()
@@ -167,7 +168,7 @@ public class Player : MonoBehaviour
 
             isFacingRight = !isFacingRight;
             player.transform.Rotate(0f, 180f, 0f);
-            wallCheck.transform.Rotate(0f,180f, 0f);
+            wallCheck.transform.Rotate(0f, 180f, 0f);
         }
 
     }
@@ -208,4 +209,5 @@ public class Player : MonoBehaviour
 
 
 }
+
 
