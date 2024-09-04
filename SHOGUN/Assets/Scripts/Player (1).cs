@@ -9,8 +9,12 @@ public class Player : MonoBehaviour
     //Main player
     public GameObject player;
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
     //animator reference
     public Animator anim;
+=======
+    private Animator anim;
+>>>>>>> Stashed changes
 =======
     private Animator anim;
 >>>>>>> Stashed changes
@@ -59,11 +63,15 @@ public class Player : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
 
         sprite = GetComponentInChildren<SpriteRenderer>();
+<<<<<<< Updated upstream
         anim=GameObject.Find("sprite").GetComponent<Animator>();
 =======
        rb = GetComponent<Rigidbody2D>();
        sprite = GetComponentInChildren<SpriteRenderer>();
        anim=GameObject.Find("sprite").GetComponent<Animator>();
+>>>>>>> Stashed changes
+=======
+        anim= GameObject.Find("sprite").GetComponent<Animator>();
 >>>>>>> Stashed changes
     }
 
@@ -125,6 +133,9 @@ public class Player : MonoBehaviour
 =======
 
         anim.SetFloat("run", Mathf.Abs(HorizontalInput));
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
     }
 
