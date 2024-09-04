@@ -50,7 +50,6 @@ public class Player : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
-
         sprite = GetComponentInChildren<SpriteRenderer>();
         anim = GameObject.Find("sprite").GetComponent<Animator>();
     }
@@ -101,7 +100,7 @@ public class Player : MonoBehaviour
         wallSliding();
         CheckIfWallSliding();
 
-       // anim.SetFloat("run", Mathf.Abs(HorizontalInput));
+        anim.SetFloat("run", Mathf.Abs(HorizontalInput));
     }
 
     void DashMechanics()
