@@ -45,6 +45,10 @@ public class Player : MonoBehaviour
     private float HorizontalInput;                // Player input for horizontal movement
     private float originalGravity;                // Store original gravity for dash
 
+    //for wall jump
+    public float wallJumpForceX = 25f;            
+    public float wallJumpDirection = 1f;
+    public float wallJumpForceY = 13f;
 
 
     void Start()
@@ -99,6 +103,7 @@ public class Player : MonoBehaviour
         CheckSurrounding();
         wallSliding();
         CheckIfWallSliding();
+        WallJump();
 
         anim.SetFloat("run", Mathf.Abs(HorizontalInput));
     }
@@ -128,6 +133,24 @@ public class Player : MonoBehaviour
                 DoubleJump = false;
             }
 
+        }
+    }
+
+    void WallJump()
+    {
+        if (isWallSliding && Input.GetKeyDown(KeyCode.Space))
+        {
+            //for direction
+            float jumpDirection = isFacingRight ? -1f : 1f;
+
+            rb.velocity = new Vector2(jumpDirection * wallJumpForceX, wallJumpForceY);
+            isWallSliding = false;
+
+            // Optionally flip the player after the jump
+            if (isFacingRight && jumpDirection < 0 || !isFacingRight && jumpDirection > 0)
+            {
+                Flip();
+            }
         }
     }
 
@@ -194,17 +217,10 @@ public class Player : MonoBehaviour
         canDash = true;
     }
 
-
-
-
     private void OnDrawGizmos()
     {
         Gizmos.DrawLine(wallCheck.position, new Vector3(wallCheck.position.x + Wallcheckdistance, wallCheck.position.y, wallCheck.position.z));
     }
-
-
-
-
 
 
 }
