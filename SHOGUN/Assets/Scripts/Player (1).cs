@@ -7,8 +7,8 @@ public class Player : MonoBehaviour
 {
     private Rigidbody2D rb;
     //Main player
-
     public GameObject player;
+    private Animator anim;
 
     // Float Values
     public float movementspeed = 5f;              // Ground movement speed
@@ -49,7 +49,7 @@ public class Player : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
-
+        anim=GetComponentInChildren<Animator>();
         sprite = GetComponentInChildren<SpriteRenderer>();
 
     }
@@ -100,7 +100,7 @@ public class Player : MonoBehaviour
         wallSliding();
         CheckIfWallSliding();
 
-
+        anim.SetFloat("run", Mathf.Abs(HorizontalInput));
     }
 
     void DashMechanics()
