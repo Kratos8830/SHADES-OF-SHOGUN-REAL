@@ -7,18 +7,9 @@ public class Player : MonoBehaviour
 {
     private Rigidbody2D rb;
     //Main player
-    public GameObject player;
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-    //animator reference
-    public Animator anim;
-=======
-    private Animator anim;
->>>>>>> Stashed changes
-=======
-    private Animator anim;
->>>>>>> Stashed changes
 
+    public GameObject player;
+    private Animator anim;
     // Float Values
     public float movementspeed = 5f;              // Ground movement speed
     public float jumpforce = 10f;                 // Jump force
@@ -53,26 +44,14 @@ public class Player : MonoBehaviour
     private float HorizontalInput;                // Player input for horizontal movement
     private float originalGravity;                // Store original gravity for dash
 
-    
-
 
 
     void Start()
     {
-<<<<<<< Updated upstream
         rb = GetComponent<Rigidbody2D>();
-
+        anim=GetComponentInChildren<Animator>();
         sprite = GetComponentInChildren<SpriteRenderer>();
-<<<<<<< Updated upstream
-        anim=GameObject.Find("sprite").GetComponent<Animator>();
-=======
-       rb = GetComponent<Rigidbody2D>();
-       sprite = GetComponentInChildren<SpriteRenderer>();
-       anim=GameObject.Find("sprite").GetComponent<Animator>();
->>>>>>> Stashed changes
-=======
-        anim= GameObject.Find("sprite").GetComponent<Animator>();
->>>>>>> Stashed changes
+
     }
 
     // Update is called once per frame
@@ -84,6 +63,8 @@ public class Player : MonoBehaviour
         }
 
         HorizontalInput = Input.GetAxis("Horizontal");
+
+
         if (isGrounded)
         {
             rb.velocity = new Vector2(HorizontalInput * 7, rb.velocity.y);
@@ -98,7 +79,6 @@ public class Player : MonoBehaviour
                 rb.velocity = new Vector2(movementspeed * HorizontalInput, rb.velocity.y);
             }
         }
-
         else if (!isGrounded && !isWallSliding && HorizontalInput == 0)
         {
             rb.velocity = new Vector2(rb.velocity.x * AirDragSpeed, rb.velocity.y);
@@ -107,36 +87,20 @@ public class Player : MonoBehaviour
         if (HorizontalInput > 0 && !isFacingRight)
         {
             Flip();
-           
         }
         else if (HorizontalInput < 0 && isFacingRight)
         {
             Flip();
         }
 
-<<<<<<< Updated upstream
-
-       // rb.velocity = new Vector2(HorizontalInput * 7, rb.velocity.y);
-
-        anim.SetFloat("run",Mathf.Abs(HorizontalInput));
-
-=======
->>>>>>> Stashed changes
         DashMechanics();
         Jump();
         CheckSurrounding();
         wallSliding();
         CheckIfWallSliding();
-<<<<<<< Updated upstream
-       
-      
-=======
 
         anim.SetFloat("run", Mathf.Abs(HorizontalInput));
-<<<<<<< Updated upstream
->>>>>>> Stashed changes
-=======
->>>>>>> Stashed changes
+
     }
 
     void DashMechanics()
@@ -154,6 +118,7 @@ public class Player : MonoBehaviour
             if (isGrounded)
             {
                 rb.velocity = new Vector2(rb.velocity.x, jumpforce);
+
                 isGrounded = false;
                 DoubleJump = true;
             }
@@ -169,7 +134,6 @@ public class Player : MonoBehaviour
     private void CheckSurrounding()
     {
         isGrounded = Physics2D.OverlapCircle(Groundcheck.position, groundCheckRadius, JumpableGround);
-
         isTouchingWall = Physics2D.Raycast(wallCheck.position, transform.right, Wallcheckdistance, whatisWall);
     }
     private void CheckIfWallSliding()
@@ -199,7 +163,6 @@ public class Player : MonoBehaviour
     {
         if (!isWallSliding)
         {
-
             isFacingRight = !isFacingRight;
             player.transform.Rotate(0f, 180f, 0f);
             wallCheck.transform.Rotate(0f,180f, 0f);
@@ -228,6 +191,8 @@ public class Player : MonoBehaviour
         yield return new WaitForSeconds(DashCoolDown);
         canDash = true;
     }
+
+
     private void OnDrawGizmos()
     {
         Gizmos.DrawLine(wallCheck.position, new Vector3(wallCheck.position.x + Wallcheckdistance, wallCheck.position.y, wallCheck.position.z));
