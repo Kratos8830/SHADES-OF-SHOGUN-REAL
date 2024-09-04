@@ -13,8 +13,8 @@ TagManager:
   - UI
   - ground
   - wall
-  - 
-  - 
+  - Player
+  - Enemy
   - 
   - 
   - 
@@ -49,4 +49,7 @@ TagManager:
     locked: 0
   - name: Player
     uniqueID: 1590758599
+    locked: 0
+  - name: mist
+    uniqueID: 814179987
     locked: 0
