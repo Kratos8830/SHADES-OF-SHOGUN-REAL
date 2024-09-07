@@ -105,7 +105,7 @@ public class Player : MonoBehaviour
         CheckIfWallSliding();
         WallJump();
 
-        anim.SetFloat("run", Mathf.Abs(HorizontalInput));
+        
     }
 
     void DashMechanics()
