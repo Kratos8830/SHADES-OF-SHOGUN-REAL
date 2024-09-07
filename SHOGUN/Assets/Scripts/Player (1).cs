@@ -50,6 +50,8 @@ public class Player : MonoBehaviour
     public float wallJumpDirection = 1f;
     public float wallJumpForceY = 13f;
 
+    //for object pooling
+    public float afterImageSpawnRate = 0.05f; // How often to spawn afterimages
 
     void Start()
     {
@@ -113,6 +115,7 @@ public class Player : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.LeftShift) && canDash)
         {
             StartCoroutine(Dash());
+            PlayerAfterImagePool.Instance.GetFromPool();
         }
     }
 
@@ -216,6 +219,8 @@ public class Player : MonoBehaviour
         yield return new WaitForSeconds(DashCoolDown);
         canDash = true;
     }
+
+  
 
     private void OnDrawGizmos()
     {
