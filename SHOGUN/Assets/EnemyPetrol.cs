@@ -9,7 +9,7 @@ public class EnemyAttack : MonoBehaviour
     public Transform pointB;                    // Second patrol point
     public LayerMask playerLayer;               // Layer that represents the player
     public float attackRange = 2f;              // Range within which the enemy will attack the player
-    public float attackCooldown = 6f;           // Time between attacks
+    public float attackCooldown = 1f;           // Time between attacks
 
     private Transform currentTarget;            // The current target to move towards
     private bool facingRight = true;            // Check if the enemy is facing right
@@ -17,13 +17,10 @@ public class EnemyAttack : MonoBehaviour
     public Transform attackPoint;
     private float lastAttackTime = 0f;          // Track the time since the last attack
 
-
-    public Animator animator;
     void Start()
     {
         // Set the initial target to point A
         currentTarget = pointA;
-        animator = GetComponent<Animator>();    
     }
 
     void Update()
@@ -57,7 +54,7 @@ public class EnemyAttack : MonoBehaviour
         {
             Flip();
         }
-        else if (player.transform.position.x < transform.position.x && facingRight)
+        else if (player.transform.position.x > transform.position.x && facingRight)
         {
             Flip();
         }
@@ -68,8 +65,6 @@ public class EnemyAttack : MonoBehaviour
             lastAttackTime = Time.time;  // Reset the attack timer
             // Insert your attack logic here (e.g., deal damage, play attack animation)
             Debug.Log("Attacking the player!");
-            animator.SetTrigger("attack");
-            
         }
     }
 

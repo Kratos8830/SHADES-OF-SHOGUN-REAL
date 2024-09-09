@@ -10,9 +10,6 @@ public class PlayerAttack : MonoBehaviour
     public float attackRange = 0.5f;
     public LayerMask enemyLayers;
     public int attackDamage = 40;
-
-    public float attackRate = 2f;
-    float nextAttackTime = 0f;
     void Start()
     {
         
@@ -21,16 +18,10 @@ public class PlayerAttack : MonoBehaviour
   
     void Update()
     {
-        if(Time.time >= nextAttackTime)
+       if (Input.GetKeyDown(KeyCode.Mouse0))
         {
-
-            if (Input.GetKeyDown(KeyCode.Mouse0))
-            {
-                Attack();
-                nextAttackTime = Time.time+1f/attackRate;
-            }
+            Attack();
         }
-      
     }
 
     void Attack()
@@ -43,8 +34,8 @@ public class PlayerAttack : MonoBehaviour
 
         foreach(Collider2D enemy in hitEnemies)
         {
-            Debug.Log("hitting Enemy");
-            enemy.GetComponent<EnemyHealth>().TakeDamage(40);
+            Debug.Log("Mar Maderchod");
+            GetComponent<EnemyHealth>().TakeDamage(attackDamage);
         }
 
 
