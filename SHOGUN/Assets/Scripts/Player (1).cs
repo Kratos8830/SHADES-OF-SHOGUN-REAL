@@ -115,7 +115,7 @@ public class Player : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.LeftShift) && canDash)
         {
             StartCoroutine(Dash());
-            PlayerAfterImagePool.Instance.GetFromPool();
+          //  PlayerAfterImagePool.Instance.GetFromPool();
         }
     }
 
@@ -126,15 +126,20 @@ public class Player : MonoBehaviour
             if (isGrounded)
             {
                 rb.velocity = new Vector2(rb.velocity.x, jumpforce);
-
+                anim.SetBool("jump", true);
                 isGrounded = false;
                 DoubleJump = true;
+                StartCoroutine(StopJumpAnim());
             }
             else if (DoubleJump)
             {
                 rb.velocity = new Vector2(rb.velocity.x, jumpforce * 1f);
+                anim.SetBool("doublejump",true);
+                StartCoroutine(StopDoubleJumpAnim());
                 DoubleJump = false;
             }
+
+           
 
         }
     }
@@ -226,6 +231,19 @@ public class Player : MonoBehaviour
     {
         Gizmos.DrawLine(wallCheck.position, new Vector3(wallCheck.position.x + Wallcheckdistance, wallCheck.position.y, wallCheck.position.z));
     }
+
+    IEnumerator StopJumpAnim()
+    {
+        yield return new WaitForSeconds(0.5f);
+        anim.SetBool("jump",false);
+    }
+
+    IEnumerator StopDoubleJumpAnim()
+    {
+        yield return new WaitForSeconds(1.3f);
+        anim.SetBool("doublejump", false);
+    }
+
 
 
 }

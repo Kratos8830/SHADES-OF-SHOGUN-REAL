@@ -1,0 +1,1359 @@
+fileFormatVersion: 2
+guid: 87e40efd53404fc47ad58772464e680e
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 16384
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: character movement sprite sheet_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1620
+        width: 274.2857
+        height: 540
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 965ab94086f3b364396fb9c31ea0dafd
+      internalID: -812057629
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: character movement sprite sheet_1
+      rect:
+        serializedVersion: 2
+        x: 274
+        y: 1620
+        width: 274.2857
+        height: 540
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0370cb014d541dd4c9224b6195b6f455
+      internalID: -100898447
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: character movement sprite sheet_2
+      rect:
+        serializedVersion: 2
+        x: 548
+        y: 1620
+        width: 274.2857
+        height: 540
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 30efde5882620ba479762384e3056ad6
+      internalID: -97183622
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: character movement sprite sheet_3
+      rect:
+        serializedVersion: 2
+        x: 822
+        y: 1620
+        width: 274.2857
+        height: 540
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 99c558479f9965244bd82d578d1ecadf
+      internalID: -844378880
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: character movement sprite sheet_4
+      rect:
+        serializedVersion: 2
+        x: 1096
+        y: 1620
+        width: 274.2857
+        height: 540
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4fae2abd330b91f46822c7c282e6f96e
+      internalID: 1110353697
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: character movement sprite sheet_5
+      rect:
+        serializedVersion: 2
+        x: 1370
+        y: 1620
+        width: 274.2857
+        height: 540
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2ff2769d4304a354d894877d9ba0649b
+      internalID: 631378646
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: character movement sprite sheet_6
+      rect:
+        serializedVersion: 2
+        x: 1644
+        y: 1620
+        width: 274.2857
+        height: 540
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 728af33b6a06a874f83216e672382fac
+      internalID: -1156887655
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: character movement sprite sheet_7
+      rect:
+        serializedVersion: 2
+        x: 1918
+        y: 1620
+        width: 274.2857
+        height: 540
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2f78223147482e644a37a60da1d0c922
+      internalID: -874004608
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: character movement sprite sheet_8
+      rect:
+        serializedVersion: 2
+        x: 2192
+        y: 1620
+        width: 274.2857
+        height: 540
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b7d0b0ffcb134c641ba4a083f681aeb9
+      internalID: -456478095
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: character movement sprite sheet_9
+      rect:
+        serializedVersion: 2
+        x: 2466
+        y: 1620
+        width: 274.2857
+        height: 540
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f90e0b2046316924d8bf1f3acdd18b83
+      internalID: 356160274
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: character movement sprite sheet_10
+      rect:
+        serializedVersion: 2
+        x: 2740
+        y: 1620
+        width: 274.2857
+        height: 540
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 530ae1d8427097b44b6d7a2a2a8f6172
+      internalID: 1387244739
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: character movement sprite sheet_11
+      rect:
+        serializedVersion: 2
+        x: 3014
+        y: 1620
+        width: 274.2857
+        height: 540
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b4fd986ce298af84bbb88309d9383eb6
+      internalID: 937698627
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: character movement sprite sheet_12
+      rect:
+        serializedVersion: 2
+        x: 3288
+        y: 1620
+        width: 274.2857
+        height: 540
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 078952afb39e34444b8d05bee5c86566
+      internalID: -1388280287
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: character movement sprite sheet_13
+      rect:
+        serializedVersion: 2
+        x: 3562
+        y: 1620
+        width: 274.2857
+        height: 540
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cbd025f88cf852846a27b9f88df3606f
+      internalID: 148717682
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: character movement sprite sheet_14
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1080
+        width: 274.2857
+        height: 540
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 28b6d8b2c9c8493428d853a42fddbc61
+      internalID: -1165033042
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: character movement sprite sheet_15
+      rect:
+        serializedVersion: 2
+        x: 274
+        y: 1080
+        width: 274.2857
+        height: 540
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4cced8d72563ee34584df9f10fd9facf
+      internalID: 407068575
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: character movement sprite sheet_16
+      rect:
+        serializedVersion: 2
+        x: 548
+        y: 1080
+        width: 274.2857
+        height: 540
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f53ea503fdec1d84d86a5b9dc33d74fa
+      internalID: 1112673505
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: character movement sprite sheet_17
+      rect:
+        serializedVersion: 2
+        x: 822
+        y: 1080
+        width: 274.2857
+        height: 540
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 16639687c003a894e973963d245809d8
+      internalID: 462648469
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: character movement sprite sheet_18
+      rect:
+        serializedVersion: 2
+        x: 1096
+        y: 1080
+        width: 274.2857
+        height: 540
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6e8aac71c9ba0e4498131bd7613482b4
+      internalID: 1940540081
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: character movement sprite sheet_19
+      rect:
+        serializedVersion: 2
+        x: 1370
+        y: 1080
+        width: 274.2857
+        height: 540
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4994878c4777d4b458129bf30884b776
+      internalID: -1625256911
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: character movement sprite sheet_20
+      rect:
+        serializedVersion: 2
+        x: 1644
+        y: 1080
+        width: 274.2857
+        height: 540
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bb07a91644376154c883c3779b896318
+      internalID: 104767982
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: character movement sprite sheet_21
+      rect:
+        serializedVersion: 2
+        x: 1918
+        y: 1080
+        width: 274.2857
+        height: 540
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e86a0455ee404fb4895c503f923ca7e0
+      internalID: 1922785993
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: character movement sprite sheet_22
+      rect:
+        serializedVersion: 2
+        x: 2192
+        y: 1080
+        width: 274.2857
+        height: 540
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 22d15256de6955548a78ba17bf76c066
+      internalID: 610919964
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: character movement sprite sheet_23
+      rect:
+        serializedVersion: 2
+        x: 2466
+        y: 1080
+        width: 274.2857
+        height: 540
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 476d856977d36c940864f52f025ad886
+      internalID: 1846450347
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: character movement sprite sheet_24
+      rect:
+        serializedVersion: 2
+        x: 2740
+        y: 1080
+        width: 274.2857
+        height: 540
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4659f9f0070351c42a6ae0fae6b0fbd7
+      internalID: 598494288
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: character movement sprite sheet_25
+      rect:
+        serializedVersion: 2
+        x: 3014
+        y: 1080
+        width: 274.2857
+        height: 540
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6ad51fc1c24d9b949a9ceb30ac4b4a2e
+      internalID: 189832477
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: character movement sprite sheet_26
+      rect:
+        serializedVersion: 2
+        x: 3288
+        y: 1080
+        width: 274.2857
+        height: 540
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 49e592665c29a5b47aa88971ef8624b7
+      internalID: -784342116
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: character movement sprite sheet_27
+      rect:
+        serializedVersion: 2
+        x: 3562
+        y: 1080
+        width: 274.2857
+        height: 540
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8e567ee1fb7c7da47a720979371f9083
+      internalID: 799326543
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: character movement sprite sheet_28
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 540
+        width: 274.2857
+        height: 540
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: eac35723e6d5c244c98d0f5f2c5b31e6
+      internalID: -999501514
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: character movement sprite sheet_29
+      rect:
+        serializedVersion: 2
+        x: 274
+        y: 540
+        width: 274.2857
+        height: 540
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 45511d4e5270e964bbf6fe1a1a438581
+      internalID: -1890252673
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: character movement sprite sheet_30
+      rect:
+        serializedVersion: 2
+        x: 548
+        y: 540
+        width: 274.2857
+        height: 540
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 456ed0b894ea45846825444a5e747ffd
+      internalID: 144765062
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: character movement sprite sheet_31
+      rect:
+        serializedVersion: 2
+        x: 822
+        y: 540
+        width: 274.2857
+        height: 540
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 30ef7ed6c41aeb346b6a57d37097fcff
+      internalID: 1696018562
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: character movement sprite sheet_32
+      rect:
+        serializedVersion: 2
+        x: 1096
+        y: 540
+        width: 274.2857
+        height: 540
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 68b7292ae37a49f4694e0ab5bc4f1c94
+      internalID: -1058832731
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: character movement sprite sheet_33
+      rect:
+        serializedVersion: 2
+        x: 1370
+        y: 540
+        width: 274.2857
+        height: 540
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a0c3ded99d802064ba30d9c3f28873d6
+      internalID: 987331083
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: character movement sprite sheet_34
+      rect:
+        serializedVersion: 2
+        x: 1644
+        y: 540
+        width: 274.2857
+        height: 540
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 764815c245676344fa5cea97d426b538
+      internalID: 462508753
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: character movement sprite sheet_35
+      rect:
+        serializedVersion: 2
+        x: 1918
+        y: 540
+        width: 274.2857
+        height: 540
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fa24c3841f271b944a293d7fbe415e90
+      internalID: 973726365
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: character movement sprite sheet_36
+      rect:
+        serializedVersion: 2
+        x: 2192
+        y: 540
+        width: 274.2857
+        height: 540
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d205179ce28907949a4e842f200fedf1
+      internalID: -464985752
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: character movement sprite sheet_37
+      rect:
+        serializedVersion: 2
+        x: 2466
+        y: 540
+        width: 274.2857
+        height: 540
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bc5e7ba7c0ec7ee4aa534e4586d998a4
+      internalID: -2130894207
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: character movement sprite sheet_38
+      rect:
+        serializedVersion: 2
+        x: 2740
+        y: 540
+        width: 274.2857
+        height: 540
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4e10683ee41c1f745971459b532c6621
+      internalID: 1494894958
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: character movement sprite sheet_39
+      rect:
+        serializedVersion: 2
+        x: 3014
+        y: 540
+        width: 274.2857
+        height: 540
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f9e376aff28aa27448c3c5caa2909f5e
+      internalID: -298204606
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: character movement sprite sheet_40
+      rect:
+        serializedVersion: 2
+        x: 3288
+        y: 540
+        width: 274.2857
+        height: 540
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bb01ee714eaad284a84201b9f84e1c42
+      internalID: 1823677278
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: character movement sprite sheet_41
+      rect:
+        serializedVersion: 2
+        x: 3562
+        y: 540
+        width: 274.2857
+        height: 540
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5246e2e73a17b4543b83e24bacc8ac97
+      internalID: 1277963807
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: character movement sprite sheet_42
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 274.2857
+        height: 540
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4f382c3fb2d329c4098556912a0b49bd
+      internalID: 44299221
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: character movement sprite sheet_43
+      rect:
+        serializedVersion: 2
+        x: 274
+        y: 0
+        width: 274.2857
+        height: 540
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: badaff646e713f4469b8f78615172e32
+      internalID: -683426794
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: character movement sprite sheet_44
+      rect:
+        serializedVersion: 2
+        x: 548
+        y: 0
+        width: 274.2857
+        height: 540
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b8eefe1aa50fc0b4ea4e339d86047cca
+      internalID: -434977253
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: character movement sprite sheet_45
+      rect:
+        serializedVersion: 2
+        x: 822
+        y: 0
+        width: 274.2857
+        height: 540
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7f29a5d4e2452dc4bae00d7a145868f6
+      internalID: 87646211
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: character movement sprite sheet_46
+      rect:
+        serializedVersion: 2
+        x: 1096
+        y: 0
+        width: 274.2857
+        height: 540
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1b591ec17db38044e81c3f83d3ca563c
+      internalID: 597919233
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: character movement sprite sheet_47
+      rect:
+        serializedVersion: 2
+        x: 1370
+        y: 0
+        width: 274.2857
+        height: 540
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 41f34a382247c09408b0f70ed4533be0
+      internalID: -1544469285
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: character movement sprite sheet_48
+      rect:
+        serializedVersion: 2
+        x: 1644
+        y: 0
+        width: 274.2857
+        height: 540
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3963d69e17f504245b09b1de29312a86
+      internalID: -1102050259
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: character movement sprite sheet_49
+      rect:
+        serializedVersion: 2
+        x: 1918
+        y: 0
+        width: 274.2857
+        height: 540
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ee40ed554e0a6a344a019a42fa512aca
+      internalID: -1963037511
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: character movement sprite sheet_50
+      rect:
+        serializedVersion: 2
+        x: 2192
+        y: 0
+        width: 274.2857
+        height: 540
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a337ee1028a0e974ba03359ccbb4aa86
+      internalID: 372197219
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: character movement sprite sheet_51
+      rect:
+        serializedVersion: 2
+        x: 2466
+        y: 0
+        width: 274.2857
+        height: 540
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 90068bd9a42e6424492d295af16fdbd9
+      internalID: 1218056676
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: character movement sprite sheet_52
+      rect:
+        serializedVersion: 2
+        x: 2740
+        y: 0
+        width: 274.2857
+        height: 540
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9985aaa7a5755f14a9db6e988cb9c032
+      internalID: -1737476931
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: character movement sprite sheet_53
+      rect:
+        serializedVersion: 2
+        x: 3014
+        y: 0
+        width: 274.2857
+        height: 540
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e85bfa8c563ccda4e818b861b3afc210
+      internalID: -532309666
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: character movement sprite sheet_54
+      rect:
+        serializedVersion: 2
+        x: 3288
+        y: 0
+        width: 274.2857
+        height: 540
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8446c756658fbbe48a6d38541905b115
+      internalID: -276615577
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: character movement sprite sheet_55
+      rect:
+        serializedVersion: 2
+        x: 3562
+        y: 0
+        width: 274.2857
+        height: 540
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0f9718e0c6906004d9387c1025d35d50
+      internalID: -1716242001
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      character movement sprite sheet_0: -812057629
+      character movement sprite sheet_1: -100898447
+      character movement sprite sheet_10: 1387244739
+      character movement sprite sheet_11: 937698627
+      character movement sprite sheet_12: -1388280287
+      character movement sprite sheet_13: 148717682
+      character movement sprite sheet_14: -1165033042
+      character movement sprite sheet_15: 407068575
+      character movement sprite sheet_16: 1112673505
+      character movement sprite sheet_17: 462648469
+      character movement sprite sheet_18: 1940540081
+      character movement sprite sheet_19: -1625256911
+      character movement sprite sheet_2: -97183622
+      character movement sprite sheet_20: 104767982
+      character movement sprite sheet_21: 1922785993
+      character movement sprite sheet_22: 610919964
+      character movement sprite sheet_23: 1846450347
+      character movement sprite sheet_24: 598494288
+      character movement sprite sheet_25: 189832477
+      character movement sprite sheet_26: -784342116
+      character movement sprite sheet_27: 799326543
+      character movement sprite sheet_28: -999501514
+      character movement sprite sheet_29: -1890252673
+      character movement sprite sheet_3: -844378880
+      character movement sprite sheet_30: 144765062
+      character movement sprite sheet_31: 1696018562
+      character movement sprite sheet_32: -1058832731
+      character movement sprite sheet_33: 987331083
+      character movement sprite sheet_34: 462508753
+      character movement sprite sheet_35: 973726365
+      character movement sprite sheet_36: -464985752
+      character movement sprite sheet_37: -2130894207
+      character movement sprite sheet_38: 1494894958
+      character movement sprite sheet_39: -298204606
+      character movement sprite sheet_4: 1110353697
+      character movement sprite sheet_40: 1823677278
+      character movement sprite sheet_41: 1277963807
+      character movement sprite sheet_42: 44299221
+      character movement sprite sheet_43: -683426794
+      character movement sprite sheet_44: -434977253
+      character movement sprite sheet_45: 87646211
+      character movement sprite sheet_46: 597919233
+      character movement sprite sheet_47: -1544469285
+      character movement sprite sheet_48: -1102050259
+      character movement sprite sheet_49: -1963037511
+      character movement sprite sheet_5: 631378646
+      character movement sprite sheet_50: 372197219
+      character movement sprite sheet_51: 1218056676
+      character movement sprite sheet_52: -1737476931
+      character movement sprite sheet_53: -532309666
+      character movement sprite sheet_54: -276615577
+      character movement sprite sheet_55: -1716242001
+      character movement sprite sheet_6: -1156887655
+      character movement sprite sheet_7: -874004608
+      character movement sprite sheet_8: -456478095
+      character movement sprite sheet_9: 356160274
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
