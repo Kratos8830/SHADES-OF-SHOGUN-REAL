@@ -15,7 +15,9 @@ public class EnemyAttack : MonoBehaviour
     private bool facingRight = true;            // Check if the enemy is facing right
     private bool isAttacking = false;           // Check if the enemy is attacking
     public Transform attackPoint;
-    private float lastAttackTime = 0f;          // Track the time since the last attack
+    private float lastAttackTime = 0f;        // Track the time since the last attack
+
+    public Animator animator;
 
     void Start()
     {
@@ -49,12 +51,13 @@ public class EnemyAttack : MonoBehaviour
     {
         // Stop moving and face the player
         GameObject player = Physics2D.OverlapCircle(attackPoint.position, attackRange, playerLayer).gameObject;
+        
 
         if (player.transform.position.x > transform.position.x && !facingRight)
         {
             Flip();
         }
-        else if (player.transform.position.x > transform.position.x && facingRight)
+        else if (player.transform.position.x < transform.position.x && facingRight)
         {
             Flip();
         }
@@ -62,6 +65,7 @@ public class EnemyAttack : MonoBehaviour
         // Perform an attack if cooldown is over
         if (Time.time >= lastAttackTime + attackCooldown)
         {
+            animator.SetTrigger("attack");
             lastAttackTime = Time.time;  // Reset the attack timer
             // Insert your attack logic here (e.g., deal damage, play attack animation)
             Debug.Log("Attacking the player!");

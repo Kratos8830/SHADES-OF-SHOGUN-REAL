@@ -130,10 +130,10 @@ public class Player : MonoBehaviour
             if (isGrounded)
             {
                 rb.velocity = new Vector2(rb.velocity.x, jumpforce);
-                anim.SetBool("jump", true);
+                anim.SetBool("doublejump", true);
                 isGrounded = false;
                 DoubleJump = true;
-                StartCoroutine(StopJumpAnim());
+                StartCoroutine(StopDoubleJumpAnim());
             }
             else if (DoubleJump)
             {
