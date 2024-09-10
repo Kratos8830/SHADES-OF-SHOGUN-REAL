@@ -115,6 +115,7 @@ public class Player : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.LeftShift) && canDash)
         {
             StartCoroutine(Dash());
+            anim.SetBool("dash",true);
           //  PlayerAfterImagePool.Instance.GetFromPool();
         }
     }
@@ -215,7 +216,7 @@ public class Player : MonoBehaviour
         rb.velocity = new Vector2(dashDirection * dashAmount, 0f);
 
         yield return new WaitForSeconds(DashTime);
-
+        anim.SetBool("dash", false);
 
         // Stop the player's movement after the dash
         rb.velocity = new Vector2(0f, rb.velocity.y);
