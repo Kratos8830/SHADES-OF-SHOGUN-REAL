@@ -26,6 +26,7 @@ public class Player : MonoBehaviour
     // Transform Values
     public Transform Groundcheck;                 // Ground check position
     public Transform wallCheck;                   // Wall check position
+   
 
     // LayerMask Values
     public LayerMask JumpableGround;              // Ground layers mask
@@ -58,6 +59,8 @@ public class Player : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         sprite = GetComponentInChildren<SpriteRenderer>();
         anim = GameObject.Find("sprite").GetComponent<Animator>();
+
+      
     }
 
     // Update is called once per frame
@@ -198,10 +201,11 @@ public class Player : MonoBehaviour
     {
         if (!isWallSliding)
         {
-
             isFacingRight = !isFacingRight;
             player.transform.Rotate(0f, 180f, 0f);
             wallCheck.transform.Rotate(0f, 180f, 0f);
+
+           
         }
 
     }
