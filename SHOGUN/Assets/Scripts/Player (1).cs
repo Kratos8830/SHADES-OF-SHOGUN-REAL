@@ -174,10 +174,12 @@ public class Player : MonoBehaviour
         if (isTouchingWall && !isGrounded && rb.velocity.y < 0)
         {
             isWallSliding = true;
+            anim.SetBool("wallslide",true );
             Debug.Log("walled");
         }
         else
         {
+            anim.SetBool("wallslide", false);
             isWallSliding = false;
         }
     }
