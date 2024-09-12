@@ -5,13 +5,12 @@ using UnityEngine;
 public class EnemyAttack : MonoBehaviour
 {
     public float speed = 2f;                    // Speed of the enemy
-    public Transform pointA;                    // First patrol point
-    public Transform pointB;                    // Second patrol point
+                 
     public LayerMask playerLayer;               // Layer that represents the player
     public float attackRange = 2f;              // Range within which the enemy will attack the player
     public float attackCooldown = 1f;           // Time between attacks
 
-    private Transform currentTarget;            // The current target to move towards
+           // The current target to move towards
     private bool facingRight = true;            // Check if the enemy is facing right
     private bool isAttacking = false;           // Check if the enemy is attacking
     public Transform attackPoint;
@@ -21,8 +20,8 @@ public class EnemyAttack : MonoBehaviour
 
     void Start()
     {
-        // Set the initial target to point A
-        currentTarget = pointA;
+        
+        
     }
 
     void Update()
@@ -32,10 +31,7 @@ public class EnemyAttack : MonoBehaviour
         {
             AttackPlayer();
         }
-        else
-        {
-            Patrol();
-        }
+       
     }
 
     private bool PlayerInRange()
@@ -53,16 +49,7 @@ public class EnemyAttack : MonoBehaviour
         GameObject player = Physics2D.OverlapCircle(attackPoint.position, attackRange, playerLayer).gameObject;
         
 
-        if (player.transform.position.x > transform.position.x && !facingRight)
-        {
-            Flip();
-        }
-        else if (player.transform.position.x < transform.position.x && facingRight)
-        {
-            Flip();
-        }
-
-        // Perform an attack if cooldown is over
+       
         if (Time.time >= lastAttackTime + attackCooldown)
         {
             animator.SetTrigger("attack");
@@ -72,48 +59,12 @@ public class EnemyAttack : MonoBehaviour
         }
     }
 
-    private void Patrol()
-    {
-        // Move between the patrol points when not attacking
-        if (pointA != null && pointB != null && !isAttacking)
-        {
-            // Move the enemy towards the current target point
-            float step = speed * Time.deltaTime;
-            transform.position = Vector2.MoveTowards(transform.position, currentTarget.position, step);
+  
 
-            // Check if the enemy has reached the target point
-            if (Vector2.Distance(transform.position, currentTarget.position) < 0.5f) // Increased tolerance
-            {
-                // Switch the target between point A and point B
-                currentTarget = currentTarget == pointA ? pointB : pointA;
-                Flip();
-            }
-        }
-    }
-
-    // Method to flip the enemy sprite
-    private void Flip()
-    {
-        facingRight = !facingRight; // Toggle the direction the enemy is facing
-
-        // Multiply the enemy's x local scale by -1 to flip the sprite
-        Vector3 theScale = transform.localScale;
-        theScale.x *= -1;
-        transform.localScale = theScale;
-    }
-
-    // Optional: Visualize patrol points and attack range in the editor
+   
     private void OnDrawGizmos()
     {
-        // Visualize patrol points
-        if (pointA != null && pointB != null)
-        {
-            Gizmos.color = Color.red;
-            Gizmos.DrawWireSphere(pointA.position, 0.2f);
-            Gizmos.DrawWireSphere(pointB.position, 0.2f);
-        }
-
-        // Visualize attack range
+       
         Gizmos.color = Color.yellow;
         Gizmos.DrawWireSphere(attackPoint.position, attackRange);
     }
