@@ -54,6 +54,9 @@ public class Player : MonoBehaviour
     //for object pooling
     public float afterImageSpawnRate = 0.05f; // How often to spawn afterimages
 
+    // for variable height
+    public float variableJumpheightmultiplier = 0.5f;
+
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -78,6 +81,7 @@ public class Player : MonoBehaviour
         {
             rb.velocity = new Vector2(HorizontalInput * 7, rb.velocity.y);
         }
+
         else if (!isGrounded && !isWallSliding && HorizontalInput != 0)
         {
             Vector2 forcetoadd = new Vector2(movementForceInAir * HorizontalInput, 0);
@@ -88,6 +92,7 @@ public class Player : MonoBehaviour
                 rb.velocity = new Vector2(movementspeed * HorizontalInput, rb.velocity.y);
             }
         }
+
         else if (!isGrounded && !isWallSliding && HorizontalInput == 0)
         {
             rb.velocity = new Vector2(rb.velocity.x * AirDragSpeed, rb.velocity.y);
@@ -138,13 +143,17 @@ public class Player : MonoBehaviour
             else if (DoubleJump)
             {
                 rb.velocity = new Vector2(rb.velocity.x, jumpforce * 1f);
-                anim.SetBool("doublejump",true);
+                anim.SetBool("doublejump", true);
                 StartCoroutine(StopDoubleJumpAnim());
                 DoubleJump = false;
             }
 
-           
+        }
 
+        //for variable jump height
+        if (Input.GetButtonUp("Jump"))
+        {
+            rb.velocity = new Vector2(rb.velocity.x, rb.velocity.y * variableJumpheightmultiplier);
         }
     }
 
@@ -202,10 +211,8 @@ public class Player : MonoBehaviour
         if (!isWallSliding)
         {
             isFacingRight = !isFacingRight;
-            player.transform.Rotate(0f, 180f, 0f);
+            transform.Rotate(0f, 180f, 0f);
             wallCheck.transform.Rotate(0f, 180f, 0f);
-
-           
         }
 
     }
