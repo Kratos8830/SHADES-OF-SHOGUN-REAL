@@ -90,16 +90,6 @@ public class EnemyAI : MonoBehaviour
 
    
 
-    //void DealDamage(Collider2D playerCollider)
-    //{
-    //    // Example logic for damaging the player
-    //    PlayerHealth playerHealth = playerCollider.GetComponent<PlayerHealth>();
-    //    if (playerHealth != null)
-    //    {
-    //        playerHealth.TakeDamage(attackDamage);
-    //    }
-    //}
-
     void FlipTowardsPlayer()
     {
         // Flip towards the player's position
