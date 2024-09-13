@@ -34,7 +34,7 @@ public class EnemyAI : MonoBehaviour
             if (isPlayerInRange)
             {
                 float distanceToPlayer = Vector2.Distance(transform.position, player.position);
-
+                animator.SetBool("isMoving", false);
                 // Flip the enemy to face the player
                 FlipTowardsPlayer();
 
@@ -49,6 +49,7 @@ public class EnemyAI : MonoBehaviour
             }
             else
             {
+                
                 StopChasing(); // Stop chasing when the player is out of range
             }
 
@@ -61,7 +62,7 @@ public class EnemyAI : MonoBehaviour
     {
         // Reset attack state when chasing
         isAttacking = false;
-
+        animator.SetBool("Attack",false);
         // Move towards the player if not attacking
         if (!isAttacking)
         {

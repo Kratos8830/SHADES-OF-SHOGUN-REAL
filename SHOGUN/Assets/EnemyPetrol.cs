@@ -52,7 +52,7 @@ public class EnemyAttack : MonoBehaviour
        
         if (Time.time >= lastAttackTime + attackCooldown)
         {
-            animator.SetTrigger("attack");
+            animator.SetBool("Attack",true);
             lastAttackTime = Time.time;  // Reset the attack timer
             // Insert your attack logic here (e.g., deal damage, play attack animation)
             Debug.Log("Attacking the player!");
