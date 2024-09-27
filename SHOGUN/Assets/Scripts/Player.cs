@@ -46,9 +46,9 @@ public class Player : MonoBehaviour
     // Boolean Values
     public bool DoubleJump = false;               // Double jump availability
     public bool isGrounded;                       // Is the player grounded
-    private bool isTouchingWall;                  // Is the player touching a wall
-    private bool isWallSliding;                   // Is the player sliding on a wall
-    private bool isFacingRight = true;            // Direction player is facing
+    public bool isTouchingWall;                  // Is the player touching a wall
+    public bool isWallSliding;                   // Is the player sliding on a wall
+   public bool isFacingRight = true;            // Direction player is facing
 
     // Variable jump height
     public float variableJumpheightmultiplier = 0.5f;
