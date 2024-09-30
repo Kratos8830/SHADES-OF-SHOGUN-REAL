@@ -206,11 +206,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!1 &141062519 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 5302193226759632536, guid: e380502566930424c8122db9e0115a71, type: 3}
-  m_PrefabInstance: {fileID: 5524038408210798946}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &158440334
 GameObject:
   m_ObjectHideFlags: 0
@@ -16845,28 +16840,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 5030337570198869836, guid: e380502566930424c8122db9e0115a71, type: 3}
   m_PrefabInstance: {fileID: 5524038408210798946}
   m_PrefabAsset: {fileID: 0}
---- !u!95 &1363847857 stripped
-Animator:
-  m_CorrespondingSourceObject: {fileID: 3695904606828623802, guid: e380502566930424c8122db9e0115a71, type: 3}
-  m_PrefabInstance: {fileID: 5524038408210798946}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1363847859
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 141062519}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b179523fe21f217499efc2698d4da522, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  maxHealth: 100
-  currentHealth: 0
-  myPlayer: {fileID: 141062519}
-  rb: {fileID: 0}
-  animator: {fileID: 1363847857}
 --- !u!1 &1393054496 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2330877638593483488, guid: 6573cf8d822a4be48b5e335ae3320aec, type: 3}
@@ -17862,25 +17835,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
-    - target: {fileID: 6022586165239296024, guid: e380502566930424c8122db9e0115a71, type: 3}
-      propertyPath: animator
-      value: 
-      objectReference: {fileID: 1363847857}
-    - target: {fileID: 6022586165239296024, guid: e380502566930424c8122db9e0115a71, type: 3}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6022586165239296024, guid: e380502566930424c8122db9e0115a71, type: 3}
-      propertyPath: attackRange
-      value: 0.88
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 5302193226759632536, guid: e380502566930424c8122db9e0115a71, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1363847859}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e380502566930424c8122db9e0115a71, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
