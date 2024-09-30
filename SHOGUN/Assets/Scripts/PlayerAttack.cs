@@ -26,8 +26,15 @@ public class PlayerAttack : MonoBehaviour
         {
 
 
-            if (Input.GetKeyDown(KeyCode.Mouse0))
+            if (Input.GetKeyDown(KeyCode.E))
             {
+                animator.SetTrigger("attack1");
+                Attack();
+                nextAttackTime = Time.time + 1f / attackRate;
+            }
+            if (Input.GetKeyDown(KeyCode.Q))
+            {
+                animator.SetTrigger("attack2");
                 Attack();
                 nextAttackTime = Time.time + 1f / attackRate;
             }
@@ -44,13 +51,14 @@ public class PlayerAttack : MonoBehaviour
 
         foreach(Collider2D enemy in hitEnemies)
         {
-            animator.SetTrigger("mar");
+            animator.SetTrigger("attack1");
             Debug.Log("hitting enemy");
             enemy.GetComponent<EnemyHealth>().TakeDamage(attackDamage);
         }
 
 
     }
+    
 
     private void OnDrawGizmos()
     {
