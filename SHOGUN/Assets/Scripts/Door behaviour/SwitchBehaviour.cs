@@ -53,7 +53,6 @@ public class SwitchBehaviour : MonoBehaviour
 
     public void MoveSwitchUp()
     {
-
         if (transform.position != switchUpPos)
         {
             transform.position = Vector3.MoveTowards(transform.position,
