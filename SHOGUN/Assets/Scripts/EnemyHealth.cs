@@ -42,6 +42,7 @@ public class EnemyHealth : MonoBehaviour
         myEnemy.GetComponent<Collider2D>().enabled = false;
         GetComponent<EnemyAttack>().enabled = false;
         GetComponent<EnemyHealth>().enabled = false;
+        GetComponent<EnemyAI>().enabled = false;
         Destroy(rb);
         this.enabled = true;
     }

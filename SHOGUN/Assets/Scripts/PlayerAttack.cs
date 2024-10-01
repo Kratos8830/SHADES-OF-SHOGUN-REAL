@@ -26,8 +26,10 @@ public class PlayerAttack : MonoBehaviour
         {
 
 
-            if (Input.GetKeyDown(KeyCode.Mouse0))
+            if (Input.GetButton("Fire1"))
             {
+                animator.SetTrigger("attack");
+
                 Attack();
                 nextAttackTime = Time.time + 1f / attackRate;
             }
@@ -44,7 +46,6 @@ public class PlayerAttack : MonoBehaviour
 
         foreach(Collider2D enemy in hitEnemies)
         {
-            animator.SetTrigger("mar");
             Debug.Log("hitting enemy");
             enemy.GetComponent<EnemyHealth>().TakeDamage(attackDamage);
         }

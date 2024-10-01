@@ -7,6 +7,9 @@ TagManager:
   - narutoStart
   - narutoEnd
   - Music
+  - MovingPlatform
+  - Enemy
+  - Trap
   layers:
   - Default
   - TransparentFX
