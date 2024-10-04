@@ -1,61 +1,62 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerAttack : MonoBehaviour
 {
-    public Animator animator;
+    public int attackDamage = 10;           // Damage dealt to the enemy
+    public float attackCooldown = 0.5f;        // Time between attacks
+    public Collider2D attackTrigger;           // The trigger collider representing the attack area
+    public LayerMask enemyLayer;               // Layer to detect enemies
+    private float attackTimer = 0f;            // Timer to track cooldown
+    private bool canAttack = true;
 
-    public Transform attackPoint;
-    public float attackRange = 0.5f;
-    public LayerMask enemyLayers;
-    public int attackDamage = 40;
-
-    public float attackRate = 2f;
-    float nextAttackTime = 0f;
-
-    void Start()
+    private void Start()
     {
-        
+        attackTrigger.enabled = false;         // Disable the trigger at start
     }
 
-  
-    void Update()
+    private void Update()
     {
-        if (Time.time >= nextAttackTime)
+        attackTimer -= Time.deltaTime;         // Countdown the cooldown
+
+        if (Input.GetButtonDown("Fire1") && attackTimer <= 0f)
         {
+            Attack();                          // Perform attack
+            attackTimer = attackCooldown;      // Reset cooldown
+        }
+    }
 
+    private void Attack()
+    {
+        canAttack = true;
+        attackTrigger.enabled = true;          // Enable the attack trigger when attacking
+        Debug.Log("Player attacking!");
 
-            if (Input.GetKeyDown(KeyCode.Mouse0))
+        // Optional: Play attack animation here if using an animator
+
+        Invoke("DisableAttackTrigger", 0.1f);  // Disable the trigger after a short time to avoid multiple hits
+    }
+
+    private void DisableAttackTrigger()
+    {
+        attackTrigger.enabled = false;         // Disable the attack trigger after the attack is performed
+        canAttack = false;
+    }
+
+    // Detect when the enemy enters the attack range
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if (canAttack && other.gameObject.layer == LayerMask.NameToLayer("Enemy"))
+        {
+            // Apply damage to the enemy
+            EnemyHealth enemyHealth = other.GetComponent<EnemyHealth>();
+            if (enemyHealth != null)
             {
-                Attack();
-                nextAttackTime = Time.time + 1f / attackRate;
+                enemyHealth.TakeDamage(attackDamage);
+                Debug.Log("Enemy hit by player!");
+
+                canAttack = false;  // Prevent applying damage multiple times in the same attack
+                DisableAttackTrigger();  // Immediately disable the attack trigger
             }
         }
-    }
-
-    void Attack()
-    {
-     
-
-
-        Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(attackPoint.position, attackRange, enemyLayers);
-
-
-        foreach(Collider2D enemy in hitEnemies)
-        {
-            animator.SetTrigger("mar");
-            Debug.Log("hitting enemy");
-            enemy.GetComponent<EnemyHealth>().TakeDamage(attackDamage);
-        }
-
-
-    }
-
-    private void OnDrawGizmos()
-    {
-        Gizmos.color = Color.red;
-
-        Gizmos.DrawWireSphere(attackPoint.position, attackRange);
     }
 }
