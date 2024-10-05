@@ -265,6 +265,7 @@ public class PlayerController : MonoBehaviour
     {
         if (Time.time >= (lastDash + dashCoolDown))
         {
+            anim.SetTrigger("dash");
             isDashing = true;
             dashTimeLeft = dashTime;
             lastDash = Time.time;
@@ -305,6 +306,7 @@ public class PlayerController : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.LeftShift))
         {
+            
             AttemptToDash();
         }
     }

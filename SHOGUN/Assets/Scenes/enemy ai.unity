@@ -414,7 +414,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6022586165239296024, guid: e380502566930424c8122db9e0115a71, type: 3}
       propertyPath: m_Enabled
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6022586165239296024, guid: e380502566930424c8122db9e0115a71, type: 3}
       propertyPath: attackTrigger
@@ -434,6 +434,12 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 5302193226759632536, guid: e380502566930424c8122db9e0115a71, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1175961104}
+    - targetCorrespondingSourceObject: {fileID: 5302193226759632536, guid: e380502566930424c8122db9e0115a71, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1175961106}
+    - targetCorrespondingSourceObject: {fileID: 5302193226759632536, guid: e380502566930424c8122db9e0115a71, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1175961105}
     - targetCorrespondingSourceObject: {fileID: 8530655677813635235, guid: e380502566930424c8122db9e0115a71, type: 3}
       insertIndex: -1
       addedObject: {fileID: 837714770}
@@ -2522,13 +2528,39 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1175961096}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 56bfa90981669664691e0d236730ad58, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   firepoint: {fileID: 1513829903}
   NinjaStarPrefeb: {fileID: 4740853034561273620, guid: c0c9bcb9219a28b45b34c9d67d1b59e4, type: 3}
+--- !u!114 &1175961105
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1175961096}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ea31759ce737c2c488230ef6207b5c64, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hitbox: {fileID: 837714770}
+--- !u!114 &1175961106
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1175961096}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6cf61fe3fb7b0b646a72d8c733ca313b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  customName: Combat
 --- !u!1 &1212678920
 GameObject:
   m_ObjectHideFlags: 0
