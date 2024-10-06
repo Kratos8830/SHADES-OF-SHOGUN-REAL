@@ -8,12 +8,14 @@ public class HealthManager : MonoBehaviour
 {
    
     public Image healthFill;
-    private float healthAmount = 100f;
+    public float healthAmount = 100f;
     public TMP_Text currenthealth;
+    private GameController gm;
 
     private void Start()
     {
         currenthealth.text = "100";
+        gm= GameObject.Find("Player").GetComponent<GameController>();
     }
 
 
@@ -22,14 +24,10 @@ public class HealthManager : MonoBehaviour
     void Update()
     {
         currenthealth.text = ""+ healthAmount; 
-        if (Input.GetKeyDown(KeyCode.K))
-        {
-            TakeDamage(5);
-        }
 
-        if (Input.GetKeyDown(KeyCode.H))
+        if(healthAmount<1)
         {
-            Heal(5);
+            gm.ZeroHealth();
         }
     }
 
@@ -39,12 +37,14 @@ public class HealthManager : MonoBehaviour
         healthFill.fillAmount = healthAmount / 100f;
     }
 
-    public void Heal(float healingAmount)
-    {
-        healthAmount += healingAmount;
-        healthAmount = Mathf.Clamp(healthAmount, 0, 100f);
-        healthFill.fillAmount = healthAmount / 100f;
-    }
+    //public void Heal(float healingAmount)
+    //{
+    //    healthAmount += healingAmount;
+    //    healthAmount = Mathf.Clamp(healthAmount, 0, 100f);
+    //    healthFill.fillAmount = healthAmount / 100f;
+    //}
+
+   
 }
 
 

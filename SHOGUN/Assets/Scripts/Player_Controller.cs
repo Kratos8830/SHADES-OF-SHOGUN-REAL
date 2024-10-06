@@ -11,7 +11,7 @@ public class PlayerController : MonoBehaviour
     private float movementInputDirection;
     private bool isFacingRight = true;
     private bool isWalking;
-    private bool canMove = true;
+    public bool canMove = true;
     private bool canFlip = true;
     private int facingDirection = 1;
 
