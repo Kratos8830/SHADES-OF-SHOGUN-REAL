@@ -122,6 +122,17 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!114 &43069731 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 776575828959052596, guid: b609edf8704001f4dab59e1487402b0b, type: 3}
+  m_PrefabInstance: {fileID: 2115932458}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &88595481
 GameObject:
   m_ObjectHideFlags: 0
@@ -1019,7 +1030,7 @@ PrefabInstance:
     - target: {fileID: 4712201238053880427, guid: 2663f341773fd6440bd015c952136790, type: 3}
       propertyPath: healthFill
       value: 
-      objectReference: {fileID: 1696584687}
+      objectReference: {fileID: 43069731}
     - target: {fileID: 4712201238053880427, guid: 2663f341773fd6440bd015c952136790, type: 3}
       propertyPath: currenthealth
       value: 
@@ -19269,17 +19280,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e0d1cba946b6a9f41a62928fe8788ba6, type: 3}
---- !u!114 &1696584687 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 2749415459185665970, guid: b609edf8704001f4dab59e1487402b0b, type: 3}
-  m_PrefabInstance: {fileID: 2115932458}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!20 &1699695760 stripped
 Camera:
   m_CorrespondingSourceObject: {fileID: 5792612554140819491, guid: e0d1cba946b6a9f41a62928fe8788ba6, type: 3}
@@ -20284,9 +20284,21 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3092742709130400451, guid: b609edf8704001f4dab59e1487402b0b, type: 3}
+      propertyPath: m_FillAmount
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7611879918260206840, guid: b609edf8704001f4dab59e1487402b0b, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -2.8081055
+      objectReference: {fileID: 0}
     - target: {fileID: 8124755687256232430, guid: b609edf8704001f4dab59e1487402b0b, type: 3}
       propertyPath: m_Name
       value: HealthBar
+      objectReference: {fileID: 0}
+    - target: {fileID: 8729228932604291985, guid: b609edf8704001f4dab59e1487402b0b, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -2.8081055
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

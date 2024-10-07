@@ -10,7 +10,7 @@ public class EnemyHitBox : MonoBehaviour
     {
         if(collision.tag=="Player")
         {
-            hm.TakeDamage(5);
+            hm.TakeDamage(25);
         }
     }
 }

@@ -46,7 +46,7 @@ public class GameController : MonoBehaviour
 
     public void ZeroHealth()
     {
-        transform.position = RestartStartLevelPos;
+       StartCoroutine (Respawn());
 
         if (hm.healthAmount < 1)
         {
