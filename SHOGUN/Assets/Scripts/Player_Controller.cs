@@ -70,6 +70,10 @@ public class PlayerController : MonoBehaviour
     public Transform wallCheck;
     public LayerMask whatIsGround;
 
+    //Audio
+    private bool isRunningSoundPlaying = false;
+    public AudioSource runningSound;
+
     // --- Start & Update ---
     void Start()
     {
@@ -82,13 +86,17 @@ public class PlayerController : MonoBehaviour
 
     void Update()
     {
-        CheckInput();
-        CheckMovementDirection();
-        UpdateAnimations();
-        CheckIfCanJump();
-        CheckIfWallSliding();
-        CheckJump();
-        CheckDash();
+        if (!Pause_Menu.isPaused)
+        {
+            CheckInput();
+            CheckMovementDirection();
+            UpdateAnimations();
+            CheckIfCanJump();
+            CheckIfWallSliding();
+            CheckJump();
+            CheckDash();
+        }
+
     }
 
     private void FixedUpdate()
@@ -97,6 +105,7 @@ public class PlayerController : MonoBehaviour
         CheckSurroundings();
     }
 
+   
     // --- General Movement Mechanics ---
     private void CheckMovementDirection()
     {
@@ -160,6 +169,10 @@ public class PlayerController : MonoBehaviour
             jumpTimer = 0;
             isAttemptingToJump = false;
             checkJumpMultiplier = true;
+
+            // Play jumping sound
+            SoundManager.Instance.PlaySound3D("Jump", transform.position);
+            SoundManager.Instance.PlaySound3D("Jump Start", transform.position);
         }
     }
 
@@ -316,7 +329,17 @@ public class PlayerController : MonoBehaviour
         anim.SetFloat("yVelocity", rb.velocity.y);
         anim.SetBool("isWallSliding", isWallSliding);
         //anim.SetBool("isDashing", isDashing);
-       
+
+        // Play running sound when walking
+        if (isWalking && isGrounded && !runningSound.isPlaying)
+        {
+            runningSound.Play();
+        }
+        else if (!isWalking || !isGrounded)
+        {
+            runningSound.Stop();
+            
+        }
     }
 
 
