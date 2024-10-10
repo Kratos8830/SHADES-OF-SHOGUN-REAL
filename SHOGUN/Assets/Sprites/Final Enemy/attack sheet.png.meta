@@ -1,0 +1,567 @@
+fileFormatVersion: 2
+guid: cd95744695d895b4e82eb7d500d57fad
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: attack sheet_0
+      rect:
+        serializedVersion: 2
+        x: 82
+        y: 1054
+        width: 236
+        height: 342
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a08d3ae722b49d947950b1b6ab308eaf
+      internalID: -53003407
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: attack sheet_1
+      rect:
+        serializedVersion: 2
+        x: 489
+        y: 1054
+        width: 222
+        height: 342
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5fe6e43b37a6f5848863b25d789104e6
+      internalID: 2055067757
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: attack sheet_2
+      rect:
+        serializedVersion: 2
+        x: 871
+        y: 1054
+        width: 258
+        height: 342
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9bf776faba04705449fb62f3ad089c67
+      internalID: 1688451360
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: attack sheet_3
+      rect:
+        serializedVersion: 2
+        x: 1256
+        y: 1054
+        width: 288
+        height: 342
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f88c3b9ff03975b4f9b03a2ce17ba91d
+      internalID: 1450507385
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: attack sheet_4
+      rect:
+        serializedVersion: 2
+        x: 1663
+        y: 1054
+        width: 274
+        height: 342
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f63e9efab9ae8bb4d8d0be66d0ec2f6f
+      internalID: -1318067364
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: attack sheet_5
+      rect:
+        serializedVersion: 2
+        x: 67
+        y: 704
+        width: 266
+        height: 342
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 50a3f7335decb0142adf45baf0031b03
+      internalID: 604904545
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: attack sheet_6
+      rect:
+        serializedVersion: 2
+        x: 459
+        y: 704
+        width: 282
+        height: 342
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5b807566ab4f11a49b42d90c5ebec525
+      internalID: 1779096795
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: attack sheet_7
+      rect:
+        serializedVersion: 2
+        x: 833
+        y: 704
+        width: 334
+        height: 342
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: eb772b338a8b02142906b80070dbb6cb
+      internalID: 1942037715
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: attack sheet_8
+      rect:
+        serializedVersion: 2
+        x: 1215
+        y: 704
+        width: 370
+        height: 342
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4add464dfc6d5054fb690ebe50091a78
+      internalID: -41633179
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: attack sheet_9
+      rect:
+        serializedVersion: 2
+        x: 1695
+        y: 704
+        width: 210
+        height: 342
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d1470247141a8a04782a3ee18f227337
+      internalID: -279768277
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: attack sheet_10
+      rect:
+        serializedVersion: 2
+        x: 36
+        y: 354
+        width: 328
+        height: 342
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2eb1e51d01e97694a8c4fc3af24ca315
+      internalID: -1933891865
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: attack sheet_11
+      rect:
+        serializedVersion: 2
+        x: 498
+        y: 354
+        width: 204
+        height: 342
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5c8a5aa023d340547b5e0af20ad74e99
+      internalID: 781914112
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: attack sheet_12
+      rect:
+        serializedVersion: 2
+        x: 869
+        y: 354
+        width: 262
+        height: 342
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0563dd6175e6cf74c9d6ec1971135ebb
+      internalID: -269314740
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: attack sheet_13
+      rect:
+        serializedVersion: 2
+        x: 1257
+        y: 354
+        width: 287
+        height: 342
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 12eda30b329233c4abad4418278dd711
+      internalID: -1387176466
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: attack sheet_14
+      rect:
+        serializedVersion: 2
+        x: 1677
+        y: 354
+        width: 246
+        height: 342
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: df7ecf7c869bef34b85c2b7ce5d2d418
+      internalID: 611263392
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: attack sheet_15
+      rect:
+        serializedVersion: 2
+        x: 102
+        y: 4
+        width: 196
+        height: 342
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ab5292c986a5eb24980485135540afab
+      internalID: -536827190
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: attack sheet_16
+      rect:
+        serializedVersion: 2
+        x: 488
+        y: 4
+        width: 224
+        height: 342
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7a321fcb81a13a04198b45ca093d17c9
+      internalID: 1829017614
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: attack sheet_17
+      rect:
+        serializedVersion: 2
+        x: 880
+        y: 4
+        width: 240
+        height: 342
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e825fbeec3807c84aadbec3f76b198ba
+      internalID: 462179695
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: attack sheet_18
+      rect:
+        serializedVersion: 2
+        x: 1281
+        y: 4
+        width: 238
+        height: 342
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: edc3afb11a0db9b48ae060506996512c
+      internalID: -646971807
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: attack sheet_19
+      rect:
+        serializedVersion: 2
+        x: 1681
+        y: 4
+        width: 238
+        height: 342
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 646c93cebb966c747892d4f2fa5f8519
+      internalID: -1033203823
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      attack sheet_0: -53003407
+      attack sheet_1: 2055067757
+      attack sheet_10: -1933891865
+      attack sheet_11: 781914112
+      attack sheet_12: -269314740
+      attack sheet_13: -1387176466
+      attack sheet_14: 611263392
+      attack sheet_15: -536827190
+      attack sheet_16: 1829017614
+      attack sheet_17: 462179695
+      attack sheet_18: -646971807
+      attack sheet_19: -1033203823
+      attack sheet_2: 1688451360
+      attack sheet_3: 1450507385
+      attack sheet_4: -1318067364
+      attack sheet_5: 604904545
+      attack sheet_6: 1779096795
+      attack sheet_7: 1942037715
+      attack sheet_8: -41633179
+      attack sheet_9: -279768277
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

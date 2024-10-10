@@ -1,0 +1,545 @@
+fileFormatVersion: 2
+guid: c03fe7956c472bd47b08935329afee7a
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: idel sheet_0
+      rect:
+        serializedVersion: 2
+        x: 79
+        y: 1053
+        width: 242
+        height: 344
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 94e97eb12dc66d845a106143134bfb9e
+      internalID: 2127748407
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: idel sheet_1
+      rect:
+        serializedVersion: 2
+        x: 480
+        y: 1053
+        width: 240
+        height: 344
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f54845aebb6642943be5bb20e49e8301
+      internalID: 1706617329
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: idel sheet_2
+      rect:
+        serializedVersion: 2
+        x: 881
+        y: 1053
+        width: 238
+        height: 344
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 73790130d80f0bd41b2fa1913fd5afda
+      internalID: -859318080
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: idel sheet_3
+      rect:
+        serializedVersion: 2
+        x: 1282
+        y: 1053
+        width: 237
+        height: 344
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: be9906e9516ffde4d8201170e33d551b
+      internalID: 2117134605
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: idel sheet_4
+      rect:
+        serializedVersion: 2
+        x: 1679
+        y: 1053
+        width: 242
+        height: 344
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: de12248208eea5f4aa1db78f09e060ef
+      internalID: -1286934589
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: idel sheet_5
+      rect:
+        serializedVersion: 2
+        x: 79
+        y: 703
+        width: 242
+        height: 344
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6f3d7ff47d8626348a779b5390924b94
+      internalID: -1963323632
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: idel sheet_6
+      rect:
+        serializedVersion: 2
+        x: 479
+        y: 703
+        width: 242
+        height: 344
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a11f1ea57b913ad4ab48e7517c6fb550
+      internalID: 526576024
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: idel sheet_7
+      rect:
+        serializedVersion: 2
+        x: 879
+        y: 703
+        width: 243
+        height: 344
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ee2af4f3c7465e34aa30d74a7f1261bd
+      internalID: 1065593823
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: idel sheet_8
+      rect:
+        serializedVersion: 2
+        x: 1279
+        y: 703
+        width: 242
+        height: 344
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cc95d57a1bf042940b0ea8720cbc65b1
+      internalID: 2106086053
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: idel sheet_9
+      rect:
+        serializedVersion: 2
+        x: 1680
+        y: 703
+        width: 240
+        height: 344
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 036e53299d29dd34cac0808cc86cc6a8
+      internalID: -68029335
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: idel sheet_10
+      rect:
+        serializedVersion: 2
+        x: 81
+        y: 353
+        width: 239
+        height: 344
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ca9f265d2aee514499d7d0f11967aa7a
+      internalID: -641398654
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: idel sheet_11
+      rect:
+        serializedVersion: 2
+        x: 480
+        y: 353
+        width: 240
+        height: 344
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b18413681b81d3a43adc2039d3046674
+      internalID: 2882572
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: idel sheet_12
+      rect:
+        serializedVersion: 2
+        x: 879
+        y: 353
+        width: 242
+        height: 344
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 79ad2ba2c5f57e04bb5d91b5bbe5e70a
+      internalID: 1112978123
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: idel sheet_13
+      rect:
+        serializedVersion: 2
+        x: 1279
+        y: 353
+        width: 242
+        height: 344
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7fa710b3db38167489578fdc18d2f442
+      internalID: 1247949807
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: idel sheet_14
+      rect:
+        serializedVersion: 2
+        x: 1679
+        y: 353
+        width: 242
+        height: 344
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dcb063e7982b9c04d9dd6f47f4e11516
+      internalID: -440819050
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: idel sheet_15
+      rect:
+        serializedVersion: 2
+        x: 81
+        y: 3
+        width: 238
+        height: 344
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0a37bbd058995d740a7dcfcbce1355ca
+      internalID: 1042011937
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: idel sheet_16
+      rect:
+        serializedVersion: 2
+        x: 481
+        y: 3
+        width: 239
+        height: 344
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3f2cffa96cf31bf44b3aa7d511a542c0
+      internalID: -1203063996
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: idel sheet_17
+      rect:
+        serializedVersion: 2
+        x: 880
+        y: 3
+        width: 240
+        height: 344
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 924cde5b8bc55ff4eba34aed0a1d1b52
+      internalID: -888523989
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: idel sheet_18
+      rect:
+        serializedVersion: 2
+        x: 1280
+        y: 3
+        width: 240
+        height: 344
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 805319d5739eb8a4dbcda1126e8d6024
+      internalID: 1781717232
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      idel sheet_0: 2127748407
+      idel sheet_1: 1706617329
+      idel sheet_10: -641398654
+      idel sheet_11: 2882572
+      idel sheet_12: 1112978123
+      idel sheet_13: 1247949807
+      idel sheet_14: -440819050
+      idel sheet_15: 1042011937
+      idel sheet_16: -1203063996
+      idel sheet_17: -888523989
+      idel sheet_18: 1781717232
+      idel sheet_2: -859318080
+      idel sheet_3: 2117134605
+      idel sheet_4: -1286934589
+      idel sheet_5: -1963323632
+      idel sheet_6: 526576024
+      idel sheet_7: 1065593823
+      idel sheet_8: 2106086053
+      idel sheet_9: -68029335
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
