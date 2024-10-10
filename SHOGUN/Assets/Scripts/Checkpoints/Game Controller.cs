@@ -27,6 +27,7 @@ public class GameController : MonoBehaviour
     {
         if(collision.tag=="Trap")
         {
+            hm.TakeDamage(10);
             StartCoroutine(Respawn());
         }
     }
