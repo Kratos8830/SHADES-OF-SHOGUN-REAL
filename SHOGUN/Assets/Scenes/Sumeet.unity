@@ -1031,6 +1031,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 43069731}
     - target: {fileID: 4712201238053880427, guid: 2663f341773fd6440bd015c952136790, type: 3}
+      propertyPath: healthAmount
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 4712201238053880427, guid: 2663f341773fd6440bd015c952136790, type: 3}
       propertyPath: currenthealth
       value: 
       objectReference: {fileID: 2115932460}

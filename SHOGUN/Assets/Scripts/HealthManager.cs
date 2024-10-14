@@ -16,6 +16,7 @@ public class HealthManager : MonoBehaviour
     {
         currenthealth.text = "100";
         gm= GameObject.Find("Player").GetComponent<GameController>();
+        healthAmount = 100f;
     }
 
 

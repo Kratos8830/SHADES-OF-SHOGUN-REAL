@@ -15,7 +15,8 @@ public class EnemyPatrol : MonoBehaviour
     public Transform player;
     public Transform enemy;
     public EnemyShoot es;
-
+    private bool canMove = true;
+    
 
 
     void Start()
@@ -30,6 +31,7 @@ public class EnemyPatrol : MonoBehaviour
         {
             return;
         }
+
         Movement();
         Attack();
     }
@@ -71,18 +73,18 @@ public class EnemyPatrol : MonoBehaviour
 
         }
 
-        transform.position = Vector3.MoveTowards(transform.position, CurrenTarget, speed * Time.deltaTime);
-
-        
+            transform.position = Vector3.MoveTowards(transform.position, CurrenTarget, speed * Time.deltaTime);
     }
 
     void Attack()
     {
         float distance = player.position.x - enemy.position.x;
 
-        if (Mathf.Abs(distance) < 15.0f)
+        if (Mathf.Abs(distance) < 10.0f)
         {
             anim.SetBool("inCombat", true);
+
+                
             if (distance > 0 && !isfacingRight)
             {
                 Flip();
@@ -92,6 +94,11 @@ public class EnemyPatrol : MonoBehaviour
             {
                 Flip();
             }
+                
+                if (anim.GetCurrentAnimatorStateInfo(0).IsName("attack"))
+                {
+                    es.Shoot(isfacingRight);
+                }
         }
 
         else
