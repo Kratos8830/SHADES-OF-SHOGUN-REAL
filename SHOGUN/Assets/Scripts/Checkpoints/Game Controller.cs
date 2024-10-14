@@ -30,6 +30,12 @@ public class GameController : MonoBehaviour
             hm.TakeDamage(10);
             StartCoroutine(Respawn());
         }
+
+        else if(collision.tag=="Arrow")
+        {
+            hm.TakeDamage(5);
+            collision.gameObject.SetActive(false);
+        }
     }
 
     public void UpdateCheckPos(Vector2 pos)
