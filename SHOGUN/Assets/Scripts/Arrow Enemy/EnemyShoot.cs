@@ -15,24 +15,22 @@ public class EnemyShoot : MonoBehaviour
 
     private float shootTimer;
     private Rigidbody2D arrowRB;
-    private void Update()
+     void Update()
     {
         shootTimer += Time.deltaTime;
-
-        if(shootTimer >= timeBtwAttacks)
-        {
-            shootTimer = 0;
-
-            Shoot();
-        }
     }
 
-    private void Shoot()
+    public void Shoot()
     {
-        arrowRB=Instantiate(arrowPrefab,transform.position,Quaternion.identity);
+        if (shootTimer >= timeBtwAttacks)
+        {
+            shootTimer = 0;
+            arrowRB = Instantiate(arrowPrefab, transform.position, Quaternion.identity);
 
-        arrowRB.velocity =  arrowRB.transform.right * -arrowSpeed ;
+            arrowRB.velocity = arrowRB.transform.right * -arrowSpeed;
 
-        Destroy(arrowRB.gameObject, arrowDestroyTime);
+            Destroy(arrowRB.gameObject, arrowDestroyTime);
+
+        }
     }
 }
