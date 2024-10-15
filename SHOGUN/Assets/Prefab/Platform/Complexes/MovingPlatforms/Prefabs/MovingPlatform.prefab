@@ -10,9 +10,9 @@ GameObject:
   m_Component:
   - component: {fileID: 5462424926034372355}
   - component: {fileID: 8579370601087338479}
+  - component: {fileID: 515899241331069608}
   - component: {fileID: 738429234125897602}
   - component: {fileID: 2941343925841766589}
-  - component: {fileID: 515899241331069608}
   - component: {fileID: 5592400956719084228}
   - component: {fileID: 1378095894145782259}
   m_Layer: 8
@@ -76,7 +76,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 84559311
-  m_SortingLayer: 2
+  m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 7482667652216324306, guid: 5c217e58d79b6ad4aafcd8c6959f44ce, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -89,6 +89,28 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &515899241331069608
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3829826318686692715}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 05b7de2610c17b64da84904fa14d13aa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  waypoints: []
+  handleRadius: 0.25
+  snappingSettings: {x: 0.5, y: 0.5}
+  gizmoDeselectedColor: {r: 0, g: 0, b: 0, a: 1}
+  rb: {fileID: 5592400956719084228}
+  editing: 0
+  pathType: 1
+  behaviorType: 1
+  moveSpeed: 5
+  stopDistance: 0.1
 --- !u!61 &738429234125897602
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -153,28 +175,6 @@ PlatformEffector2D:
   m_UseSideFriction: 0
   m_UseSideBounce: 1
   m_SideArc: 12.8
---- !u!114 &515899241331069608
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3829826318686692715}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 05b7de2610c17b64da84904fa14d13aa, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  waypoints: []
-  handleRadius: 0.25
-  snappingSettings: {x: 0.5, y: 0.5}
-  gizmoDeselectedColor: {r: 0, g: 0, b: 0, a: 1}
-  rb: {fileID: 5592400956719084228}
-  editing: 0
-  pathType: 1
-  behaviorType: 1
-  moveSpeed: 5
-  stopDistance: 0.1
 --- !u!50 &5592400956719084228
 Rigidbody2D:
   serializedVersion: 4

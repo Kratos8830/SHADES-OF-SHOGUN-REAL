@@ -64,6 +64,7 @@ public class PlayerController : MonoBehaviour
     public float groundCheckRadius;
 
     // Component References
+    Rigidbody2D platform;
     private Rigidbody2D rb;
     private Animator anim;
     public Transform groundCheck;
@@ -74,6 +75,9 @@ public class PlayerController : MonoBehaviour
     private bool isRunningSoundPlaying = false;
     public AudioSource runningSound;
 
+    //Post Processing
+    public ParticleSystem dust;
+   
     // --- Start & Update ---
     void Start()
     {
@@ -95,6 +99,7 @@ public class PlayerController : MonoBehaviour
             CheckIfWallSliding();
             CheckJump();
             CheckDash();
+            
         }
 
     }
@@ -103,6 +108,8 @@ public class PlayerController : MonoBehaviour
     {
         ApplyMovement();
         CheckSurroundings();
+        MovingPlatform();
+        
     }
 
    
@@ -145,6 +152,11 @@ public class PlayerController : MonoBehaviour
             facingDirection *= -1;
             isFacingRight = !isFacingRight;
             transform.Rotate(0.0f, 180.0f, 0.0f);
+
+            if (isGrounded)
+            {
+                dust.Play();
+            }
         }
     }
 
@@ -170,9 +182,11 @@ public class PlayerController : MonoBehaviour
             isAttemptingToJump = false;
             checkJumpMultiplier = true;
 
+            dust.Play();
             // Play jumping sound
-            SoundManager.Instance.PlaySound3D("Jump", transform.position);
-            SoundManager.Instance.PlaySound3D("Jump Start", transform.position);
+            SoundManager.Instance.PlaySound2D("JumpStart");
+            SoundManager.Instance.PlaySound2D("Jump");
+            
         }
     }
 
@@ -282,6 +296,13 @@ public class PlayerController : MonoBehaviour
             dashTimeLeft = dashTime;
             lastDash = Time.time;
 
+            if(isGrounded)
+            {
+                dust.Play(); //Dust Effect go boom baby
+            }
+
+            SoundManager.Instance.PlaySound2D("Dash");
+
             AI_Pool.Instance.GetFromPool();
             lastImageXpos = transform.position.x;
         }
@@ -324,23 +345,66 @@ public class PlayerController : MonoBehaviour
 
     private void UpdateAnimations()
     {
-        anim.SetBool("isWalking", isWalking);
+        // Update the grounded, walking, and wall sliding states
         anim.SetBool("isGrounded", isGrounded);
         anim.SetFloat("yVelocity", rb.velocity.y);
         anim.SetBool("isWallSliding", isWallSliding);
-        //anim.SetBool("isDashing", isDashing);
 
-        // Play running sound when walking
-        if (isWalking && isGrounded && !runningSound.isPlaying)
+        // Only play running animation if player is actively walking (input direction) and not just due to platform movement
+        if (Mathf.Abs(movementInputDirection) > 0.01f && isGrounded)
+        {
+            anim.SetBool("isWalking", true);  // Running animation
+        }
+        else
+        {
+            anim.SetBool("isWalking", false);  // Idle animation
+        }
+
+        // Handle running sound based on player input and grounded state
+        if (anim.GetBool("isWalking") && !runningSound.isPlaying)
         {
             runningSound.Play();
         }
-        else if (!isWalking || !isGrounded)
+        else if (!anim.GetBool("isWalking") || !isGrounded)
         {
             runningSound.Stop();
-            
         }
     }
+
+
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.CompareTag("MovingPlatform"))
+        {
+            transform.parent = collision.transform;
+            platform = collision.gameObject.GetComponent<Rigidbody2D>();
+            rb.gravityScale = 10;
+        }
+    }
+
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        if (collision.gameObject.CompareTag("MovingPlatform"))
+        {
+            transform.parent = null;
+            platform = null;
+            rb.gravityScale = 3f;
+        }
+    }
+
+    void MovingPlatform()
+    {
+        if (platform)
+        {
+            // Only apply the platform's velocity when the player is not moving (idle on the platform)
+            if (Mathf.Abs(movementInputDirection) < 0.01f)
+            {
+                rb.velocity = new Vector2(platform.velocity.x, rb.velocity.y);
+            }
+        }
+    }
+
 
 
     private void OnDrawGizmos()

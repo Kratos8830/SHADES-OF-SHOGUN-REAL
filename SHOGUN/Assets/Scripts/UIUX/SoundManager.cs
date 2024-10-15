@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;  // Add this to manage scene transitions
 
 public class SoundManager : MonoBehaviour
 {
@@ -6,23 +7,41 @@ public class SoundManager : MonoBehaviour
 
     [SerializeField]
     private SoundLibrary sfxLibrary;
+    [SerializeField]
+    private AudioSource sfx2DSource;
 
-    // Volume and pitch settings
-    [Range(0f, 10f)]  // You can increase this further, allowing up to 10x louder sound
-    public float soundVolume = 1.0f;
-    [Range(0.5f, 3f)]
-    public float soundPitch = 1.0f;
+    // Option to destroy the SoundManager on scene load
+    public bool destroyOnNewScene = false;
 
     private void Awake()
     {
         if (Instance != null)
         {
             Destroy(gameObject);
+         
         }
         else
         {
             Instance = this;
-            DontDestroyOnLoad(gameObject);
+
+            // If destroyOnNewScene is false, persist across scenes
+            if (!destroyOnNewScene)
+            {
+                DontDestroyOnLoad(gameObject);
+            }
+
+            // Register to sceneLoaded event
+            SceneManager.sceneLoaded += OnSceneLoaded;
+        }
+    }
+
+    // This method will be called every time a new scene is loaded
+    private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
+    {
+        if (destroyOnNewScene)
+        {
+            // Destroy the SoundManager when a new scene loads
+            Destroy(gameObject);
         }
     }
 
@@ -30,23 +49,23 @@ public class SoundManager : MonoBehaviour
     {
         if (clip != null)
         {
-            // Create a temporary audio source to play the sound with custom pitch and volume
-            GameObject tempAudioSource = new GameObject("TempAudioSource");
-            tempAudioSource.transform.position = pos;
-            AudioSource audioSource = tempAudioSource.AddComponent<AudioSource>();
-
-            audioSource.clip = clip;
-            audioSource.volume = Mathf.Clamp(soundVolume, 0f, 10f);  // Boost volume up to 10x
-            audioSource.pitch = soundPitch;
-            audioSource.spatialBlend = 1f;  // Make it 3D sound
-            audioSource.Play();
-
-            Destroy(tempAudioSource, clip.length / audioSource.pitch);  // Destroy after playing
+            AudioSource.PlayClipAtPoint(clip, pos);
         }
     }
 
     public void PlaySound3D(string soundName, Vector3 pos)
     {
         PlaySound3D(sfxLibrary.GetClipFromName(soundName), pos);
+    }
+
+    public void PlaySound2D(string soundName)
+    {
+        sfx2DSource.PlayOneShot(sfxLibrary.GetClipFromName(soundName));
+    }
+
+    private void OnDestroy()
+    {
+        // Unsubscribe from the sceneLoaded event when SoundManager is destroyed
+        SceneManager.sceneLoaded -= OnSceneLoaded;
     }
 }
