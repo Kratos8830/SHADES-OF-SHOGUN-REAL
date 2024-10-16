@@ -8,8 +8,8 @@ public class PlayerController : MonoBehaviour
     // --- Variables ---
 
     // General Movement Variables
-    private float movementInputDirection;
-    private bool isFacingRight = true;
+    public float movementInputDirection;
+    public bool isFacingRight = true;
     private bool isWalking;
     public bool canMove = true;
     private bool canFlip = true;
@@ -412,6 +412,11 @@ public class PlayerController : MonoBehaviour
         Gizmos.DrawWireSphere(groundCheck.position, groundCheckRadius);
 
         Gizmos.DrawLine(wallCheck.position, new Vector3(wallCheck.position.x + wallCheckDistance, wallCheck.position.y, wallCheck.position.z));
+    }
+
+    public void PlayHurtAnim()
+    {
+        anim.SetTrigger("hurt");
     }
 }
 

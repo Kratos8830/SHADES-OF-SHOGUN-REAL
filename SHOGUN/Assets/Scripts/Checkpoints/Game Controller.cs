@@ -11,6 +11,7 @@ public class GameController : MonoBehaviour
     Vector2 CheckPos;
     private HealthManager hm;
     private PlayerController pc;
+  
 
     void Start()
     {
@@ -18,6 +19,7 @@ public class GameController : MonoBehaviour
         startPos = transform.position;
         hm=GameObject.Find("Health Manager").GetComponent<HealthManager>();
         pc=GameObject.Find("Player").GetComponent<PlayerController>();
+        
     }
 
     
@@ -28,13 +30,21 @@ public class GameController : MonoBehaviour
         if(collision.tag=="Trap")
         {
             hm.TakeDamage(10);
+            pc.PlayHurtAnim();
             StartCoroutine(Respawn());
         }
 
         else if(collision.tag=="Arrow")
         {
             hm.TakeDamage(5);
+            pc.PlayHurtAnim();
             collision.gameObject.SetActive(false);
+        }
+
+        else if (collision.tag == "Saw")
+        {
+            hm.TakeDamage(5);
+            pc.PlayHurtAnim();
         }
     }
 

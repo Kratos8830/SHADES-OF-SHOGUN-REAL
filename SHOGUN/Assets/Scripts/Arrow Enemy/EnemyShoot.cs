@@ -12,29 +12,37 @@ public class EnemyShoot : MonoBehaviour
     private float arrowSpeed;
     [SerializeField]
     private float arrowDestroyTime = 1f;
-
     private float shootTimer;
     private Rigidbody2D arrowRB;
-     void Update()
-     {
+    
+   
+    void Update()
+    {
         shootTimer += Time.deltaTime;
-     }
+        
+    }
 
-    public void Shoot(bool isFacingRight)
+    public void Shoot(bool FacingRight)
     {
         if (shootTimer >= timeBtwAttacks)
         {
             shootTimer = 0;
             Rigidbody2D arrowRB = Instantiate(arrowPrefab, transform.position, Quaternion.identity);
-            float direction = isFacingRight ? 1f : -1f;
+            float direction = FacingRight ? 1f : -1f;
+            // Flip the arrow's local scale if the player is facing right
+            if (direction == 1f)
+            {
+                arrowRB.transform.localScale = new Vector3(2f, 2f, 2f); 
+            }
+            else
+            {
+                arrowRB.transform.localScale = new Vector3(-2f, 2f, 2f); 
+            }
             arrowRB.velocity = new Vector2(direction * arrowSpeed, 0f);
-
-            //for changing arrow rotation depending upon is Player facing right 
-            Vector3 arrowScale = arrowRB.transform.localScale;
-            arrowScale.x = isFacingRight ? Mathf.Abs(arrowScale.x) : -Mathf.Abs(arrowScale.x);
-            arrowRB.transform.localScale = arrowScale;
-
             Destroy(arrowRB.gameObject, arrowDestroyTime);
         }
+
     }
+
+  
 }
