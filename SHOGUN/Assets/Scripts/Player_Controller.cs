@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerController : MonoBehaviour
 {
@@ -77,7 +78,10 @@ public class PlayerController : MonoBehaviour
 
     //Post Processing
     public ParticleSystem dust;
-   
+    private HealthManager hm;
+
+    public int lives = 2;
+
     // --- Start & Update ---
     void Start()
     {
@@ -417,6 +421,17 @@ public class PlayerController : MonoBehaviour
     public void PlayHurtAnim()
     {
         anim.SetTrigger("hurt");
+    }
+
+    public void Damage()
+    {
+        lives--;
+
+        if(lives <1)
+        {
+            Debug.Log("Level Restart");
+            SceneManager.LoadScene(1);
+        }
     }
 }
 

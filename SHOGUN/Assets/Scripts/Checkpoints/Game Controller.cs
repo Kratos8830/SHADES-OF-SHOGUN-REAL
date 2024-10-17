@@ -11,6 +11,7 @@ public class GameController : MonoBehaviour
     Vector2 CheckPos;
     private HealthManager hm;
     private PlayerController pc;
+    
   
 
     void Start()
@@ -25,28 +26,7 @@ public class GameController : MonoBehaviour
     
 
 
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        if(collision.tag=="Trap")
-        {
-            hm.TakeDamage(10);
-            pc.PlayHurtAnim();
-            StartCoroutine(Respawn());
-        }
-
-        else if(collision.tag=="Arrow")
-        {
-            hm.TakeDamage(5);
-            pc.PlayHurtAnim();
-            collision.gameObject.SetActive(false);
-        }
-
-        else if (collision.tag == "Saw")
-        {
-            hm.TakeDamage(5);
-            pc.PlayHurtAnim();
-        }
-    }
+    
 
     public void UpdateCheckPos(Vector2 pos)
     {
@@ -72,5 +52,27 @@ public class GameController : MonoBehaviour
         }
     }
 
-    
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.tag == "Trap")
+        {
+            pc.Damage();
+            StartCoroutine(Respawn());
+        }
+
+        else if (collision.tag == "Arrow")
+        {
+            hm.TakeDamage(5);
+            pc.PlayHurtAnim();
+            collision.gameObject.SetActive(false);
+        }
+
+        else if (collision.tag == "Saw")
+        {
+            hm.TakeDamage(5);
+            pc.PlayHurtAnim();
+        }
+    }
+
+
 }

@@ -11,6 +11,7 @@ public class HealthManager : MonoBehaviour
     public float healthAmount = 100f;
     public TMP_Text currenthealth;
     private GameController gm;
+   
 
     private void Start()
     {
@@ -44,6 +45,9 @@ public class HealthManager : MonoBehaviour
     //    healthAmount = Mathf.Clamp(healthAmount, 0, 100f);
     //    healthFill.fillAmount = healthAmount / 100f;
     //}
+
+
+
 
    
 }
