@@ -271,11 +271,14 @@ public class PlayerController : MonoBehaviour
         {
             if (dashTimeLeft > 0)
             {
+                // During dash, disable movement and flipping but keep running
                 canMove = false;
                 canFlip = false;
-                rb.velocity = new Vector2(dashSpeed * facingDirection, 0.0f);
+
+                rb.velocity = new Vector2(dashSpeed * facingDirection, 0.0f); // Apply dash velocity
                 dashTimeLeft -= Time.deltaTime;
 
+                // Keep spawning dash images if using trail effect
                 if (Mathf.Abs(transform.position.x - lastImageXpos) > distanceBetweenImages)
                 {
                     AI_Pool.Instance.GetFromPool();
@@ -285,32 +288,49 @@ public class PlayerController : MonoBehaviour
 
             if (dashTimeLeft <= 0 || isTouchingWall)
             {
+                // Dash finished, allow movement again
                 isDashing = false;
                 canMove = true;
                 canFlip = true;
+
+                // Stop running animation only if no input, otherwise continue running
+                if (Mathf.Abs(movementInputDirection) < 0.01f)
+                {
+                    anim.SetBool("isWalking", false); // Transition back to idle if no input
+                }
+                else if (isGrounded)
+                {
+                    anim.SetBool("isWalking", true); // Continue running if player is moving
+                }
             }
         }
     }
+
 
     private void AttemptToDash()
+{
+    if (Time.time >= (lastDash + dashCoolDown))
     {
-        if (Time.time >= (lastDash + dashCoolDown))
+        isDashing = true;
+        dashTimeLeft = dashTime;
+        lastDash = Time.time;
+
+        if (isGrounded)
         {
-            isDashing = true;
-            dashTimeLeft = dashTime;
-            lastDash = Time.time;
+            anim.SetBool("isWalking", true); // Force running animation
 
-            if(isGrounded)
-            {
-                dust.Play(); //Dust Effect go boom baby
-            }
-
-            SoundManager.Instance.PlaySound2D("Dash");
-
-            AI_Pool.Instance.GetFromPool();
-            lastImageXpos = transform.position.x;
+            dust.Play(); // Dust effect for visual feedback
         }
+
+        SoundManager.Instance.PlaySound2D("Dash");
+
+        AI_Pool.Instance.GetFromPool();
+        lastImageXpos = transform.position.x;
     }
+}
+
+
+
 
     // --- Ground Mechanics ---
     private void CheckSurroundings()
@@ -349,19 +369,27 @@ public class PlayerController : MonoBehaviour
 
     private void UpdateAnimations()
     {
-        // Update the grounded, walking, and wall sliding states
-        anim.SetBool("isGrounded", isGrounded);
-        anim.SetFloat("yVelocity", rb.velocity.y);
-        anim.SetBool("isWallSliding", isWallSliding);
-
-        // Only play running animation if player is actively walking (input direction) and not just due to platform movement
-        if (Mathf.Abs(movementInputDirection) > 0.01f && isGrounded)
+        // Force running animation if dashing, regardless of movement
+        if (isDashing)
         {
-            anim.SetBool("isWalking", true);  // Running animation
+            anim.SetBool("isWalking", true);
         }
         else
         {
-            anim.SetBool("isWalking", false);  // Idle animation
+            // Update the grounded, walking, and wall sliding states
+            anim.SetBool("isGrounded", isGrounded);
+            anim.SetFloat("yVelocity", rb.velocity.y);
+            anim.SetBool("isWallSliding", isWallSliding);
+
+            // Only play running animation if player is actively walking (input direction) and not just due to platform movement
+            if (Mathf.Abs(movementInputDirection) > 0.01f && isGrounded)
+            {
+                anim.SetBool("isWalking", true);  // Running animation
+            }
+            else
+            {
+                anim.SetBool("isWalking", false);  // Idle animation
+            }
         }
 
         // Handle running sound based on player input and grounded state
@@ -374,6 +402,7 @@ public class PlayerController : MonoBehaviour
             runningSound.Stop();
         }
     }
+
 
 
 
