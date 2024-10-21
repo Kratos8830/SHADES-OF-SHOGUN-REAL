@@ -28,7 +28,7 @@ public class PlayerAttack : MonoBehaviour
 
             if (Input.GetButton("Fire1"))
             {
-                animator.SetTrigger("attack");
+                animator.SetTrigger("Attack");
 
                 Attack();
                 nextAttackTime = Time.time + 1f / attackRate;
