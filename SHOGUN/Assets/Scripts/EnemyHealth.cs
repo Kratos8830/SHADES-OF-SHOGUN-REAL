@@ -4,27 +4,31 @@ using UnityEngine;
 
 public class EnemyHealth : MonoBehaviour
 {
-    public int maxHealth = 100;
-    public int currentHealth;
+    public float maxHealth = 100;
+    public float currentHealth;
     public GameObject myEnemy;
     public Rigidbody2D rb;
     public Animator animator;
+
+    public float knockbackDuration = 0.2f; // Duration of the knockback
+    public float knockbackForce = 5f; // Adjust this value to control knockback strength
+
+    //public CameraShake cameraShake;
+
     void Start()
     {
-        currentHealth = maxHealth;  
+        currentHealth = maxHealth;
         rb = GetComponent<Rigidbody2D>();
     }
 
-
-    void Update()
-    {
-        
-    }
-
-    public void TakeDamage(int damage)
+    public void TakeDamage(float damage, Vector2 knockbackDirection)
     {
         currentHealth -= damage;
         animator.SetTrigger("hurt");
+        Debug.Log("Hurting enemy: " + currentHealth);
+
+        // Start knockback coroutine
+        StartCoroutine(ApplyKnockback(knockbackDirection));
 
         if (currentHealth <= 0)
         {
@@ -34,17 +38,46 @@ public class EnemyHealth : MonoBehaviour
         }
     }
 
+    private IEnumerator ApplyKnockback(Vector2 knockbackDirection)
+    {
+        float elapsed = 0f;
+
+        // Store original velocity for the enemy
+        Vector2 originalVelocity = rb.velocity;
+
+        while (elapsed < knockbackDuration)
+        {
+            // Apply knockback force in the specified direction
+            rb.velocity = new Vector2(knockbackDirection.x * knockbackForce, originalVelocity.y);
+            elapsed += Time.deltaTime;
+            yield return null; // Wait for the next frame
+        }
+
+        // Reset the velocity after the knockback
+        rb.velocity = new Vector2(originalVelocity.x, originalVelocity.y);
+    }
+
     public void Die()
     {
-        Debug.Log("Enemy Died");
 
-        
+
+
+        // Play death animation, particle effects, etc.
+        Debug.Log("Enemy died!");
+
+        // Trigger camera shake when the enemy dies
+      /*  StartCoroutine(cameraShake.Shake(0.15f, 0.1f));*/ // Adjust duration and magnitude as needed
+
+        // Destroy the enemy game object (or use a pooling system)
+
+
+
+        Debug.Log("Enemy Died");
         myEnemy.GetComponent<Collider2D>().enabled = false;
         GetComponent<EnemyAttack>().enabled = false;
         GetComponent<EnemyHealth>().enabled = false;
         GetComponent<EnemyAI>().enabled = false;
         Destroy(rb);
-        this.enabled = true;
+        this.enabled = false; // Disable this component
     }
-
 }

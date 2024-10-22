@@ -96,7 +96,7 @@ public class PlayerComboAttack : MonoBehaviour
             EnemyHealth enemyhealth = enemy.GetComponent<EnemyHealth>();
             if (enemyhealth != null)
             {
-                enemyhealth.TakeDamage(attackDamage);  // Apply damage to the enemy
+               /* enemyhealth.TakeDamage(attackDamage); */ // Apply damage to the enemy
             }
         }
     }
