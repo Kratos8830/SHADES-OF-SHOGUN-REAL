@@ -13,7 +13,7 @@ public class EnemyHealth : MonoBehaviour
     public float knockbackDuration = 0.2f; // Duration of the knockback
     public float knockbackForce = 5f; // Adjust this value to control knockback strength
 
-    //public CameraShake cameraShake;
+    public GameObject bloodParticlePrefab; // Reference to the blood particle prefab
 
     void Start()
     {
@@ -26,6 +26,12 @@ public class EnemyHealth : MonoBehaviour
         currentHealth -= damage;
         animator.SetTrigger("hurt");
         Debug.Log("Hurting enemy: " + currentHealth);
+
+        // Instantiate blood particles when hurt
+        if (bloodParticlePrefab != null)
+        {
+            Instantiate(bloodParticlePrefab, transform.position, Quaternion.identity);
+        }
 
         // Start knockback coroutine
         StartCoroutine(ApplyKnockback(knockbackDirection));
@@ -59,20 +65,16 @@ public class EnemyHealth : MonoBehaviour
 
     public void Die()
     {
-
-
+        // Instantiate blood particles on death
+        if (bloodParticlePrefab != null)
+        {
+            Instantiate(bloodParticlePrefab, transform.position, Quaternion.identity);
+        }
 
         // Play death animation, particle effects, etc.
         Debug.Log("Enemy died!");
 
-        // Trigger camera shake when the enemy dies
-      /*  StartCoroutine(cameraShake.Shake(0.15f, 0.1f));*/ // Adjust duration and magnitude as needed
-
-        // Destroy the enemy game object (or use a pooling system)
-
-
-
-        Debug.Log("Enemy Died");
+        // Disable enemy components and collider
         myEnemy.GetComponent<Collider2D>().enabled = false;
         GetComponent<EnemyAttack>().enabled = false;
         GetComponent<EnemyHealth>().enabled = false;

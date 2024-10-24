@@ -20,12 +20,18 @@ public class PlayerAttackJod : MonoBehaviour
     // Reference to PlayerController for facing direction
     public PlayerController playerController;
 
+    public Transform slashPosition;
+
     // Reference to the slash effect prefab
     public GameObject slashEffectPrefab;
 
     // Coroutine reference for forward movement
     private Coroutine forwardMovementCoroutine;
 
+    // Speeds for different attacks
+    private float[] attackSpeeds = { 3f, 4f, 5f }; // Different speeds for each combo attack
+
+    public Cinemachine.CinemachineImpulseSource impulseSource;
     void Update()
     {
         if (Time.time >= nextAttackTime)
@@ -79,15 +85,14 @@ public class PlayerAttackJod : MonoBehaviour
             StopCoroutine(forwardMovementCoroutine);
         }
 
-        // Start the forward movement coroutine
-        forwardMovementCoroutine = StartCoroutine(MoveForward());
+        // Start the forward movement coroutine with the current combo index speed
+        forwardMovementCoroutine = StartCoroutine(MoveForward(attackSpeeds[currentComboIndex]));
     }
 
     // Coroutine to move the player forward during the attack
-    private IEnumerator MoveForward()
+    private IEnumerator MoveForward(float speed)
     {
         float moveDuration = 0.1f; // Duration of the forward movement
-        float speed = 3f; // Adjust this value to control how fast the player moves forward
 
         Vector2 forwardDirection = playerController.isFacingRight ? Vector2.right : Vector2.left;
 
@@ -108,7 +113,8 @@ public class PlayerAttackJod : MonoBehaviour
     {
         // Detect enemies within the attack range
         Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(attackPoint.position, attackRange, enemyLayers);
-
+        SoundManager.Instance.PlaySound2D("AttackStart");
+        SoundManager.Instance.PlaySound2D("Attack");
         foreach (Collider2D enemy in hitEnemies)
         {
             Debug.Log("Hitting enemy: " + enemy.name);
@@ -117,23 +123,30 @@ public class PlayerAttackJod : MonoBehaviour
             EnemyHealth enemyHealth = enemy.GetComponent<EnemyHealth>();
             if (enemyHealth != null)
             {
+                //CameraShake
+                cinemachineShake.instance.ShakeCamera(1f,0.3f);
+
+
                 // Calculate the knockback direction based on the player's facing direction
                 Vector2 knockbackDirection = playerController.isFacingRight ? Vector2.right : Vector2.left;
 
                 // Pass both the damage and the knockback direction to the TakeDamage method
                 enemyHealth.TakeDamage(attackDamages[currentComboIndex], knockbackDirection);
+
+                // Instantiate the slash effect at the slashPosition
+                if (slashPosition != null && slashEffectPrefab != null)
+                {
+                    GameObject slashEffect = Instantiate(slashEffectPrefab, slashPosition.position, Quaternion.identity);
+                    Destroy(slashEffect, 1f); // Manually destroy the slash effect after 1 second
+                }
+
+                // Trigger camera shake
+                if (impulseSource != null)
+                {
+                    impulseSource.GenerateImpulse();
+                }
             }
         }
-    }
-
-
-    public void SpawnSlashEffect()
-    {
-        // Instantiate the slash effect at the attack point position with the correct rotation
-        GameObject slashEffect = Instantiate(slashEffectPrefab, attackPoint.position, Quaternion.identity);
-
-        // Optional: Destroy the slash effect after a certain duration
-        Destroy(slashEffect, 0.5f); // Adjust this duration to how long you want the slash effect to last
     }
 
     public void OnAttackAnimationEnd()
