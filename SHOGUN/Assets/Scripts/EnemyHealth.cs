@@ -24,7 +24,7 @@ public class EnemyHealth : MonoBehaviour
     public void TakeDamage(float damage, Vector2 knockbackDirection)
     {
         currentHealth -= damage;
-        animator.SetTrigger("hurt");
+        //animator.SetTrigger("hurt");
         Debug.Log("Hurting enemy: " + currentHealth);
 
         // Instantiate blood particles when hurt

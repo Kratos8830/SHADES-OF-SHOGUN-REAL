@@ -37,8 +37,6 @@ public class GameController : MonoBehaviour
     {
         yield return new WaitForSeconds(0.1f);
         transform.position = CheckPos;
-
-        
     }
 
     public void ZeroHealth()
@@ -47,6 +45,7 @@ public class GameController : MonoBehaviour
 
         if (hm.healthAmount < 1)
         {
+            pc.Damage();
             hm.healthAmount = 100;
             hm.healthFill.fillAmount = 1;
         }
