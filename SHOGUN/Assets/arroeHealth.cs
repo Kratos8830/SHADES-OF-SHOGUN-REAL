@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EnemyHealth : MonoBehaviour
+public class arroeHwalth : MonoBehaviour
 {
     public float maxHealth = 100;
     public float currentHealth;
@@ -18,7 +18,7 @@ public class EnemyHealth : MonoBehaviour
     void Start()
     {
         currentHealth = maxHealth;
-        
+
     }
 
     public void TakeDamage(float damage, Vector2 knockbackDirection)

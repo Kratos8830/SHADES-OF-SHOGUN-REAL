@@ -113,6 +113,8 @@ public class PlayerAttackJod : MonoBehaviour
     {
         // Detect enemies within the attack range
         Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(attackPoint.position, attackRange, enemyLayers);
+
+
         SoundManager.Instance.PlaySound2D("AttackStart");
         SoundManager.Instance.PlaySound2D("Attack");
         foreach (Collider2D enemy in hitEnemies)
@@ -124,7 +126,8 @@ public class PlayerAttackJod : MonoBehaviour
             if (enemyHealth != null)
             {
                 //CameraShake
-                cinemachineShake.instance.ShakeCamera(1f,0.3f);
+                //cinemachineShake.instance.ShakeCamera(1f,0.3f);
+
 
 
                 // Calculate the knockback direction based on the player's facing direction
