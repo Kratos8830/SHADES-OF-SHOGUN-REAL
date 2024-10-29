@@ -11994,11 +11994,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3397300520360744405, guid: e380502566930424c8122db9e0115a71, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 107.1
+      value: -2.6
       objectReference: {fileID: 0}
     - target: {fileID: 3397300520360744405, guid: e380502566930424c8122db9e0115a71, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -1.9
+      value: 1.2
       objectReference: {fileID: 0}
     - target: {fileID: 3397300520360744405, guid: e380502566930424c8122db9e0115a71, type: 3}
       propertyPath: m_LocalPosition.z
@@ -12045,6 +12045,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 7418014998354293352, guid: a666cb8a63712154ca6b1db6081c702a, type: 3}
     - target: {fileID: 4317972487839328128, guid: e380502566930424c8122db9e0115a71, type: 3}
+      propertyPath: groundCheck
+      value: 
+      objectReference: {fileID: 1551914982}
+    - target: {fileID: 4317972487839328128, guid: e380502566930424c8122db9e0115a71, type: 3}
       propertyPath: ghostOffsetX
       value: -0.5
       objectReference: {fileID: 0}
@@ -12065,9 +12069,17 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 950279345}
     - target: {fileID: 4317972487839328128, guid: e380502566930424c8122db9e0115a71, type: 3}
+      propertyPath: groundCheckRadius
+      value: 0.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 4317972487839328128, guid: e380502566930424c8122db9e0115a71, type: 3}
       propertyPath: slashEffectPrefab
       value: 
       objectReference: {fileID: 7234206838944516169, guid: 4b0f9f47dc5196b47978bc414889cc53, type: 3}
+    - target: {fileID: 4317972487839328128, guid: e380502566930424c8122db9e0115a71, type: 3}
+      propertyPath: whatIsGround.m_Bits
+      value: 64
+      objectReference: {fileID: 0}
     - target: {fileID: 4317972487839328128, guid: e380502566930424c8122db9e0115a71, type: 3}
       propertyPath: attackSpeeds.Array.data[0]
       value: 4
@@ -38744,6 +38756,11 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!4 &1551914982 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 6609903704389037390, guid: e380502566930424c8122db9e0115a71, type: 3}
+  m_PrefabInstance: {fileID: 1293760217}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1584308912
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -40386,11 +40403,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4305840441833235124, guid: e0d1cba946b6a9f41a62928fe8788ba6, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 114.119995
+      value: 4.42
       objectReference: {fileID: 0}
     - target: {fileID: 4305840441833235124, guid: e0d1cba946b6a9f41a62928fe8788ba6, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.3385754
+      value: 4.4385757
       objectReference: {fileID: 0}
     - target: {fileID: 4305840441833235124, guid: e0d1cba946b6a9f41a62928fe8788ba6, type: 3}
       propertyPath: m_LocalPosition.z
@@ -40402,11 +40419,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6455770627889280088, guid: e0d1cba946b6a9f41a62928fe8788ba6, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 114.119995
+      value: 4.42
       objectReference: {fileID: 0}
     - target: {fileID: 6455770627889280088, guid: e0d1cba946b6a9f41a62928fe8788ba6, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.3385754
+      value: 4.4385757
       objectReference: {fileID: 0}
     - target: {fileID: 6700512316884427535, guid: e0d1cba946b6a9f41a62928fe8788ba6, type: 3}
       propertyPath: m_Follow
@@ -42180,7 +42197,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 40b3f7d7cca857e499ef06e9504e7eda, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pauseMenu: {fileID: 0}
 --- !u!114 &1832062018
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -37,20 +37,27 @@ public class ArrowEnemy : MonoBehaviour
     public void CalulateDistance()
     {
         float distance = player.position.x - enemy.position.x;
-        //Debug.Log(distance);
-        if (distance > 0 && isFacingRight)
-        {
-            Flip();
-        }
-
-        else if (distance < 0 && !isFacingRight)
-        {
-            Flip();
-        }
+        FlipTowardsPlayer();
         if (Mathf.Abs(distance) < disbtwplayerenemy && pc.movementInputDirection>=0)
         {
             anim.SetTrigger("attack");
             es.Shoot(!isFacingRight);
+        }
+    }
+
+    void FlipTowardsPlayer()
+    {
+        // Flip towards the player's position
+        if (player != null)
+        {
+            if (player.position.x < transform.position.x && !isFacingRight)
+            {
+                Flip();
+            }
+            else if (player.position.x > transform.position.x && isFacingRight)
+            {
+                Flip();
+            }
         }
     }
 }

@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class PlayerAttackJod : MonoBehaviour
@@ -32,6 +33,12 @@ public class PlayerAttackJod : MonoBehaviour
     private float[] attackSpeeds = { 3f, 4f, 5f }; // Different speeds for each combo attack
 
     public Cinemachine.CinemachineImpulseSource impulseSource;
+
+
+    public bool isGrounded;
+    public Transform groundCheck;
+    public float groundCheckRadius;
+    public LayerMask whatIsGround;
     void Update()
     {
         if (Time.time >= nextAttackTime)
@@ -42,12 +49,17 @@ public class PlayerAttackJod : MonoBehaviour
                 {
                     attackQueued = true; // Queue the next attack if an attack is already in progress
                 }
-                else
+                else if(isGrounded) 
                 {
-                    PerformAttack();
+                   PerformAttack();
                 }
             }
         }
+    }
+
+    private void FixedUpdate()
+    {
+        CheckSurroundings();
     }
 
     void PerformAttack()
@@ -178,5 +190,11 @@ public class PlayerAttackJod : MonoBehaviour
     {
         Gizmos.color = Color.red;
         Gizmos.DrawWireSphere(attackPoint.position, attackRange);
+    }
+
+    private void CheckSurroundings()
+    {
+        isGrounded = Physics2D.OverlapCircle(groundCheck.position, groundCheckRadius, whatIsGround);
+       
     }
 }

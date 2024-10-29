@@ -25,9 +25,6 @@ public class GameController : MonoBehaviour
 
     
 
-
-    
-
     public void UpdateCheckPos(Vector2 pos)
     {
         CheckPos = pos;
@@ -64,12 +61,57 @@ public class GameController : MonoBehaviour
             hm.TakeDamage(5);
             pc.PlayHurtAnim();
             collision.gameObject.SetActive(false);
+
+            if (hm.healthAmount < 1)
+            {
+                pc.Damage();
+                hm.healthAmount = 100;
+                hm.healthFill.fillAmount = 1;
+                StartCoroutine(Respawn());
+
+                if(pc.lives>1)
+                {
+                    StartCoroutine(Respawn());
+                }
+            }
+        }
+
+        else if (collision.tag == "EArrow")
+        {
+            hm.TakeDamage(20);
+            pc.PlayHurtAnim();
+            collision.gameObject.SetActive(false);
+
+            if (hm.healthAmount < 1)
+            {
+                pc.Damage();
+                hm.healthAmount = 100;
+                hm.healthFill.fillAmount = 1;
+                StartCoroutine(Respawn());
+
+                if (pc.lives > 1)
+                {
+                    StartCoroutine(Respawn());
+                }
+            }
         }
 
         else if (collision.tag == "Saw")
         {
             hm.TakeDamage(5);
             pc.PlayHurtAnim();
+            if (hm.healthAmount < 1)
+            {
+                pc.Damage();
+                hm.healthAmount = 100;
+                hm.healthFill.fillAmount = 1;
+
+                if (pc.lives > 1)
+                {
+                    StartCoroutine(Respawn());
+                }
+
+            }
         }
     }
 

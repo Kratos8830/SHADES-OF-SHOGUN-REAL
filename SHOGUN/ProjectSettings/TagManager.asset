@@ -12,6 +12,7 @@ TagManager:
   - Trap
   - Arrow
   - Saw
+  - EArrow
   layers:
   - Default
   - TransparentFX
