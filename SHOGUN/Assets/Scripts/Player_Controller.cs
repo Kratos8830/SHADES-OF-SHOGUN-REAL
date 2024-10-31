@@ -80,7 +80,10 @@ public class PlayerController : MonoBehaviour
     public ParticleSystem dust;
     private HealthManager hm;
 
+
     public int lives = 2;
+    public GameObject restartMenu;
+    private PlayerController pc;
 
     // --- Start & Update ---
     void Start()
@@ -90,6 +93,7 @@ public class PlayerController : MonoBehaviour
         amountOfJumpsLeft = amountOfJumps;
         wallHopDirection.Normalize();
         wallJumpDirection.Normalize();
+        pc = GameObject.Find("Player").GetComponent<PlayerController>();
     }
 
     void Update()
@@ -458,8 +462,8 @@ public class PlayerController : MonoBehaviour
 
         if(lives <1)
         {
-            Debug.Log("Level Restart");
-            SceneManager.LoadScene(1);
+            restartMenu.SetActive(true);
+            pc.enabled = false;
         }
     }
 }
