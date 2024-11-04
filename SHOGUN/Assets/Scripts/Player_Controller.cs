@@ -66,7 +66,7 @@ public class PlayerController : MonoBehaviour
 
     // Component References
     Rigidbody2D platform;
-    private Rigidbody2D rb;
+    public Rigidbody2D rb;
     private Animator anim;
     public Transform groundCheck;
     public Transform wallCheck;
@@ -84,6 +84,7 @@ public class PlayerController : MonoBehaviour
     public int lives = 2;
     public GameObject restartMenu;
     private PlayerController pc;
+    private bool isAutoMoving = false;
 
     // --- Start & Update ---
     void Start()
@@ -100,27 +101,75 @@ public class PlayerController : MonoBehaviour
     {
         if (!Pause_Menu.isPaused)
         {
-            CheckInput();
-            CheckMovementDirection();
+            if (!isAutoMoving)  // Prevent regular input when auto-moving
+            {
+                CheckInput();
+                CheckMovementDirection();
+            }
+
             UpdateAnimations();
             CheckIfCanJump();
             CheckIfWallSliding();
             CheckJump();
             CheckDash();
-            
         }
 
+        if (Pause_Menu.isPaused)
+        { 
+            runningSound.Stop();
+        }
     }
+
 
     private void FixedUpdate()
     {
-        ApplyMovement();
+        if (isAutoMoving)
+        {
+            rb.velocity = new Vector2(movementSpeed, rb.velocity.y);  // Auto move to the right
+        }
+        else
+        {
+            ApplyMovement();
+        }
         CheckSurroundings();
         MovingPlatform();
-        
     }
 
-   
+    // --- AutoMove Mecahnics which enable at Endzone (Trial) --- 
+
+    public void ResetPlayerState()
+    {
+        // Stop dash and jump mechanics
+        isDashing = false;
+        isAttemptingToJump = false;
+        rb.velocity = Vector2.zero; // Reset velocity
+
+        // Reset animation parameters
+        anim.SetBool("isWalking", false);
+        anim.SetBool("isGrounded", true);
+        anim.SetBool("isWallSliding", false);
+        //anim.ResetTrigger("dash"); // Optional: Ensure any dash trigger is reset if used
+    }
+
+    public void SetAutoMove(bool autoMove)
+    {
+        if (autoMove)
+        {
+            ResetPlayerState();  // Reset player state upon entering auto-move
+        }
+
+        isAutoMoving = autoMove;
+        canMove = !autoMove;
+        canFlip = !autoMove;
+
+        // Force rightward movement and run animation when auto-moving
+        rb.velocity = new Vector2(autoMove ? movementSpeed : 0, 0);
+        anim.SetBool("isWalking", autoMove);
+    }
+
+    // ------------------------------------------------------------------------------------
+
+
     // --- General Movement Mechanics ---
     private void CheckMovementDirection()
     {
@@ -373,6 +422,8 @@ public class PlayerController : MonoBehaviour
 
     private void UpdateAnimations()
     {
+        //not changed code for automove here
+
         // Force running animation if dashing, regardless of movement
         if (isDashing)
         {
