@@ -1,5 +1,4 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class EnemyHealth : MonoBehaviour
@@ -15,10 +14,14 @@ public class EnemyHealth : MonoBehaviour
 
     public GameObject bloodParticlePrefab; // Reference to the blood particle prefab
 
+    private EnemyAI enemyAI; // Reference to EnemyAI script
+
     void Start()
     {
         currentHealth = maxHealth;
-        
+
+        // Get reference to EnemyAI component
+        enemyAI = GetComponent<EnemyAI>();
     }
 
     public void TakeDamage(float damage, Vector2 knockbackDirection)
@@ -38,8 +41,6 @@ public class EnemyHealth : MonoBehaviour
 
         if (currentHealth <= 0)
         {
-            animator.SetTrigger("dead");
-            animator.SetBool("isDead", true);
             Die();
         }
     }
@@ -65,19 +66,39 @@ public class EnemyHealth : MonoBehaviour
 
     public void Die()
     {
+        // Set the "isDead" animator flag and trigger the "dead" animation
+        animator.SetTrigger("dead");
+        animator.SetBool("isDead", true);
+
         // Instantiate blood particles on death
         if (bloodParticlePrefab != null)
         {
             Instantiate(bloodParticlePrefab, transform.position, Quaternion.identity);
         }
 
-        // Play death animation, particle effects, etc.
-        Debug.Log("Enemy died!");
-
         // Disable enemy components and collider
-        myEnemy.GetComponent<Collider2D>().enabled = false;
-        myEnemy.GetComponent<ArrowEnemy>().enabled = false;
-        Destroy(rb);
-        this.enabled = false; // Disable this component
+        if (myEnemy != null)
+        {
+            myEnemy.GetComponent<Collider2D>().enabled = false;
+        }
+
+        // Set isDead in EnemyAI and disable it
+        if (enemyAI != null)
+        {
+            enemyAI.isDead = true;
+            enemyAI.enabled = false; // Disable the EnemyAI script
+        }
+
+        // Start coroutine to wait for the animation to finish, then destroy the GameObject
+        StartCoroutine(WaitForDeathAnimation());
+    }
+
+    private IEnumerator WaitForDeathAnimation()
+    {
+        // Wait for the length of the death animation
+        yield return new WaitForSeconds(animator.GetCurrentAnimatorStateInfo(0).length);
+
+        // Destroy the enemy GameObject
+        Destroy(myEnemy);
     }
 }
