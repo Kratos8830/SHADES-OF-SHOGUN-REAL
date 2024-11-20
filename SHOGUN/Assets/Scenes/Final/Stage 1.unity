@@ -11867,6 +11867,7 @@ MonoBehaviour:
   player: {fileID: 950279324}
   enemy: {fileID: 1636675375}
   disbtwplayerenemy: 12.2
+  eh: {fileID: 1139472742}
 --- !u!114 &1139472742
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11888,6 +11889,7 @@ MonoBehaviour:
   knockbackForce: 5
   bloodParticlePrefab: {fileID: 7234206838944516169, guid: 4b0f9f47dc5196b47978bc414889cc53, type: 3}
   arrowenemy: {fileID: 0}
+  ismyEnemyDied: 0
 --- !u!1 &1140791912
 GameObject:
   m_ObjectHideFlags: 0
@@ -12968,7 +12970,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3397300520360744405, guid: e380502566930424c8122db9e0115a71, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 69.47
+      value: 84.6
       objectReference: {fileID: 0}
     - target: {fileID: 3397300520360744405, guid: e380502566930424c8122db9e0115a71, type: 3}
       propertyPath: m_LocalPosition.y
@@ -41647,7 +41649,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4305840441833235124, guid: e0d1cba946b6a9f41a62928fe8788ba6, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 76.49
+      value: 91.619995
       objectReference: {fileID: 0}
     - target: {fileID: 4305840441833235124, guid: e0d1cba946b6a9f41a62928fe8788ba6, type: 3}
       propertyPath: m_LocalPosition.y
@@ -41663,7 +41665,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6455770627889280088, guid: e0d1cba946b6a9f41a62928fe8788ba6, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 76.49
+      value: 91.619995
       objectReference: {fileID: 0}
     - target: {fileID: 6455770627889280088, guid: e0d1cba946b6a9f41a62928fe8788ba6, type: 3}
       propertyPath: m_LocalPosition.y

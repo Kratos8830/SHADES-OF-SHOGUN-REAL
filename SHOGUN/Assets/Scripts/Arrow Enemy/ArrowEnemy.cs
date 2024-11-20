@@ -10,6 +10,7 @@ public class ArrowEnemy : MonoBehaviour
     private bool isFacingRight=true;
     private EnemyShoot es;
     private PlayerController pc;
+    public EnemyHealth eh;
   
 
     void Start()
@@ -42,7 +43,10 @@ public class ArrowEnemy : MonoBehaviour
         if (Mathf.Abs(distance) < disbtwplayerenemy && pc.movementInputDirection>=0)
         {
             anim.SetTrigger("attack");
-            es.Shoot(!isFacingRight);
+            if(eh.ismyEnemyDied==false)
+            {
+                es.Shoot(!isFacingRight);
+            }
         }
     }
 

@@ -9,7 +9,7 @@ public class Geisha : MonoBehaviour
     {
         if(collision.tag=="Player")
         {
-            Debug.Log("canDash true");
+            //Debug.Log("canDash true");
             canDash = true;
         }
     }
