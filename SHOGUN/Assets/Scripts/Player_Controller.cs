@@ -86,6 +86,11 @@ public class PlayerController : MonoBehaviour
     private PlayerController pc;
     private bool isAutoMoving = false;
 
+    //npc reference 
+    public Geisha gs;
+
+
+
     // --- Start & Update ---
     void Start()
     {
@@ -414,7 +419,7 @@ public class PlayerController : MonoBehaviour
             }
         }
 
-        if (Input.GetKeyDown(KeyCode.LeftShift))
+        if (Input.GetKeyDown(KeyCode.LeftShift)&& gs.canDash==true)
         {
             AttemptToDash();
         }

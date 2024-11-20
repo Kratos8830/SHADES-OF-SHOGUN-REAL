@@ -6,6 +6,7 @@ public class EnemyHealth : MonoBehaviour
     public float maxHealth = 100;
     public float currentHealth;
     public GameObject myEnemy;
+
     public Rigidbody2D rb;
     public Animator animator;
 
@@ -15,6 +16,7 @@ public class EnemyHealth : MonoBehaviour
     public GameObject bloodParticlePrefab; // Reference to the blood particle prefab
 
     private EnemyAI enemyAI; // Reference to EnemyAI script
+    public ArrowEnemy arrowenemy;
 
     void Start()
     {
@@ -22,7 +24,10 @@ public class EnemyHealth : MonoBehaviour
 
         // Get reference to EnemyAI component
         enemyAI = GetComponent<EnemyAI>();
+        
     }
+
+    
 
     public void TakeDamage(float damage, Vector2 knockbackDirection)
     {
@@ -48,6 +53,10 @@ public class EnemyHealth : MonoBehaviour
     public IEnumerator ApplyKnockback(Vector2 knockbackDirection)
     {
         float elapsed = 0f;
+        
+        animator.SetTrigger("hurt");
+        myEnemy.GetComponent<ArrowEnemy>().enabled = false;
+        StartCoroutine(isHitOff());
 
         // Store original velocity for the enemy
         Vector2 originalVelocity = rb.velocity;
@@ -80,6 +89,7 @@ public class EnemyHealth : MonoBehaviour
         if (myEnemy != null)
         {
             myEnemy.GetComponent<Collider2D>().enabled = false;
+           
         }
 
         // Set isDead in EnemyAI and disable it
@@ -100,5 +110,13 @@ public class EnemyHealth : MonoBehaviour
 
         // Destroy the enemy GameObject
         Destroy(myEnemy);
+        myEnemy.GetComponent<ArrowEnemy>().enabled = false;
     }
+
+    IEnumerator isHitOff()
+    {
+        yield return new WaitForSeconds(3.0f);
+        myEnemy.GetComponent<ArrowEnemy>().enabled = true;
+    }
+   
 }

@@ -12,6 +12,8 @@ namespace HeneGames.DialogueSystem
         private bool dialogueIsOn;
         private DialogueTrigger dialogueTrigger;
 
+      
+
         public enum TriggerState
         {
             Collision,

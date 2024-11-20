@@ -10,6 +10,7 @@ public class ArrowEnemy : MonoBehaviour
     private bool isFacingRight=true;
     private EnemyShoot es;
     private PlayerController pc;
+  
 
     void Start()
     {
@@ -60,4 +61,6 @@ public class ArrowEnemy : MonoBehaviour
             }
         }
     }
+
+  
 }

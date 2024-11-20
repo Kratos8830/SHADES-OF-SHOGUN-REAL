@@ -78,7 +78,7 @@ public class GameController : MonoBehaviour
 
         else if (collision.tag == "EArrow")
         {
-            hm.TakeDamage(20);
+            hm.TakeDamage(5);
             pc.PlayHurtAnim();
             collision.gameObject.SetActive(false);
 
