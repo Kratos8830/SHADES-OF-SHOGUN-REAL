@@ -5,18 +5,20 @@ using UnityEngine;
 public class ArrowEnemy : MonoBehaviour
 {
     public Transform player, enemy;
-    public float disbtwplayerenemy=12.2f;
+    public float disbtwplayerenemy = 12.2f;
     private Animator anim;
-    private bool isFacingRight=true;
+    private bool isFacingRight = true;
     private EnemyShoot es;
     private PlayerController pc;
-  
+    public EnemyHealth eh;
+
+
 
     void Start()
     {
         anim = GameObject.Find("Arrow Enemy").GetComponentInChildren<Animator>();
-        es= GameObject.Find("Arrow Enemy").GetComponentInChildren<EnemyShoot>();
-        pc=GameObject.Find("Player").GetComponent<PlayerController>();
+        es = GameObject.Find("Arrow Enemy").GetComponentInChildren<EnemyShoot>();
+        pc = GameObject.Find("Player").GetComponent<PlayerController>();
     }
 
     // Update is called once per frame
@@ -27,7 +29,7 @@ public class ArrowEnemy : MonoBehaviour
 
     void Flip()
     {
-       
+
         isFacingRight = !isFacingRight;
 
         Vector3 scale = transform.localScale;
@@ -39,10 +41,13 @@ public class ArrowEnemy : MonoBehaviour
     {
         float distance = player.position.x - enemy.position.x;
         FlipTowardsPlayer();
-        if (Mathf.Abs(distance) < disbtwplayerenemy && pc.movementInputDirection>=0)
+        if (Mathf.Abs(distance) < disbtwplayerenemy && pc.movementInputDirection >= 0)
         {
             anim.SetTrigger("attack");
-            es.Shoot(!isFacingRight);
+            if (eh.ismyEnemyDied == false)
+            {
+                es.Shoot(!isFacingRight);
+            }
         }
     }
 
@@ -62,5 +67,5 @@ public class ArrowEnemy : MonoBehaviour
         }
     }
 
-  
+
 }

@@ -87,7 +87,7 @@ public class PlayerController : MonoBehaviour
     private bool isAutoMoving = false;
 
     //npc reference 
-    public Geisha gs;
+    public Izo iz;
 
 
 
@@ -419,7 +419,7 @@ public class PlayerController : MonoBehaviour
             }
         }
 
-        if (Input.GetKeyDown(KeyCode.LeftShift)&& gs.canDash==true)
+        if (Input.GetKeyDown(KeyCode.LeftShift) && iz.canDash == true)
         {
             AttemptToDash();
         }
