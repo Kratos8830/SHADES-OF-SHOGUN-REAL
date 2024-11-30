@@ -11,10 +11,18 @@ public class Main_Menu : MonoBehaviour
         SceneManager.LoadScene("Stage 1");
     }
 
+    public void Credits()
+    {
+        SceneManager.LoadScene("Credits");
+    }
+
     public void QuitGame()
     {
         Debug.Log("Game quit hoya Guru!");
         Application.Quit();
     }
-
+    public void Back()
+    {
+        SceneManager.LoadScene("Main Menu");
+    }
 }

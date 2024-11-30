@@ -83,6 +83,8 @@ public class PlayerController : MonoBehaviour
 
     public int lives = 2;
     public GameObject restartMenu;
+    //public GameObject endScreen;
+    //public BoxCollider2D end;
     private PlayerController pc;
     private bool isAutoMoving = false;
 
