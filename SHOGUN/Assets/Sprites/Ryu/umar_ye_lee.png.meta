@@ -1,0 +1,1328 @@
+fileFormatVersion: 2
+guid: 2b911de0a22b94444a4b4558e75b5f03
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: iPhone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: umar_ye_lee_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1800
+        width: 384
+        height: 360
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 61fbe65b1d5919d42977844c1088117a
+      internalID: 1398036188
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: umar_ye_lee_1
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 1800
+        width: 384
+        height: 360
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a8e2bab946d2f4d48afa07f939a72788
+      internalID: -1742866083
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: umar_ye_lee_2
+      rect:
+        serializedVersion: 2
+        x: 768
+        y: 1800
+        width: 384
+        height: 360
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 53fdbad6a551fc84f915b8f9ab383e21
+      internalID: -1854430710
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: umar_ye_lee_3
+      rect:
+        serializedVersion: 2
+        x: 1152
+        y: 1800
+        width: 384
+        height: 360
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 099049343e30c1c4ab479a33dfeb423b
+      internalID: 1852249908
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: umar_ye_lee_4
+      rect:
+        serializedVersion: 2
+        x: 1536
+        y: 1800
+        width: 384
+        height: 360
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: eb72ad2c56f9fe74bac10d9f1106e1f4
+      internalID: 1259570253
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: umar_ye_lee_5
+      rect:
+        serializedVersion: 2
+        x: 1920
+        y: 1800
+        width: 384
+        height: 360
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 36c0929ff9fdd524aa83a3e6d0a690c0
+      internalID: 1402601319
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: umar_ye_lee_6
+      rect:
+        serializedVersion: 2
+        x: 2304
+        y: 1800
+        width: 384
+        height: 360
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8e80324e0b5bbb040a05b081c90b7e10
+      internalID: -1309402684
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: umar_ye_lee_7
+      rect:
+        serializedVersion: 2
+        x: 2688
+        y: 1800
+        width: 384
+        height: 360
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c8a43e498ec5b8341a01faa5647e229a
+      internalID: -1802103353
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: umar_ye_lee_8
+      rect:
+        serializedVersion: 2
+        x: 3072
+        y: 1800
+        width: 384
+        height: 360
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a73180f6b87a1bd428300db8f2155999
+      internalID: 1662512276
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: umar_ye_lee_9
+      rect:
+        serializedVersion: 2
+        x: 3456
+        y: 1800
+        width: 384
+        height: 360
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a86afcc62bca24c49a4e90d12e15d601
+      internalID: 976406503
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: umar_ye_lee_10
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1440
+        width: 384
+        height: 360
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7f5dedac8efc9f3489a98d02a1d152a6
+      internalID: -1976412535
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: umar_ye_lee_11
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 1440
+        width: 384
+        height: 360
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 32877a7464a7c2349aaf0ad73f0df7a0
+      internalID: 2075875879
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: umar_ye_lee_12
+      rect:
+        serializedVersion: 2
+        x: 768
+        y: 1440
+        width: 384
+        height: 360
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ad146fdfb4cdd494980fca74535677d8
+      internalID: -1496186071
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: umar_ye_lee_13
+      rect:
+        serializedVersion: 2
+        x: 1152
+        y: 1440
+        width: 384
+        height: 360
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3b7ef0eb550c295429ae6fa8bc4652a7
+      internalID: -1610978973
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: umar_ye_lee_14
+      rect:
+        serializedVersion: 2
+        x: 1536
+        y: 1440
+        width: 384
+        height: 360
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c08db3842572a9e41bb483c7716cf1ab
+      internalID: 1411374476
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: umar_ye_lee_15
+      rect:
+        serializedVersion: 2
+        x: 1920
+        y: 1440
+        width: 384
+        height: 360
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 57212712a110ea84fbc971bfdfca2470
+      internalID: 253062125
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: umar_ye_lee_16
+      rect:
+        serializedVersion: 2
+        x: 2304
+        y: 1440
+        width: 384
+        height: 360
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bc437a5939460a84f82eeab918913096
+      internalID: -611898
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: umar_ye_lee_17
+      rect:
+        serializedVersion: 2
+        x: 2688
+        y: 1440
+        width: 384
+        height: 360
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 15ec9986562387c4a9a2754849f5ba04
+      internalID: -379428466
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: umar_ye_lee_18
+      rect:
+        serializedVersion: 2
+        x: 3072
+        y: 1440
+        width: 384
+        height: 360
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 413736a6d166a7546ac3b89af4b04780
+      internalID: -563490616
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: umar_ye_lee_19
+      rect:
+        serializedVersion: 2
+        x: 3456
+        y: 1440
+        width: 384
+        height: 360
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3e8ab6d2be2b50941b428db7b0b4b14f
+      internalID: 19553634
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: umar_ye_lee_20
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1080
+        width: 384
+        height: 360
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dafaaf2a69109794f8a9a9f241464cec
+      internalID: -1411277896
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: umar_ye_lee_21
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 1080
+        width: 384
+        height: 360
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5dd716a5439a1204cb409607b44d877c
+      internalID: -872928590
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: umar_ye_lee_22
+      rect:
+        serializedVersion: 2
+        x: 768
+        y: 1080
+        width: 384
+        height: 360
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f3933deefee97a24fb1b52b355bc513d
+      internalID: -1456856286
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: umar_ye_lee_23
+      rect:
+        serializedVersion: 2
+        x: 1152
+        y: 1080
+        width: 384
+        height: 360
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 326bb98722bdef942930f30a6cff203d
+      internalID: 1549460689
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: umar_ye_lee_24
+      rect:
+        serializedVersion: 2
+        x: 1536
+        y: 1080
+        width: 384
+        height: 360
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 73b6ec6b5ee77c647a96f897e8c1a520
+      internalID: -474132045
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: umar_ye_lee_25
+      rect:
+        serializedVersion: 2
+        x: 1920
+        y: 1080
+        width: 384
+        height: 360
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: eae89a7dccd502647ba7791cdc3eb09c
+      internalID: -775502612
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: umar_ye_lee_26
+      rect:
+        serializedVersion: 2
+        x: 2304
+        y: 1080
+        width: 384
+        height: 360
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 64522cfcb2689fe47bd09b303e54e2c3
+      internalID: 659564989
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: umar_ye_lee_27
+      rect:
+        serializedVersion: 2
+        x: 2688
+        y: 1080
+        width: 384
+        height: 360
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7e7df7607d354a24699f51ca6f03fb17
+      internalID: -49235308
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: umar_ye_lee_28
+      rect:
+        serializedVersion: 2
+        x: 3072
+        y: 1080
+        width: 384
+        height: 360
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f7a2b743befeeb242b039dee85b336e1
+      internalID: -601242790
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: umar_ye_lee_29
+      rect:
+        serializedVersion: 2
+        x: 3456
+        y: 1080
+        width: 384
+        height: 360
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 64d9cea166beec8459cb18f91d62138f
+      internalID: 508173288
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: umar_ye_lee_30
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 720
+        width: 384
+        height: 360
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f26b2d6f918578141a347a1862ab051a
+      internalID: -1220434607
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: umar_ye_lee_31
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 720
+        width: 384
+        height: 360
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f81df49d91a8b454fa4bbedbf42db64c
+      internalID: 701542742
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: umar_ye_lee_32
+      rect:
+        serializedVersion: 2
+        x: 768
+        y: 722
+        width: 384
+        height: 360
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5d415fe9b0aff734fa67b2a25cb50a5d
+      internalID: -1363232676
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: umar_ye_lee_33
+      rect:
+        serializedVersion: 2
+        x: 1150
+        y: 720
+        width: 384
+        height: 360
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 28fc02c87f67f5148b42a0c832dd78ed
+      internalID: 852236382
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: umar_ye_lee_34
+      rect:
+        serializedVersion: 2
+        x: 1536
+        y: 720
+        width: 384
+        height: 360
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 47d330ea33bda044a8fcc3638a0187ed
+      internalID: -1385941179
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: umar_ye_lee_35
+      rect:
+        serializedVersion: 2
+        x: 1920
+        y: 720
+        width: 384
+        height: 360
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 83af6e201a6b95847b6eb64129fe7a4d
+      internalID: -1257399944
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: umar_ye_lee_36
+      rect:
+        serializedVersion: 2
+        x: 2304
+        y: 720
+        width: 384
+        height: 360
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 816f6fb2af4e3ca42954ee412adb1f27
+      internalID: 652817418
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: umar_ye_lee_37
+      rect:
+        serializedVersion: 2
+        x: 2688
+        y: 720
+        width: 384
+        height: 360
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7a2aee8067f4abc4fafb1bfe3ef876ba
+      internalID: 431599789
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: umar_ye_lee_38
+      rect:
+        serializedVersion: 2
+        x: 3072
+        y: 720
+        width: 384
+        height: 360
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d48167789726fed488be9cdd247b1d8c
+      internalID: 603184442
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: umar_ye_lee_39
+      rect:
+        serializedVersion: 2
+        x: 3456
+        y: 720
+        width: 384
+        height: 360
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7a8e92b1f7f358e49ae227e2c7f869ce
+      internalID: -1895519099
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: umar_ye_lee_40
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 360
+        width: 384
+        height: 360
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7dfebf8c2fee7fa4c83779872cc33bf0
+      internalID: 1380911991
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: umar_ye_lee_41
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 362
+        width: 384
+        height: 360
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3576890b6d1a45748820afb5be27d3e7
+      internalID: 987740106
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: umar_ye_lee_42
+      rect:
+        serializedVersion: 2
+        x: 768
+        y: 360
+        width: 384
+        height: 360
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7f102b5d0a111da458efce59ba4f9f23
+      internalID: 1446782729
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: umar_ye_lee_43
+      rect:
+        serializedVersion: 2
+        x: 1152
+        y: 360
+        width: 384
+        height: 360
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cf4dcdc890ef8c04fb928ee5ecf6227d
+      internalID: -29572120
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: umar_ye_lee_44
+      rect:
+        serializedVersion: 2
+        x: 1536
+        y: 360
+        width: 384
+        height: 360
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 08a0647e1cf1b61428be16e045d7b432
+      internalID: -662129705
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: umar_ye_lee_45
+      rect:
+        serializedVersion: 2
+        x: 1920
+        y: 360
+        width: 384
+        height: 360
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 41c757ccff6f0074db68c9f31be69f39
+      internalID: -264597717
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: umar_ye_lee_46
+      rect:
+        serializedVersion: 2
+        x: 2304
+        y: 360
+        width: 384
+        height: 360
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ed0f27515aeed2e4d9c2a592a18d6750
+      internalID: -1052380984
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: umar_ye_lee_47
+      rect:
+        serializedVersion: 2
+        x: 2688
+        y: 360
+        width: 384
+        height: 360
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bf89ed51ca474a948bcfe1a6dceed293
+      internalID: 1386537038
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: umar_ye_lee_48
+      rect:
+        serializedVersion: 2
+        x: 3072
+        y: 360
+        width: 384
+        height: 360
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8f176a80eefbd6947b913a70c5415ab6
+      internalID: 49820265
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: umar_ye_lee_49
+      rect:
+        serializedVersion: 2
+        x: 3456
+        y: 360
+        width: 384
+        height: 360
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 265e8084e857b5a408f77420be013348
+      internalID: 1378267903
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: umar_ye_lee_50
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 384
+        height: 360
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 469e9397e246577459dabe53f69492e2
+      internalID: -1881667884
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: umar_ye_lee_51
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 0
+        width: 384
+        height: 360
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8fc0c6701db7b7f40a82d72512929f3d
+      internalID: 925381168
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: umar_ye_lee_52
+      rect:
+        serializedVersion: 2
+        x: 768
+        y: 0
+        width: 384
+        height: 360
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3522151cd03d00f47b3be5602022238a
+      internalID: 29629827
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: umar_ye_lee_53
+      rect:
+        serializedVersion: 2
+        x: 1152
+        y: 0
+        width: 384
+        height: 360
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 37e6019428a0ab346bc6bc6c6bc4842d
+      internalID: -496844147
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      umar_ye_lee_0: 1398036188
+      umar_ye_lee_1: -1742866083
+      umar_ye_lee_10: -1976412535
+      umar_ye_lee_11: 2075875879
+      umar_ye_lee_12: -1496186071
+      umar_ye_lee_13: -1610978973
+      umar_ye_lee_14: 1411374476
+      umar_ye_lee_15: 253062125
+      umar_ye_lee_16: -611898
+      umar_ye_lee_17: -379428466
+      umar_ye_lee_18: -563490616
+      umar_ye_lee_19: 19553634
+      umar_ye_lee_2: -1854430710
+      umar_ye_lee_20: -1411277896
+      umar_ye_lee_21: -872928590
+      umar_ye_lee_22: -1456856286
+      umar_ye_lee_23: 1549460689
+      umar_ye_lee_24: -474132045
+      umar_ye_lee_25: -775502612
+      umar_ye_lee_26: 659564989
+      umar_ye_lee_27: -49235308
+      umar_ye_lee_28: -601242790
+      umar_ye_lee_29: 508173288
+      umar_ye_lee_3: 1852249908
+      umar_ye_lee_30: -1220434607
+      umar_ye_lee_31: 701542742
+      umar_ye_lee_32: -1363232676
+      umar_ye_lee_33: 852236382
+      umar_ye_lee_34: -1385941179
+      umar_ye_lee_35: -1257399944
+      umar_ye_lee_36: 652817418
+      umar_ye_lee_37: 431599789
+      umar_ye_lee_38: 603184442
+      umar_ye_lee_39: -1895519099
+      umar_ye_lee_4: 1259570253
+      umar_ye_lee_40: 1380911991
+      umar_ye_lee_41: 987740106
+      umar_ye_lee_42: 1446782729
+      umar_ye_lee_43: -29572120
+      umar_ye_lee_44: -662129705
+      umar_ye_lee_45: -264597717
+      umar_ye_lee_46: -1052380984
+      umar_ye_lee_47: 1386537038
+      umar_ye_lee_48: 49820265
+      umar_ye_lee_49: 1378267903
+      umar_ye_lee_5: 1402601319
+      umar_ye_lee_50: -1881667884
+      umar_ye_lee_51: 925381168
+      umar_ye_lee_52: 29629827
+      umar_ye_lee_53: -496844147
+      umar_ye_lee_6: -1309402684
+      umar_ye_lee_7: -1802103353
+      umar_ye_lee_8: 1662512276
+      umar_ye_lee_9: 976406503
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
