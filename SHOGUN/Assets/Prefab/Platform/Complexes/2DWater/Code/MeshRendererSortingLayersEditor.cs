@@ -1,6 +1,11 @@
+
 using UnityEngine;
 using UnityEditor;
 using System.Collections;
+
+#if UNITY_EDITOR
+
+
 
 [CustomEditor(typeof(MeshRenderer))]
 
@@ -38,4 +43,6 @@ public class MeshRendererSortingLayersEditor : Editor
 
 		EditorGUILayout.EndHorizontal();
 	}
+
 }
+#endif

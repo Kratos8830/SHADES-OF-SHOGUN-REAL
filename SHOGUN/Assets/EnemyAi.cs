@@ -18,6 +18,7 @@ public class EnemyAI : MonoBehaviour
     private Animator animator;
     private bool isFacingRight = true;
     private bool isPlayerInChaseRange = false;
+    public HealthManager eh;
 
     public bool isDead = false;
 
@@ -103,6 +104,8 @@ public class EnemyAI : MonoBehaviour
             Collider2D playerCollider = Physics2D.OverlapBox(transform.position, attackBoxSize, 0, playerLayer);
             if (playerCollider != null)
             {
+               eh.TakeDamage(5);
+
                 Debug.Log("Player hit!");
             }
         }

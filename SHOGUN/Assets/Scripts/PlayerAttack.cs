@@ -66,7 +66,9 @@ public class PlayerAttackJod : MonoBehaviour
     {
         nextAttackTime = Time.time + 1f / attackRate; // Set the time for the next attack
         isAttacking = true; // Mark that an attack is in progress
-        
+        SoundManager.Instance.PlaySound2D("AttackStart");
+        SoundManager.Instance.PlaySound2D("Attack");
+       
 
         // Stop player movement while attacking
         playerController.canMove = false;
@@ -129,7 +131,7 @@ public class PlayerAttackJod : MonoBehaviour
 
 
         SoundManager.Instance.PlaySound2D("AttackStart");
-        SoundManager.Instance.PlaySound2D("Attack");
+        SoundManager.Instance.PlaySound2D("ATTACKBLOOD");
         foreach (Collider2D enemy in hitEnemies)
         {
             Debug.Log("Hitting enemy: " + enemy.name);
