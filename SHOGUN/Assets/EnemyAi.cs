@@ -36,8 +36,8 @@ public class EnemyAI : MonoBehaviour
         {
             float distanceToPlayer = Vector2.Distance(transform.position, player.position);
 
-            // Check if player is within the detection range
-            isPlayerInChaseRange = distanceToPlayer <= detectionRange;
+            // Check if player is within the detection + buffer range
+            isPlayerInChaseRange = distanceToPlayer <= detectionRange + stopChaseBuffer;
 
             if (isPlayerInChaseRange)
             {
@@ -53,7 +53,6 @@ public class EnemyAI : MonoBehaviour
             }
             else if (distanceToPlayer > detectionRange + stopChaseBuffer)
             {
-                // Stop chasing if player is beyond detection + buffer distance
                 StopChasing();
             }
 
@@ -63,11 +62,23 @@ public class EnemyAI : MonoBehaviour
 
     void FixedUpdate()
     {
-        if (isPlayerInChaseRange && !isAttacking)
+        if (isPlayerInChaseRange && Vector2.Distance(transform.position, player.position) > attackRange && !isAttacking)
         {
             ChasePlayer();
         }
     }
+
+    void StopChasing()
+    {
+        if (animator != null)
+        {
+            animator.SetBool("isMoving", false);
+        }
+        rb.velocity = Vector2.zero; // Ensure enemy stops completely
+        isAttacking = false;
+    }
+
+
 
     void ChasePlayer()
     {
@@ -79,14 +90,7 @@ public class EnemyAI : MonoBehaviour
         }
     }
 
-    void StopChasing()
-    {
-        if (animator != null)
-        {
-            animator.SetBool("isMoving", false);
-        }
-        isAttacking = false;
-    }
+   
 
     void AttackPlayer()
     {

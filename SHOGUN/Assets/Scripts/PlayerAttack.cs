@@ -15,7 +15,7 @@ public class PlayerAttackJod : MonoBehaviour
     private float nextAttackTime = 0f; // Time when the next attack is allowed
 
     private int currentComboIndex = 0; // Current combo index
-    private bool isAttacking = false; // Tracks if an attack is in progress
+    public bool isAttacking = false; // Tracks if an attack is in progress
     private bool attackQueued = false; // Indicates if the next attack is queued
 
     // Reference to PlayerController for facing direction
@@ -66,6 +66,7 @@ public class PlayerAttackJod : MonoBehaviour
     {
         nextAttackTime = Time.time + 1f / attackRate; // Set the time for the next attack
         isAttacking = true; // Mark that an attack is in progress
+        
 
         // Stop player movement while attacking
         playerController.canMove = false;
