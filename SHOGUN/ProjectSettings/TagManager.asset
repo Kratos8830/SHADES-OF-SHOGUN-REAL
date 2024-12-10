@@ -13,6 +13,7 @@ TagManager:
   - Arrow
   - Saw
   - EArrow
+  - Lightning
   layers:
   - Default
   - TransparentFX

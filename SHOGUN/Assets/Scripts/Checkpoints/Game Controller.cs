@@ -56,6 +56,26 @@ public class GameController : MonoBehaviour
             StartCoroutine(Respawn());
         }
 
+        else if (collision.tag == "Lightning")
+        {
+
+            Debug.Log("Damage");
+            hm.TakeDamage(15);
+            pc.PlayHurtAnim();
+            if (hm.healthAmount < 1)
+            {
+                pc.Damage();
+                hm.healthAmount = 100;
+                hm.healthFill.fillAmount = 1;
+
+                if (pc.lives > 1)
+                {
+                    StartCoroutine(Respawn());
+                }
+
+            }
+        }
+
         else if (collision.tag == "Arrow")
         {
             hm.TakeDamage(5);
@@ -113,6 +133,8 @@ public class GameController : MonoBehaviour
 
             }
         }
+
+       
     }
 
 
