@@ -129,43 +129,53 @@ public class PlayerAttackJod : MonoBehaviour
         // Detect enemies within the attack range
         Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(attackPoint.position, attackRange, enemyLayers);
 
-
         SoundManager.Instance.PlaySound2D("AttackStart");
         SoundManager.Instance.PlaySound2D("ATTACKBLOOD");
+
         foreach (Collider2D enemy in hitEnemies)
         {
             Debug.Log("Hitting enemy: " + enemy.name);
 
             // Apply damage to the enemy's health script
             EnemyHealth enemyHealth = enemy.GetComponent<EnemyHealth>();
+            BossHealth bossHealth = enemy.GetComponent<BossHealth>();
+
             if (enemyHealth != null)
             {
-                //CameraShake
-                //cinemachineShake.instance.ShakeCamera(1f,0.3f);
-
-
-
                 // Calculate the knockback direction based on the player's facing direction
                 Vector2 knockbackDirection = playerController.isFacingRight ? Vector2.right : Vector2.left;
 
                 // Pass both the damage and the knockback direction to the TakeDamage method
                 enemyHealth.TakeDamage(attackDamages[currentComboIndex], knockbackDirection);
+            }
 
-                // Instantiate the slash effect at the slashPosition
-                if (slashPosition != null && slashEffectPrefab != null)
-                {
-                    GameObject slashEffect = Instantiate(slashEffectPrefab, slashPosition.position, Quaternion.identity);
-                    Destroy(slashEffect, 1f); // Manually destroy the slash effect after 1 second
-                }
+            if (bossHealth != null)
+            {
+                // Inflict damage on the boss
+                bossHealth.TakeDamage(attackDamages[currentComboIndex]);
 
-                // Trigger camera shake
-                if (impulseSource != null)
+                // Check for stun logic
+                if (bossHealth.GetHealth() <= bossHealth.maxHealth * 0.5f && !bossHealth.IsStunned())
                 {
-                    impulseSource.GenerateImpulse();
+                    bossHealth.Stun(3.0f); // Stun the boss for 3 seconds
                 }
+            }
+
+            // Instantiate the slash effect at the slashPosition
+            if (slashPosition != null && slashEffectPrefab != null)
+            {
+                GameObject slashEffect = Instantiate(slashEffectPrefab, slashPosition.position, Quaternion.identity);
+                Destroy(slashEffect, 1f); // Manually destroy the slash effect after 1 second
+            }
+
+            // Trigger camera shake
+            if (impulseSource != null)
+            {
+                impulseSource.GenerateImpulse();
             }
         }
     }
+
 
     public void OnAttackAnimationEnd()
     {
