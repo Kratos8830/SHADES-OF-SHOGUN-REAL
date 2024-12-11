@@ -88,8 +88,8 @@ public class PlayerController : MonoBehaviour
     private PlayerController pc;
     private bool isAutoMoving = false;
 
-    //npc reference 
-    public Izo iz;
+    //for unlocking dash
+    public bool canDash => GameController.Instance.DashUnlocked;
 
 
 
@@ -421,7 +421,7 @@ public class PlayerController : MonoBehaviour
             }
         }
 
-        if (Input.GetKeyDown(KeyCode.LeftShift) && iz.canDash == true)
+        if (Input.GetKeyDown(KeyCode.LeftShift) && canDash == true)
         {
             AttemptToDash();
         }

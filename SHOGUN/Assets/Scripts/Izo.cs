@@ -9,8 +9,12 @@ public class Izo: MonoBehaviour
     {
         if (collision.tag == "Player")
         {
-           // Debug.Log("canDash true");
-            canDash = true;
+            UnlockDashAbility();
         }
+    }
+
+    private void UnlockDashAbility()
+    {
+        GameController.Instance.DashUnlocked = true;
     }
 }

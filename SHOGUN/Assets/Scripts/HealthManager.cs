@@ -9,15 +9,17 @@ public class HealthManager : MonoBehaviour
    
     public Image healthFill;
     public float healthAmount = 100f;
-    public TMP_Text currenthealth;
     private GameController gm;
+    public Image resolveFill;
+    private float resolveAmount = 0;
    
 
     private void Start()
     {
-        currenthealth.text = "100";
+        
         gm= GameObject.Find("Player").GetComponent<GameController>();
         healthAmount = 100f;
+        resolveFill.fillAmount = 0;
     }
 
 
@@ -25,11 +27,16 @@ public class HealthManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        currenthealth.text = ""+ healthAmount; 
+     
 
         if(healthAmount<1)
         {
             gm.ZeroHealth();
+        }
+
+        if(Input.GetKeyDown(KeyCode.Q))
+        {
+            UseResolvehealth();
         }
     }
 
@@ -39,13 +46,35 @@ public class HealthManager : MonoBehaviour
         healthFill.fillAmount = healthAmount / 100f;
     }
 
-    //public void Heal(float healingAmount)
-    //{
-    //    healthAmount += healingAmount;
-    //    healthAmount = Mathf.Clamp(healthAmount, 0, 100f);
-    //    healthFill.fillAmount = healthAmount / 100f;
-    //}
+    public void Heal(float healingAmount)
+    {
+        healthAmount += healingAmount;
+        healthAmount = Mathf.Clamp(healthAmount, 0, 100f);
+        healthFill.fillAmount = healthAmount / 100f;
 
+    }
+
+    public void FillResolve(float amount)
+    {
+        resolveAmount += amount;
+        resolveFill.fillAmount = resolveAmount / 100f;
+    }
+
+    private void RemoveResolve(float amount)
+    {
+        resolveAmount -= amount;
+        resolveFill.fillAmount = resolveAmount / 100f;
+    }
+
+    
+    private void UseResolvehealth()
+    {
+        if(resolveAmount>=33.33f && healthAmount<=99)
+        {
+            Heal(15f);
+            RemoveResolve(33.33f);
+        }
+    }
 
 
 

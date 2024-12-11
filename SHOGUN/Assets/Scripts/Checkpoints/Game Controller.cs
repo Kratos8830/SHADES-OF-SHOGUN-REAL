@@ -2,28 +2,56 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.UI;
+using TMPro;
 
 public class GameController : MonoBehaviour
 {
+
+    public static GameController Instance;
+    public bool DashUnlocked = false;
+
+
     //restart position after health become 0
     Vector2 RestartStartLevelPos;
     Vector2 startPos;
     Vector2 CheckPos;
     private HealthManager hm;
     private PlayerController pc;
-    
-  
+
+    //for scrolls logic
+    public int scrollsCollected = 0;
+    private int totalScrollsRequired = 3;
+    public TMP_Text currentScrolls;
+
+
+    private void Awake()
+    {
+        if (Instance == null)
+        {
+            Instance = this;
+            DontDestroyOnLoad(gameObject);
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
+
+       
+    }
+
+
 
     void Start()
     {
         RestartStartLevelPos = transform.position;
         startPos = transform.position;
-        hm=GameObject.Find("Health Manager").GetComponent<HealthManager>();
-        pc=GameObject.Find("Player").GetComponent<PlayerController>();
-        
+        hm = GameObject.Find("Health Manager").GetComponent<HealthManager>();
+        pc = GameObject.Find("Player").GetComponent<PlayerController>();
+
     }
 
-    
+
 
     public void UpdateCheckPos(Vector2 pos)
     {
@@ -38,7 +66,7 @@ public class GameController : MonoBehaviour
 
     public void ZeroHealth()
     {
-       StartCoroutine (Respawn());
+        StartCoroutine(Respawn());
 
         if (hm.healthAmount < 1)
         {
@@ -89,7 +117,7 @@ public class GameController : MonoBehaviour
                 hm.healthFill.fillAmount = 1;
                 StartCoroutine(Respawn());
 
-                if(pc.lives>1)
+                if (pc.lives > 1)
                 {
                     StartCoroutine(Respawn());
                 }
@@ -134,8 +162,26 @@ public class GameController : MonoBehaviour
             }
         }
 
-       
+        else if (collision.tag == "resolve")
+        {
+            hm.FillResolve(33.33f);
+            Destroy(collision.gameObject);
+        }
+
+
     }
 
+    //for scrolls
+    public void CollectScroll()
+    {
+        //increment krte jao scrolls ka
+        scrollsCollected++;
+    }
+
+    //for checking all scrolls collected or not
+    public bool HasAllScrolls()
+    {
+        return scrollsCollected >= totalScrollsRequired;
+    }
 
 }
