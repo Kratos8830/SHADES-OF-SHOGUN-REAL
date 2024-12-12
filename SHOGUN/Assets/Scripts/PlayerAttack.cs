@@ -153,7 +153,7 @@ public class PlayerAttackJod : MonoBehaviour
             {
                 // Inflict damage on the boss
                 bossHealth.TakeDamage(attackDamages[currentComboIndex]);
-
+                Debug.Log("boss ko lagi");
                 // Check for stun logic
                 if (bossHealth.GetHealth() <= bossHealth.maxHealth * 0.5f && !bossHealth.IsStunned())
                 {
