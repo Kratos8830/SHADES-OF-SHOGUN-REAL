@@ -1,5 +1,7 @@
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
+
 
 public class BossHealth : MonoBehaviour
 {
@@ -22,6 +24,7 @@ public class BossHealth : MonoBehaviour
     [Header("healthBar")]
     public Image healthBar;
 
+    public GameObject endMenu;
     private bool isStunned = false; // Indicates if the boss is stunned
 
     private void Start()
@@ -122,6 +125,7 @@ public class BossHealth : MonoBehaviour
 
         // Disable the boss after a short delay to allow the animation to play
         Destroy(gameObject, 2f);
+        endMenu.SetActive(true);
     }
 
     public int GetHealth()
