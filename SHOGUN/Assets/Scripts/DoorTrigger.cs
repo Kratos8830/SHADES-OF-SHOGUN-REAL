@@ -4,13 +4,14 @@ using UnityEngine;
 
 public class DoorTrigger : MonoBehaviour
 {
+    public GameObject DoorPos;
     public GameObject Door;
-    public Vector3 doorClosedPos;
-    public Vector3 doorOpenPos;
+    private Vector3 doorOpenPos;
 
     private void Awake()
     {
-        Door.transform.position = doorClosedPos;
+       Door.transform.position= DoorPos.transform.position;
+        doorOpenPos = new Vector3(DoorPos.transform.position.x, DoorPos.transform.position.y + 5f, DoorPos.transform.position.z);
     }
     private void OnTriggerEnter2D(Collider2D other)
     {
