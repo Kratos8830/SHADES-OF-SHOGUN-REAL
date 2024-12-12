@@ -6,19 +6,19 @@ public class ArrowEnemy : MonoBehaviour
 {
     public Transform player, enemy;
     public float disbtwplayerenemy = 12.2f;
-    private Animator anim;
+    public Animator anim;
     private bool isFacingRight = true;
-    private EnemyShoot es;
-    private PlayerController pc;
+    public EnemyShoot es;
+    public PlayerController pc;
     public EnemyHealth eh;
 
 
 
     void Start()
     {
-        anim = GameObject.Find("Arrow Enemy").GetComponentInChildren<Animator>();
-        es = GameObject.Find("Arrow Enemy").GetComponentInChildren<EnemyShoot>();
-        pc = GameObject.Find("Player").GetComponent<PlayerController>();
+        //anim = GameObject.Find("Arrow Enemy").GetComponentInChildren<Animator>();
+        //es = GameObject.Find("Arrow Enemy").GetComponentInChildren<EnemyShoot>();
+        //pc = GameObject.Find("Player").GetComponent<PlayerController>();
     }
 
     // Update is called once per frame
