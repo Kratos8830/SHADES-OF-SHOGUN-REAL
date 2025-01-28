@@ -1,5 +1,6 @@
 
 using System.Collections;
+using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 
 public class EnemyHealth : MonoBehaviour
@@ -19,6 +20,7 @@ public class EnemyHealth : MonoBehaviour
     private EnemyAI enemyAI; // Reference to EnemyAI script
     public ArrowEnemy arrowenemy;
     public bool ismyEnemyDied = false;
+
 
     void Start()
     {
@@ -44,7 +46,7 @@ public class EnemyHealth : MonoBehaviour
         }
 
         // Start knockback coroutine
-        StartCoroutine(ApplyKnockback(knockbackDirection));
+       // StartCoroutine(ApplyKnockback(knockbackDirection));
 
         if (currentHealth <= 0)
         {
@@ -52,28 +54,28 @@ public class EnemyHealth : MonoBehaviour
         }
     }
 
-    public IEnumerator ApplyKnockback(Vector2 knockbackDirection)
-    {
-        float elapsed = 0f;
+    //public IEnumerator ApplyKnockback(Vector2 knockbackDirection)
+    //{
+    //    float elapsed = 0f;
 
-        animator.SetTrigger("hurt");
-        myEnemy.GetComponent<ArrowEnemy>().enabled = false;
-        StartCoroutine(isHitOff());
+    //    animator.SetTrigger("hurt");
+    //    myEnemy.GetComponent<ArrowEnemy>().enabled = false;
+    //    StartCoroutine(isHitOff());
 
-        // Store original velocity for the enemy
-        Vector2 originalVelocity = rb.velocity;
+    //    // Store original velocity for the enemy
+    //    Vector2 originalVelocity = rb.velocity;
 
-        while (elapsed < knockbackDuration)
-        {
-            // Apply knockback force in the specified direction
-            rb.velocity = new Vector2(knockbackDirection.x * knockbackForce, originalVelocity.y);
-            elapsed += Time.deltaTime;
-            yield return null; // Wait for the next frame
-        }
+    //    while (elapsed < knockbackDuration)
+    //    {
+    //        // Apply knockback force in the specified direction
+    //        rb.velocity = new Vector2(knockbackDirection.x * knockbackForce, originalVelocity.y);
+    //        elapsed += Time.deltaTime;
+    //        yield return null; // Wait for the next frame
+    //    }
 
-        // Reset the velocity after the knockback
-        rb.velocity = new Vector2(originalVelocity.x, originalVelocity.y);
-    }
+    //    // Reset the velocity after the knockback
+    //    rb.velocity = new Vector2(originalVelocity.x, originalVelocity.y);
+    //}
 
     public void Die()
     {
@@ -81,6 +83,16 @@ public class EnemyHealth : MonoBehaviour
         animator.SetTrigger("dead");
         animator.SetBool("isDead", true);
 
+        if (myEnemy.name == "ArrowEnemy")
+        {
+            Debug.Log("ArrowEnemy Died && Invoke function called");
+            //Invoke(nameof(arrowenemy.StopArrowShoot),0.00001f);
+        }
+
+        else
+        {
+            Debug.Log("EnemyVariant Died");
+        }
         // Instantiate blood particles on death
         if (bloodParticlePrefab != null)
         {
@@ -88,21 +100,23 @@ public class EnemyHealth : MonoBehaviour
         }
 
         // Disable enemy components and collider
-        if (myEnemy != null)
+        else if (myEnemy != null)
         {
             myEnemy.GetComponent<Collider2D>().enabled = false;
 
         }
 
         // Set isDead in EnemyAI and disable it
-        if (enemyAI != null)
+        else if (enemyAI != null)
         {
             enemyAI.isDead = true;
             enemyAI.enabled = false; // Disable the EnemyAI script
         }
-
+        
+      
         // Start coroutine to wait for the animation to finish, then destroy the GameObject
         StartCoroutine(WaitForDeathAnimation());
+        
     }
 
     private IEnumerator WaitForDeathAnimation()
@@ -113,6 +127,8 @@ public class EnemyHealth : MonoBehaviour
         // Destroy the enemy GameObject
         Destroy(myEnemy);
         ismyEnemyDied = true;
+
+        
     }
 
     IEnumerator isHitOff()

@@ -16,9 +16,23 @@ public class ArrowEnemy : MonoBehaviour
 
     void Start()
     {
-        //anim = GameObject.Find("Arrow Enemy").GetComponentInChildren<Animator>();
-        //es = GameObject.Find("Arrow Enemy").GetComponentInChildren<EnemyShoot>();
-        //pc = GameObject.Find("Player").GetComponent<PlayerController>();
+        GameObject arrowEnemyObject = GameObject.Find("Arrow Enemy");
+        if(arrowEnemyObject != null)
+        {
+            anim = GameObject.Find("Arrow Enemy").GetComponentInChildren<Animator>();
+            es = GameObject.Find("Arrow Enemy").GetComponentInChildren<EnemyShoot>();
+        }
+        else
+        {
+            Debug.LogError("Arrow Enemy object not found in the scene.");
+        }
+
+        pc = GameObject.Find("Player").GetComponent<PlayerController>();
+
+        if (anim == null || es == null || pc == null)
+        {
+            Debug.LogWarning("Some components could not be initialized.");
+        }
     }
 
     // Update is called once per frame
@@ -65,6 +79,11 @@ public class ArrowEnemy : MonoBehaviour
                 Flip();
             }
         }
+    }
+
+    public void StopArrowShoot()
+    {
+        es.enabled = false; 
     }
 
 

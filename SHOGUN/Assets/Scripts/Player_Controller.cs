@@ -60,7 +60,7 @@ public class PlayerController : MonoBehaviour
     public float dashCoolDown;
 
     // Ground Mechanics Variables
-    private bool isGrounded;
+    public bool isGrounded;
 
     public float groundCheckRadius;
 
@@ -91,7 +91,8 @@ public class PlayerController : MonoBehaviour
     //for unlocking dash
     public bool canDash => GameController.Instance.DashUnlocked;
 
-
+    //for solving moonwalk glitch PA=Player Attack script
+    public bool cannotMoveForPA = false;
 
     // --- Start & Update ---
     void Start()
@@ -192,8 +193,9 @@ public class PlayerController : MonoBehaviour
         isWalking = Mathf.Abs(rb.velocity.x) >= 0.01f;
     }
 
-    private void ApplyMovement()
+    public void ApplyMovement()
     {
+
         if (!isGrounded && !isWallSliding && movementInputDirection == 0)
         {
             rb.velocity = new Vector2(rb.velocity.x * 0.95f, rb.velocity.y);  // Air drag applied
@@ -203,9 +205,22 @@ public class PlayerController : MonoBehaviour
             rb.velocity = new Vector2(movementSpeed * movementInputDirection, rb.velocity.y);
         }
 
+        
+
         if (isWallSliding && rb.velocity.y < -wallSlideSpeed)
         {
             rb.velocity = new Vector2(rb.velocity.x, -wallSlideSpeed);
+        }
+
+        //for solving moonwalk glitch
+        else if (rb.velocity.x == 0 && rb.velocity.y == 0)
+        {
+            cannotMoveForPA = true;    
+        }
+
+        else
+        {
+            cannotMoveForPA = false;
         }
     }
 

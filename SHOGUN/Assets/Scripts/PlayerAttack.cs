@@ -39,12 +39,16 @@ public class PlayerAttackJod : MonoBehaviour
     public Transform groundCheck;
     public float groundCheckRadius;
     public LayerMask whatIsGround;
+
+   
     void Update()
     {
         if (Time.time >= nextAttackTime)
         {
-            if (Input.GetButtonDown("Fire1"))
+            if (Input.GetButtonDown("Fire1") && playerController.isGrounded==true && 
+                playerController.cannotMoveForPA==true)
             {
+                
                 if (isAttacking)
                 {
                     attackQueued = true; // Queue the next attack if an attack is already in progress
