@@ -1,5 +1,4 @@
-
-#if UNITY_EDITOR
+// Remove #if UNITY_EDITOR and #endif
 
 using System.Collections;
 using System.Collections.Generic;
@@ -23,7 +22,7 @@ namespace Bundos.MovingPlatforms
     {
         [HideInInspector]
         public List<Vector3> waypoints = new List<Vector3>();
-    
+
         [Header("Editor Settings")]
         public float handleRadius = .5f;
         public Vector2 snappingSettings = new Vector2(.1f, .1f);
@@ -36,12 +35,12 @@ namespace Bundos.MovingPlatforms
         public WaypointPathType pathType = WaypointPathType.Closed;
         public WaypointBehaviorType behaviorType = WaypointBehaviorType.Loop;
 
-        public float moveSpeed = 5f; // Speed of movement
-        public float stopDistance = 0.1f; // Distance to consider reaching a waypoint
+        public float moveSpeed = 5f;
+        public float stopDistance = 0.1f;
 
         private int lastWaypointIndex = -1;
         private int currentWaypointIndex = 0;
-        private int direction = 1; // 1 for forward, -1 for reverse
+        private int direction = 1;
 
         private void Update()
         {
@@ -102,13 +101,16 @@ namespace Bundos.MovingPlatforms
         {
             MoveToWaypoint(waypoints[currentWaypointIndex]);
         }
+
         private void MoveToWaypoint(Vector3 waypoint)
         {
             Vector2 direction = (waypoint - transform.position).normalized;
             rb.velocity = direction * moveSpeed;
         }
+
         private void OnDrawGizmos()
         {
+#if UNITY_EDITOR
             if (IsSelected() && editing)
                 return;
 
@@ -137,12 +139,15 @@ namespace Bundos.MovingPlatforms
                     Gizmos.DrawSphere(waypoints[i], handleRadius / 2);
                 }
             }
+#endif
         }
 
+#if UNITY_EDITOR
         private bool IsSelected()
         {
             return UnityEditor.Selection.activeGameObject == transform.gameObject;
         }
+#endif
 
         int mod(int x, int m)
         {
@@ -150,5 +155,3 @@ namespace Bundos.MovingPlatforms
         }
     }
 }
-
-#endif
