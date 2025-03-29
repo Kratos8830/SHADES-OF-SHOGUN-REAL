@@ -1,2 +1,3 @@
 # SHADES-OF-SHOGUN-REAL
-NIGGAS WORKING ON
+https://youtu.be/Noan3TNkbOE
+
