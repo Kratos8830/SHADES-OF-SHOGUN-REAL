@@ -6,82 +6,83 @@ using UnityEngine;
 public class Player : MonoBehaviour
 {
     private Rigidbody2D rb;
-    
-    //especially for Shoot script gets access of Sprite Rendered of Player
-    public SpriteRenderer sprite;  
-    private float HorizontalInput;
-    public float jumpforce = 10.0f;
-    public bool isGrounded ;
-    public LayerMask JumpableGround;
-    public bool DoubleJump = false;
-    private bool isFacingRight = true;
-    public Transform Groundcheck;
-    public float groundCheckRadius;
-    public float movementspeed = 5;
-    
+    //Main player
+    public GameObject player;
+    private Animator anim;
 
-  
+    // Float Values
+    public float movementspeed = 5f;              // Ground movement speed
+    public float jumpforce = 10f;                 // Jump force
+    public float groundCheckRadius = 0.2f;        // Ground check radius
+    public float dashAmount = 24f;                // Dash distance or speed
+    public float DashTime = 0.2f;                 // Duration of dash
+    public float DashCoolDown = 1f;               // Cooldown time before next dash
+    public float Wallcheckdistance = 0.5f;        // Distance to check for walls
+    public float wallSlidingSpeed = 1.5f;         // Speed while sliding down the wall
+    public float movementForceInAir = 10f;        // Movement force in the air
+    public float AirDragSpeed = 0.85f;            // Air drag speed multiplier
 
-    // For Dash
-    private bool canDash = true;
-    private bool isDashing;
-    public float dashAmount = 24f;
-    private float DashTime = 0.2f;
-    private float DashCoolDown = 1f;
-    private float originalGravity;
+    // Transform Values
+    public Transform Groundcheck;                 // Ground check position
+    public Transform wallCheck;                   // Wall check position
 
-    // for walljump
+    // LayerMask Values
+    public LayerMask JumpableGround;              // Ground layers mask
+    public LayerMask whatisWall;                  // Wall layers mask
 
-    private bool isTouchingWall;
-    public Transform wallCheck;
-    public float Wallcheckdistance;
-    public LayerMask whatisWall;
+    // Boolean Values
+    public bool DoubleJump = false;               // Double jump availability
+    public bool isGrounded;                       // Is the player grounded
+    private bool canDash = true;                  // Can the player dash
+    private bool isDashing;                       // Is the player currently dashing
+    private bool isTouchingWall;                  // Is the player touching a wall
+    private bool isWallSliding;                   // Is the player sliding on a wall
+    private bool isFacingRight = true;            // Direction player is facing
 
-    private bool isWallSliding;
-    public float wallSlidingSpeed;
+    // Other Values
+    public SpriteRenderer sprite;                 // Reference to the player's Sprite Renderer
+    private float HorizontalInput;                // Player input for horizontal movement
+    private float originalGravity;                // Store original gravity for dash
 
-    //in Air
-    public float movementForceInAir;
-    public float AirDragSpeed;
+
 
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
-        
+        anim=GetComponentInChildren<Animator>();
         sprite = GetComponentInChildren<SpriteRenderer>();
-      
+
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (isDashing )
+        if (isDashing)
         {
             return; // Exit Update early if currently dashing or wall jumping
         }
 
         HorizontalInput = Input.GetAxis("Horizontal");
 
-        
+
         if (isGrounded)
         {
             rb.velocity = new Vector2(HorizontalInput * 7, rb.velocity.y);
         }
-        else if(!isGrounded && !isWallSliding && HorizontalInput !=0)
+        else if (!isGrounded && !isWallSliding && HorizontalInput != 0)
         {
             Vector2 forcetoadd = new Vector2(movementForceInAir * HorizontalInput, 0);
             rb.AddForce(forcetoadd);
 
-            if(Mathf.Abs(rb.velocity.x)> movementspeed)
+            if (Mathf.Abs(rb.velocity.x) > movementspeed)
             {
-                rb.velocity = new Vector2 (movementspeed * HorizontalInput, rb.velocity.y);
+                rb.velocity = new Vector2(movementspeed * HorizontalInput, rb.velocity.y);
             }
         }
-        else if (!isGrounded && !isWallSliding && HorizontalInput ==0)
+        else if (!isGrounded && !isWallSliding && HorizontalInput == 0)
         {
             rb.velocity = new Vector2(rb.velocity.x * AirDragSpeed, rb.velocity.y);
         }
-
 
         if (HorizontalInput > 0 && !isFacingRight)
         {
@@ -99,7 +100,7 @@ public class Player : MonoBehaviour
         wallSliding();
         CheckIfWallSliding();
 
-
+        anim.SetFloat("run", Mathf.Abs(HorizontalInput));
     }
 
     void DashMechanics()
@@ -117,26 +118,26 @@ public class Player : MonoBehaviour
             if (isGrounded)
             {
                 rb.velocity = new Vector2(rb.velocity.x, jumpforce);
-                
+
                 isGrounded = false;
                 DoubleJump = true;
             }
             else if (DoubleJump)
             {
-                rb.velocity = new Vector2(rb.velocity.x, jumpforce * 0.7f);
+                rb.velocity = new Vector2(rb.velocity.x, jumpforce * 1f);
                 DoubleJump = false;
             }
-           
+
         }
     }
 
-   private void CheckSurrounding()
-   {
+    private void CheckSurrounding()
+    {
         isGrounded = Physics2D.OverlapCircle(Groundcheck.position, groundCheckRadius, JumpableGround);
 
-        isTouchingWall = Physics2D.Raycast(wallCheck.position, transform.right,Wallcheckdistance,whatisWall);
-   }
-   private void CheckIfWallSliding()
+        isTouchingWall = Physics2D.Raycast(wallCheck.position, transform.right, Wallcheckdistance, whatisWall);
+    }
+    private void CheckIfWallSliding()
     {
         if (isTouchingWall && !isGrounded && rb.velocity.y < 0)
         {
@@ -152,9 +153,9 @@ public class Player : MonoBehaviour
     {
         if (isWallSliding)
         {
-            if(rb.velocity.y < -wallSlidingSpeed)
+            if (rb.velocity.y < -wallSlidingSpeed)
             {
-                rb.velocity = new Vector2 (rb.velocity.x,-wallSlidingSpeed);
+                rb.velocity = new Vector2(rb.velocity.x, -wallSlidingSpeed);
             }
         }
     }
@@ -164,12 +165,11 @@ public class Player : MonoBehaviour
         if (!isWallSliding)
         {
 
-            Vector3 currentScale = gameObject.transform.localScale;
-            currentScale.x *= -1;
-            gameObject.transform.localScale = currentScale;
             isFacingRight = !isFacingRight;
+            player.transform.Rotate(0f, 180f, 0f);
+            wallCheck.transform.Rotate(0f,180f, 0f);
         }
-       
+
     }
 
     private IEnumerator Dash()
@@ -184,7 +184,7 @@ public class Player : MonoBehaviour
         rb.velocity = new Vector2(dashDirection * dashAmount, 0f);
 
         yield return new WaitForSeconds(DashTime);
-     
+
 
         // Stop the player's movement after the dash
         rb.velocity = new Vector2(0f, rb.velocity.y);
@@ -199,7 +199,7 @@ public class Player : MonoBehaviour
 
     private void OnDrawGizmos()
     {
-        Gizmos.DrawLine(wallCheck.position,new Vector3(wallCheck.position.x + Wallcheckdistance,wallCheck.position.y,wallCheck.position.z));
+        Gizmos.DrawLine(wallCheck.position, new Vector3(wallCheck.position.x + Wallcheckdistance, wallCheck.position.y, wallCheck.position.z));
     }
 
 
@@ -208,3 +208,4 @@ public class Player : MonoBehaviour
 
 
 }
+
