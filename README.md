@@ -11,9 +11,13 @@ a Sem 3 (2nd year) - University Project, developed by a team of 5 young develope
 
 Roles:
 Sumeet Wakde - Game Programmer & Enemy-AI Programmer
-Mrunal Mendole- Game Designer,UI/UX Designer, Co-programmer.
+
+Mrunal Mendole- Game Designer,UI/UX Designer, Co-programmer
+
 Umar Sayyad: Game Programmer
+
 Vedant Naoghare: Animator
+
 Ayush Darekar: Artist
 
 Collaborated in a 5-member team to develop a fast-paced 2D action platformer Prototype, designing core game concept & mechanics Designed and programmed levels with dynamic camera system, interactive environments focusing platforming flows. Experimented with a dialogue system Plug in, Co-developed Dynamic UI, sound design using Unity’s built-in tools
