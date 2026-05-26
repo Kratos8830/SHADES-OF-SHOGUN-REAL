@@ -10,6 +10,7 @@ Check releases for the latest playable build
 a Sem 3 (2nd year) - University Project, developed by a team of 5 young developers.
 
 Roles:
+
 Sumeet Wakde - Game Programmer & Enemy-AI Programmer
 
 Mrunal Mendole- Game Designer,UI/UX Designer, Co-programmer
